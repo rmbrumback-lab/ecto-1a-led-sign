@@ -9,14 +9,14 @@ Every export uses the same pixel values:
 | 2 | green | `#00FF00` |
 | 3 | red + green | `#FFFF00` (amber/yellow) |
 
-The base timing is **200 ms per frame**. The full loop is 111 frames, or 22.2 s.
+The base timing is **200 ms per frame**. The full loop is 109 frames, or 21.8 s.
 
 ## Which file to use
 
 | Your target | Use |
 |---|---|
 | App that imports animated GIFs | `ecto1a_80x7.gif`, or build a pixel-exact GIF (below) |
-| App that imports a folder of frames | `frames_80x7/frame_000.png` … `frame_110.png` |
+| App that imports a folder of frames | `frames_80x7/frame_000.png` … `frame_108.png` |
 | App that imports a sprite sheet | `ecto1a_spritesheet_80x7.png`, 80 × 7 per frame, stacked vertically |
 | Arduino / ESP32 / Teensy | `ecto1a_frames.h` |
 | Raspberry Pi, web, Python, JS | `ecto1a_frames.json` or `ecto1a_playlist.json` |
@@ -45,18 +45,18 @@ imgs[0].save("ecto1a_exact.gif", save_all=True, append_images=imgs[1:],
 
 ```json
 {
-  "width": 80, "height": 7, "frame_ms": 200, "frames_total": 111, "loop_ms": 22200,
+  "width": 80, "height": 7, "frame_ms": 200, "frames_total": 109, "loop_ms": 21800,
   "timeline": [{"id": "A", "label": "...", "first_frame": 0, "frames": 24, "duration_ms": 4800}, ...],
-  "frames": [ [[0,1,1,...80 values], ...7 rows], ...111 frames ]
+  "frames": [ [[0,1,1,...80 values], ...7 rows], ...109 frames ]
 }
 ```
 
-`ecto1a_playlist.json` contains the same metadata. It stores `unique_frames` (50) and a `playlist` of `{"frame": index, "ms": duration}` (82 steps). Use it when memory matters or when you want to stretch holds to film-like timing: multiply `ms` on steps longer than 400 ms.
+`ecto1a_playlist.json` contains the same metadata. It stores `unique_frames` (26) and a `playlist` of `{"frame": index, "ms": duration}` (54 steps). Use it when memory matters or when you want to stretch holds to film-like timing: multiply `ms` on steps longer than 400 ms.
 
 ## Arduino / C (`ecto1a_frames.h`)
 
-- `ecto1a_frames[50][140]`: 2 bits per pixel, 4 pixels per byte, MSB first, row-major. Each row is 20 bytes.
-- `ecto1a_playlist[82][2]`: `{unique frame index, duration ms}`.
+- `ecto1a_frames[ECTO1A_UNIQUE_FRAMES][140]` (26 frames): 2 bits per pixel, 4 pixels per byte, MSB first, row-major. Each row is 20 bytes.
+- `ecto1a_playlist[ECTO1A_STEPS][2]` (54 steps): `{unique frame index, duration ms}`.
 - Marked `PROGMEM`. On AVR, read with `pgm_read_byte` / `pgm_read_word`.
 
 ```cpp

@@ -22,7 +22,7 @@ This confirms the plane order, column-major layout, bytes per column and bit ord
 ```bash
 git clone https://github.com/auc0le/JT-Edit.git
 node tools/verify_with_jtedit.js ./JT-Edit dist/Ecto-1A_GB2_16x96.jt
-# JT-Edit decoded 111 frames of 16x96; non-red/green/yellow pixels: 0
+# JT-Edit decoded 109 frames of 16x96; non-red/green/yellow pixels: 0
 ```
 
 During development, its output was also compared pixel-by-pixel with the generator's panel frames: **0 mismatches**.
@@ -40,7 +40,7 @@ During development, its output was also compared pixel-by-pixel with the generat
 | `test_were_back_spans_full_sign` | WE'RE BACK covers cols 0–79, as in the book scan |
 | `test_ghostbusters_spans_sign` | GHOSTBUSTERS covers cols 0–78, as in the night still |
 | `test_green_sits_half_pixel_lower` | hardware offset on the panel |
-| `test_playlist_reconstructs_sequence` | the deduplicated playlist expands back to the exact 111 frames |
+| `test_playlist_reconstructs_sequence` | the deduplicated playlist expands back to the exact 109 frames |
 | `test_dist_jt_is_current` | the committed `.jt` equals freshly generated output |
 
 ## Not yet verified

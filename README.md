@@ -9,9 +9,10 @@ A frame-by-frame recreation of the roof-mounted dot-matrix sign from the **Ecto-
 | | |
 |---|---|
 | Sign model | 80 × 7 pixels, red + green (both lit = amber) |
-| Sequence | 13 segments, 111 frames, 22.2 s loop at 200 ms/frame |
+| Sequence | 12 segments, 109 frames, 21.8 s loop at 200 ms/frame |
 | Fonts | 3, traced from reference photos |
-| CoolLED file | `aniType 1` (3-bit colour), 63,936 bytes, inside the app's upload limits |
+| Attribution | every element traced to a source — [ATTRIBUTION.md](docs/ATTRIBUTION.md) |
+| CoolLED file | `aniType 1` (3-bit colour), 62,784 bytes, inside the app's upload limits |
 | Verified | Byte-for-byte encoder match with app-exported files; decoded with zero errors by JT-Edit's own import code |
 
 This project builds directly on research by the GBFans community. See **[Credits](#credits)**.
@@ -31,7 +32,7 @@ This project builds directly on research by the GBFans community. See **[Credits
 - [Legal](#legal)
 
 Detailed documentation:
-[Design](docs/DESIGN.md) · [JT file format](docs/JT_FORMAT.md) · [Porting guide](docs/PORTING.md) · [Validation](docs/VALIDATION.md) · [Research log](docs/RESEARCH.md) · [GBFans post](docs/GBFANS_POST.md)
+[Design](docs/DESIGN.md) · [JT file format](docs/JT_FORMAT.md) · [Porting guide](docs/PORTING.md) · [Attribution audit](docs/ATTRIBUTION.md) · [Validation](docs/VALIDATION.md) · [Research log](docs/RESEARCH.md) · [GBFans post](docs/GBFANS_POST.md)
 
 ---
 
@@ -59,14 +60,13 @@ Use the files in [`dist/`](dist/): GIF, per-frame PNGs, sprite sheet, JSON, or a
 
 | ID | Shows | Effect | Time |
 |---|---|---|---|
-| A | GHOSTBUSTERS | rises in red, bounces and flips, rapid red/green swaps, solid green | 4.8 s |
-| B | FOR HIRE… | red text, green dotted border chasing round the edge; green wipe | 1.8 s |
-| C | WE'RE READY | thin font, amber; green wipe | 1.6 s |
-| D | TO BELIEVE YOU | thin font, word colours cycle; pushed down by E | 1.6 s |
-| E | CALL JL5-2020 | thin font, amber; red wipe | 1.6 s |
-| F | GHOSTBUSTERS | green, shimmer, green, green→red wipe, solid red | 2.2 s |
-| G | WE'RE BACK | "WE'RE" red, green flash, then WE'RE (red) BACK (green), words swap colours | 2.0 s |
-| G2 | (graphic) | five vertical lines sweep and become green boxes, twice | 1.6 s |
+| A | GHOSTBUSTERS | rises in red, green, 16 rapid red/green swaps, solid green | 5.6 s |
+| B | FOR HIRE… | red text inside a green border; solid green | 1.6 s |
+| C | WE'RE READY | font and colour unknown (shown thin, amber) | 1.4 s |
+| D | TO BELIEVE YOU | thin font, the three observed colour states; wipes down as E slides in | 2.2 s |
+| E | CALL JL5-2020 | thin font, amber; solid red | 1.6 s |
+| F | GHOSTBUSTERS | green, red, solid red | 1.8 s |
+| G | WE'RE BACK | "WE'RE" red, green flash, then WE'RE (red) BACK (green), words swap colours | 2.4 s |
 | H | WHO YA | | 0.8 s |
 | I | GONNA | | 0.8 s |
 | J | CALL? | slides up and out | 1.2 s |
@@ -74,6 +74,8 @@ Use the files in [`dist/`](dist/): GIF, per-frame PNGs, sprite sheet, JSON, or a
 | L | CALL JL5-2020 | slides down; GHOSTBUSTERS rises to restart the loop | 1.2 s |
 
 The segment IDs follow the A–L scheme from the GBFans reference thread.
+
+**Deliberately not rendered.** Three effects are known to exist but have never been documented visually: the **shimmer** (in A and F), the **direction of the wipes**, and the **five lines that become green boxes** (between G and H). Drawing them would mean inventing them. Instead, the confirmed frame is held, or a solid colour frame stands in for the wipe. See [docs/ATTRIBUTION.md](docs/ATTRIBUTION.md).
 
 ---
 
@@ -106,12 +108,11 @@ The project went through four iterations as more reference material surfaced. Th
 | TO BELIEVE YOU thin font + 3 colour states | **Sourced** | Film still, museum still, premiere close-up |
 | CALL JL5-2020 thin font, amber | **Sourced** | Premiere close-ups |
 | US! red with inward green arrows | **Sourced (shape approximate)** | Heavily motion-blurred premiere frames |
-| Effects (wipes, slides, shimmer, flip, lines/boxes) | **Sourced (rendering estimated)** | Thread's frame-by-frame descriptions |
-| WE'RE READY amber | **Estimate** | Thin amber "WE" close-up, most likely this frame |
+| Slides, 16 red/green swaps, solid colour frames, word colour swaps, arrow blink | **Sourced** | Thread's frame-by-frame descriptions |
+| Shimmer, wipe direction, lines → boxes | **Not rendered** | Exist, but appearance undocumented |
+| WE'RE READY font and colour | **Unknown** (shown thin, amber) | No clear reference |
 | WHO YA / GONNA / CALL? font and colours | **Estimate** | Bold-wide font assumed |
-| Border chase pattern | **Estimate** | Uneven dot spacing in still suggests motion |
 | All timing | **Estimate**, compressed | 113-frame upload limit; film timing is longer |
-| Upside-down flip in A | **Estimate** | Thread marks it "possibly" |
 
 ---
 
@@ -122,8 +123,8 @@ The project went through four iterations as more reference material surfaced. Th
 | [`dist/Ecto-1A_GB2_16x96.jt`](dist/Ecto-1A_GB2_16x96.jt) | CoolLED1248 animation, 16×96 panel |
 | [`dist/ecto1a_96x16_panel.gif`](dist/ecto1a_96x16_panel.gif) | Preview as it appears on the panel |
 | [`dist/ecto1a_80x7.gif`](dist/ecto1a_80x7.gif) | Native 80×7 LED-style preview |
-| [`dist/frames_80x7/`](dist/frames_80x7/) | 111 PNGs, 1 image pixel = 1 sign pixel |
-| [`dist/ecto1a_spritesheet_80x7.png`](dist/ecto1a_spritesheet_80x7.png) | All frames stacked vertically (80 × 777) |
+| [`dist/frames_80x7/`](dist/frames_80x7/) | 109 PNGs, 1 image pixel = 1 sign pixel |
+| [`dist/ecto1a_spritesheet_80x7.png`](dist/ecto1a_spritesheet_80x7.png) | All frames stacked vertically (80 × 763) |
 | [`dist/ecto1a_frames.json`](dist/ecto1a_frames.json) | Every frame as an 80×7 array of 0–3, plus timeline |
 | [`dist/ecto1a_playlist.json`](dist/ecto1a_playlist.json) | Deduplicated: unique frames + {frame, ms} playlist |
 | [`dist/ecto1a_frames.h`](dist/ecto1a_frames.h) | C/Arduino header, 2 bits/pixel, PROGMEM-ready |
@@ -138,8 +139,8 @@ The project went through four iterations as more reference material surfaced. Th
 Pixel values everywhere are **0 = off, 1 = red, 2 = green, 3 = red + green**. On RGB panels, map 3 to amber/yellow.
 
 - **Apps that import GIFs:** use `ecto1a_80x7.gif`, or build a crisp 80×7 GIF from the PNG frames.
-- **Apps that import frame images:** `frames_80x7/frame_000.png` … `frame_110.png`, each shown for 200 ms. Many frames repeat; `ecto1a_playlist.json` gives the deduplicated version with durations.
-- **Arduino / ESP32 / Pi:** `ecto1a_frames.h` has 50 unique frames at 140 bytes each (7 KB), plus an 82-step playlist.
+- **Apps that import frame images:** `frames_80x7/frame_000.png` … `frame_108.png`, each shown for 200 ms. Many frames repeat; `ecto1a_playlist.json` gives the deduplicated version with durations.
+- **Arduino / ESP32 / Pi:** `ecto1a_frames.h` has 26 unique frames at 140 bytes each (3.6 KB), plus a 54-step playlist.
 - **Your own code:** `ecto1a_frames.json`.
 
 Step-by-step recipes (GIF building, scaling to other panel sizes, Arduino example, red/green-only hardware) are in **[docs/PORTING.md](docs/PORTING.md)**.

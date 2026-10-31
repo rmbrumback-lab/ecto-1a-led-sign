@@ -16,7 +16,6 @@ from __future__ import annotations
 import argparse
 import json
 import os
-import random
 
 W, H = 80, 7
 OFF, R, G, Y = 0, 1, 2, 3
@@ -173,53 +172,14 @@ def stack(top, bottom, dy):
     return [list(tall[dy + y]) for y in range(H)]
 
 
-def colmix(a, b, x):
-    """Columns < x from a, the rest from b."""
-    return [ra[:x] + rb[x:] for ra, rb in zip(a, b)]
-
-
-def flipv(f):
-    return [list(r) for r in f[::-1]]
-
-
-def wipe(old, new, color):
-    """Colour bar sweeps over old, then new is revealed from the bar (3 frames)."""
-    bar = blank(color)
-    return [colmix(bar, old, 40), bar, colmix(new, bar, 40)]
-
-
-def shimmer(f, probs, rng):
-    return [[[v if (v and rng.random() > p) else OFF for v in row] for row in f] for p in probs]
-
-
-PERIM = ([(0, x) for x in range(W)] + [(y, W - 1) for y in range(1, H)] +
-         [(H - 1, x) for x in range(W - 2, -1, -1)] + [(y, 0) for y in range(H - 2, 0, -1)])
-
-
-def border(f, t):
-    """Green dotted border chasing round the sign edge, behind the text."""
+def border(f):
+    """Static green border round the sign edge, behind the text (seen in the FOR HIRE still).
+    Whether it animates is undocumented, so it is drawn static."""
     out = [list(r) for r in f]
-    for i, (y, x) in enumerate(PERIM):
-        if out[y][x] == OFF and (i + t) % 5 != 0:
-            out[y][x] = G
-    return out
-
-
-def lines_boxes():
-    """Five vertical red lines sweep across 16-col segments, then become green boxes."""
-    out = []
-    for off in (0, 7, 15):
-        f = blank()
-        for s in range(5):
-            for y in range(H):
-                f[y][s * 16 + off] = R
-        out.append(f)
-    box = blank()
-    for s in range(5):
-        for y in range(1, 6):
-            for x in range(s * 16 + 3, s * 16 + 13):
-                box[y][x] = G
-    out.append(box)
+    for y in range(H):
+        for x in range(W):
+            if (y in (0, H - 1) or x in (0, W - 1)) and out[y][x] == OFF:
+                out[y][x] = G
     return out
 
 
@@ -229,48 +189,49 @@ def hold(f, n):
 
 # --------------------------------------------------------------------------- sequence
 def build_segments():
-    """Return [(id, label, [frames])] in playback order. Ids follow the GBFans A-L scheme."""
-    rng = random.Random(1989)
+    """Return [(id, label, [frames])] in playback order. Ids follow the GBFans A-L scheme.
+
+    Only attributable elements are rendered; see docs/ATTRIBUTION.md. Effects known to exist
+    but whose appearance is undocumented (shimmer, wipe direction, lines -> boxes) are not drawn.
+    """
     A_r = narrow("GHOSTBUSTERS", R)
     A_g = recolor(A_r, G)
-    B = narrow("FOR HIRE...", R, gap=2, space=6)
-    C = thin("WE'RE READY", Y)
+    B = border(narrow("FOR HIRE...", R, gap=2, space=6))
+    C = thin("WE'RE READY", Y)                      # colour unknown (estimate)
     s = "TO BELIEVE YOU"
     D_red, D_tog, D_bely = (thin(s, per_word(s, c)) for c in ([R, R, R], [G, R, R], [R, Y, R]))
     E = thin("CALL JL5-2020", Y)
     s = "WE'RE BACK"
     G_were = wide("WE'RE", R, start=0)
     G_rg, G_gr = wide(s, per_word(s, [R, G])), wide(s, per_word(s, [G, R]))
-    Hf, I, J = wide("WHO YA", G), wide("GONNA", R), wide("CALL?", G)
+    Hf, I, J = wide("WHO YA", G), wide("GONNA", R), wide("CALL?", G)   # font/colour estimated
     k = "> US! <"
     K_on = wide(k, [G, OFF, R, R, R, OFF, G], space=6)
     K_off = wide(k, [OFF, OFF, R, R, R, OFF, OFF], space=6)
     L = E
 
     seg = []
-    a = [shift(A_r, 4), shift(A_r, 2)] + hold(A_r, 2)
-    a += [shift(A_g, 3), A_g, shift(A_r, -3), A_r, flipv(A_g), A_r]
-    a += [A_g if i % 2 == 0 else A_r for i in range(10)]
-    a += hold(A_g, 2) + [blank(G), colmix(border(B, 0), blank(G), 40)]
-    seg.append(("A", "GHOSTBUSTERS - rises red, bounces/flips, red/green swaps, solid green", a))
-    seg.append(("B", "FOR HIRE... - red, chasing green border; green wipe out",
-                [border(B, t) for t in range(1, 7)] + wipe(border(B, 7), C, G)))
-    seg.append(("C", "WE'RE READY - thin, yellow; green wipe out", hold(C, 5) + wipe(C, D_red, G)))
-    seg.append(("D", "TO BELIEVE YOU - thin, word colours cycle; pushed down by E",
-                [D_red, D_red, D_tog, D_tog, D_bely, D_bely, stack(E, D_red, 5), stack(E, D_red, 2)]))
-    seg.append(("E", "CALL JL5-2020 - thin, yellow; red wipe out", hold(E, 5) + wipe(E, A_g, R)))
-    seg.append(("F", "GHOSTBUSTERS - green, shimmer, green, green-to-red, solid red",
-                hold(A_g, 2) + shimmer(A_g, (0.3, 0.6, 0.8, 0.6, 0.3), rng) + hold(A_g, 1)
-                + [colmix(A_r, A_g, 40), A_r, blank(R)]))
+    a = [shift(A_r, 4), shift(A_r, 2)] + hold(A_r, 4)          # rises in red after L slides out
+    a += hold(A_g, 5)                                          # green (shimmer here not rendered)
+    a += [A_r if i % 2 == 0 else A_g for i in range(16)]       # ~16 rapid swaps, ends green
+    a += [blank(G)]                                            # solid green
+    seg.append(("A", "GHOSTBUSTERS - rises red, green, 16 red/green swaps, solid green", a))
+    seg.append(("B", "FOR HIRE... - red, green border; solid green", hold(B, 7) + [blank(G)]))
+    seg.append(("C", "WE'RE READY - thin; cut to D", hold(C, 7)))
+    seg.append(("D", "TO BELIEVE YOU - thin, observed colour states; wipes down as E slides in",
+                hold(D_red, 3) + hold(D_tog, 3) + hold(D_bely, 3)
+                + [stack(E, D_red, 5), stack(E, D_red, 2)]))
+    seg.append(("E", "CALL JL5-2020 - thin, amber; solid red", hold(E, 7) + [blank(R)]))
+    seg.append(("F", "GHOSTBUSTERS - green (shimmer not rendered), red, solid red",
+                hold(A_g, 6) + hold(A_r, 2) + [blank(R)]))
     seg.append(("G", "WE'RE BACK - WE'RE red, green flash, WE'RE BACK, words swap colours",
-                hold(G_were, 2) + [blank(G)] + hold(G_rg, 3) + [G_gr, G_rg, G_gr, G_rg]))
-    seg.append(("G2", "Five sweeping lines become green boxes (x2)", lines_boxes() + lines_boxes()))
+                hold(G_were, 3) + [blank(G)] + hold(G_rg, 4) + [G_gr, G_rg, G_gr, G_rg]))
     seg.append(("H", "WHO YA", hold(Hf, 4)))
     seg.append(("I", "GONNA", hold(I, 4)))
     seg.append(("J", "CALL? - slides up and out", hold(J, 4) + [shift(J, -3), shift(J, -6)]))
     seg.append(("K", "US! - red, blinking green arrows pointing in", [K_on, K_off, K_on, K_off, K_on]))
     seg.append(("L", "CALL JL5-2020 - slides down; GHOSTBUSTERS rises to loop",
-                hold(L, 4) + [shift(L, 3), shift(L, 6)]))
+                hold(L, 5) + [shift(L, 3), shift(L, 6)]))
     return seg
 
 

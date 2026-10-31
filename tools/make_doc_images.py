@@ -56,7 +56,7 @@ font_sheet("bold_wide", FONTS["bold_wide"], G)
 font_sheet("thin", FONTS["thin"], Y)
 
 # Storyboard: a representative frame from each segment
-pick = {"A": 2, "B": 3, "C": 0, "D": 2, "E": 0, "F": 3, "G": 4, "G2": 3,
+pick = {"A": 2, "B": 0, "C": 0, "D": 3, "E": 0, "F": 0, "G": 4,
         "H": 0, "I": 0, "J": 0, "K": 0, "L": 0}
 segs = build_segments()
 scale, lab_w = 7, 430

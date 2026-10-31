@@ -44,7 +44,7 @@ The sign uses three fonts. They were identified by enlarging the reference still
 - Sampled from the night GHOSTBUSTERS still with a tilted-grid fit. **GHOSTBUSTERS spans columns 0–78**, edge to edge as in the photo.
 - FOR HIRE… uses the same font with 2-column letter gaps and 6-column word spaces, which matches its looser spacing in the still. The ellipsis is three 2×2 dots.
 
-### Thin 5×7 — WE'RE READY, TO BELIEVE YOU, CALL JL5-2020
+### Thin 5×7 — TO BELIEVE YOU, CALL JL5-2020 (and WE'RE READY, unconfirmed)
 
 ![thin](images/font_thin.png)
 
@@ -56,36 +56,46 @@ The sign uses three fonts. They were identified by enlarging the reference still
 
 | Frame | Colours | Evidence |
 |---|---|---|
-| A GHOSTBUSTERS | red; flashes red/green, settles green | night still (red); thread: red/green flashing |
+| A GHOSTBUSTERS | red; green; ~16 red/green swaps; settles green | night still (red); thread: film 01:22:59 and Getty clip |
 | B FOR HIRE… | red text, green border | night still |
-| C WE'RE READY | amber (estimate) | thin amber "WE" close-up |
-| D TO BELIEVE YOU | cycles: all red → TO green → BELIEVE amber | film still, museum still, premiere close-up |
+| C WE'RE READY | **unknown**, shown amber (font also unconfirmed) | no clear reference |
+| D TO BELIEVE YOU | all red / TO green / BELIEVE amber, in that order | three observed states; the order is not documented |
 | E / L CALL JL5-2020 | amber | premiere close-ups (red and green clusters both lit) |
-| F GHOSTBUSTERS | green, shimmer, then red | thread (premiere + behind-the-scenes) |
-| G WE'RE BACK | WE'RE red, BACK green, then swapped | book scan; thread (premiere) |
-| H WHO YA / I GONNA / J CALL? | green / red / green (estimate) | none |
+| F GHOSTBUSTERS | green, then red | thread (film 01:23:28; Getty clip) |
+| G WE'RE BACK | WE'RE red, BACK green, then swapped | book scan; thread (Getty clip) |
+| H WHO YA / I GONNA / J CALL? | **unknown**, shown green / red / green | thread had crops; not supplied |
 | K US! | red word, green arrows | premiere frames |
 
 ## 4. Sequence and effects
 
 ![Storyboard](images/storyboard.png)
 
-The order and the transitions come from the thread's analysis of the film (timecodes 00:37:06, 00:38:10, 00:49:44, 01:22:59–01:24:54), deleted scenes, behind-the-scenes footage, and the 42-second Getty premiere clip.
+The order and the transitions come from the thread's analysis of the film (timecodes 00:37:06, 00:38:10, 00:49:44, 01:22:59–01:24:54), deleted scenes, behind-the-scenes footage, and the 42-second Getty premiere clip. **Only effects whose appearance is documented are drawn.** Per-element sources are in [ATTRIBUTION.md](ATTRIBUTION.md).
 
-| Effect | Implementation |
-|---|---|
-| Slide up / down | content shifted 2–3 rows per frame |
-| Push (D→E) | E above D on a 15-row strip, viewed at offsets 5, then 2 |
-| Wipe | colour bar covers the left half, then the full sign, then the new text is revealed on the left half (3 frames) |
-| Red/green flashing | the same glyphs alternate colour every frame |
-| Shimmer | lit pixels randomly drop out at 30→60→80→60→30% (seeded, so output is reproducible) |
-| Flip | rows reversed for one frame (the thread marks this "possibly") |
-| Border chase | perimeter pixels lit in green behind the text, every 5th one dark, advancing 1 step per frame |
-| Lines → boxes | one red vertical line in each 16-column segment sweeps across in 3 steps, then each segment becomes a 10×5 green box |
-| Arrow blink | arrows on/off over 5 frames |
+| Effect | Implementation | Source |
+|---|---|---|
+| L slides down, A slides up (red) | content shifted 2–3 rows per frame | film 01:23:17; museum arrival |
+| J slides up and out | as above | Getty clip |
+| D wipes down as E slides in from the top | E above D on a 15-row strip, viewed at offsets 5, then 2 | film 01:24:46; Getty clip |
+| Red/green swaps (A) | the same glyphs alternate colour every frame, 16 times | Getty clip: "about 16 times" |
+| Colour wipe (A→B, B→C, E→F) | **one solid frame of the reported colour**, then the next message. No sweep is drawn because the wipe direction is undocumented. | thread reports the colours |
+| Green → red (F) | cut | thread |
+| Solid red (F→G), green flash (G) | one solid frame | Getty clip |
+| Word colour swap (G) | WE'RE/BACK alternate red/green | Getty clip |
+| Static border (B) | perimeter pixels green where the text is unlit | FOR HIRE still |
+| Arrow blink (K) | arrows on/off over 5 frames | Getty clip |
+
+### Known but not rendered
+
+| Effect | Where | Why it's not drawn |
+|---|---|---|
+| Shimmer | A (before the swaps), F | its look is undocumented; the green frame is held instead |
+| Five sweeping lines → green boxes | between G and H | described in words only: line colour, positions, box size and timing are unknown |
+| Wipe motion | A→B, B→C, E→F, F | direction is undocumented |
+| Possible slide/flip in A | A | the thread hedges it ("seems", "possibly") |
 
 ## 5. Timing
 
 The CoolLED1248 format has **one delay for the whole animation**. Holds are therefore made by repeating frames. The upload protocol limits a 16×96 animation to 113 frames (65,535 bytes ÷ 576 bytes per frame).
 
-At 200 ms per frame this gives a 22.2-second loop of 111 frames. Message holds are 0.8–1.2 s, which is shorter than in the film. A microcontroller build is not bound by this limit: use `ecto1a_playlist.json` and stretch the holds.
+At 200 ms per frame this gives a 21.8-second loop of 109 frames. **All durations are estimates.** No uninterrupted footage of the full loop is known, and message holds of 0.8–1.4 s are likely shorter than the real sign's. A microcontroller build is not bound by the frame limit: use `ecto1a_playlist.json` and stretch the holds.

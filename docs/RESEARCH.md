@@ -42,10 +42,27 @@ Reference stills from the thread were enlarged and sampled on a fitted, perspect
 
 The blurred green shapes beside US! were first read as crosses. On re-examination, in each frame the shaft runs away from the word and the tall head faces it. They are **arrows pointing inward** at US!.
 
+## v4: attribution audit
+
+Every element was checked against the thread text and the reference photos (see [ATTRIBUTION.md](ATTRIBUTION.md)). Anything without a source, or with an undocumented appearance, was removed.
+
+- **Removed:**
+  - the five lines → green boxes graphic (only described in words, so v3.1's version was invented);
+  - the shimmer rendering, in A and F;
+  - the bounce and upside-down flip in A (hedged in the thread);
+  - the FOR HIRE border chase (the motion was inferred);
+  - the C→D wipe (no source).
+- **Corrected:**
+  - A now has the reported **~16** red/green swaps (v3.1 had 10);
+  - wipes are shown as a single solid frame of the reported colour, because the wipe direction is unknown;
+  - F's green→red is now a cut.
+- **Flagged as unknown:** the colours of WE'RE READY, WHO YA, GONNA and CALL?, and all timing.
+
 ## Open questions
 
 - The WHO YA, GONNA and CALL? frames: their font and colours, if reference images exist.
-- Exact border-chase pattern and speed.
+- Whether the FOR HIRE border animates.
+- What the shimmer and the lines → boxes graphic actually look like, and the direction of the wipes.
 - A sharp frame of the US! arrows.
 - True film timing. Uninterrupted footage of the full loop isn't known to exist.
 
