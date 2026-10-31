@@ -58,7 +58,7 @@ The sign uses three fonts. They were identified by enlarging the reference still
 |---|---|---|
 | A GHOSTBUSTERS | red; green; ~16 red/green swaps; settles green | night still (red); thread: film 01:22:59 and Getty clip |
 | B FOR HIRE… | red text, green border | night still |
-| C WE'RE READY | **unknown**, shown amber (font also unconfirmed); built word by word, WE'RE then READY (**inferred**) | no clear reference; the build is based on the Getty "WE'RE"-alone frame, which Ryan attributes to WE'RE READY |
+| C WE'RE READY | **unknown**, shown amber (font also unconfirmed) | no clear reference |
 | D TO BELIEVE YOU | all red → TO green → BELIEVE amber → YOU green (**inferred colour**) → all red; the other words stay red | states in P3, P8, P16; the word-by-word order is Ryan's observation; the rate is estimated |
 | E / L CALL JL5-2020 | amber | premiere close-ups (red and green clusters both lit) |
 | F GHOSTBUSTERS | green, then red | thread (film 01:23:28; Getty clip) |

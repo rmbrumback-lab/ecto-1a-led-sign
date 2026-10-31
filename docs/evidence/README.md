@@ -11,7 +11,7 @@ One card per element of the animation, showing a small source extract beside our
 | 5 | [A. GHOSTBUSTERS: rises in red after CALL JL5-2020 slides down](05-a-ghostbusters-rises-in-red-after-call-jl5-2020-.png) | SOURCED |
 | 6 | [A. GHOSTBUSTERS: ~16 rapid red/green swaps, settles green, solid green](06-a-ghostbusters-16-rapid-red-green-swaps-settles-.png) | SOURCED |
 | 7 | [B. FOR HIRE... in red inside a green border](07-b-for-hire-in-red-inside-a-green-border.png) | SOURCED |
-| 8 | [C. WE'RE READY: WE'RE first, then READY](08-c-we-re-ready-we-re-first-then-ready.png) | ESTIMATE |
+| 8 | [C. WE'RE READY](08-c-we-re-ready.png) | ESTIMATE |
 | 9 | [D. TO BELIEVE YOU: highlight moves word by word](09-d-to-believe-you-highlight-moves-word-by-word.png) | SOURCED |
 | 10 | [D -> E. TO BELIEVE YOU wipes down as CALL JL5-2020 slides in from the top](10-d-e-to-believe-you-wipes-down-as-call-jl5-2020-s.png) | SOURCED |
 | 11 | [E / L. CALL JL5-2020 in amber](11-e-l-call-jl5-2020-in-amber.png) | SOURCED |
@@ -49,4 +49,4 @@ The source extracts are small crops of third-party images, used here only to att
 
 Thread: [Screen Accurate ECTO-1A Dot Matrix LED Sign (Reference)](https://forum.gbfans.com/t/screen-accurate-ecto-1a-dot-matrix-led-sign-reference/26454). If you're a rights holder and want an extract removed, please open an issue.
 
-Two elements also rest on owner observations or inferences rather than an image: the word-by-word highlight TO → BELIEVE → YOU (card 9), and WE'RE READY building word by word (card 8).
+One element also rests on an owner observation rather than an image: the word-by-word highlight TO → BELIEVE → YOU (card 9).

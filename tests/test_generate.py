@@ -98,12 +98,3 @@ def test_to_believe_you_highlights_one_word_at_a_time():
                 order.append(lit[0])
         assert order[:3] == ["TO", "BELIEVE", "YOU"]
 
-
-def test_were_ready_builds_word_by_word():
-    for prof in g.PROFILES:
-        c = [fr for sid, _, fr in g.build_segments(prof) if sid == "C"][0]
-        first_full = next(f for f in c if any(f[y][x] for y in range(g.H) for x in range(g.W)) and
-                          not any(v == g.G for row in f for v in row))
-        # first clean frame shows WE'RE only: READY's columns (right half) dark
-        assert not any(first_full[y][x] for y in range(g.H) for x in range(46, g.W))
-        assert any(c[-1][y][x] for y in range(g.H) for x in range(46, g.W))

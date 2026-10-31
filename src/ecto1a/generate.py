@@ -296,11 +296,7 @@ def build_segments(profile="single"):
     A_r = narrow("GHOSTBUSTERS", R)
     A_g = recolor(A_r, G)
     B = border(narrow("FOR HIRE...", R, gap=2, space=6))
-    s = "WE'RE READY"
-    C = thin(s, Y)                                  # font/colour unknown (estimate)
-    # Built word by word: WE'RE first, then READY (INFERRED). Evidence: the "WE'RE"-alone frame in
-    # the Getty clip (T #14), which the owner attributes to this build rather than to WE'RE BACK.
-    C_were = thin(s, per_word(s, [Y, OFF]))
+    C = thin("WE'RE READY", Y)                      # font/colour unknown (estimate)
     s = "TO BELIEVE YOU"
     # One word highlighted at a time: TO (green, P3), BELIEVE (amber, P16), YOU (green, INFERRED
     # colour); the other words stay red, as in P3/P16. Sequential highlight: owner observation.
@@ -334,8 +330,8 @@ def build_segments(profile="single"):
                 wipe_steps(None, B, G, 0, WS) + hold(B, MSG or 2)
                 + wipe_steps(B, None, G, 2 if full else 1, WS)))
     # C
-    seg.append(("C", "WE'RE READY - wiped in from green (inferred L-R); WE'RE first, then READY (inferred)",
-                wipe_steps(None, C_were, G, 0, WS) + hold(C_were, 3 if full else 1) + hold(C, 7 if full else 2)))
+    seg.append(("C", "WE'RE READY - wiped in from green (inferred L-R); cut to D",
+                wipe_steps(None, C, G, 0, WS) + hold(C, MSG or 3)))
     # D: one word highlighted at a time, TO -> BELIEVE -> YOU
     d = (hold(D_red, 2) + hold(D_to, 2) + hold(D_bel, 2) + hold(D_you, 2) + hold(D_red, 4)) if full \
         else [D_red, D_to, D_bel, D_you, D_red]
@@ -352,7 +348,7 @@ def build_segments(profile="single"):
     f += hold(A_r, 4 if full else 1) + [blank(R)] * (2 if full else 1)
     seg.append(("F", "GHOSTBUSTERS - wiped in green from red, shimmer (inferred), green, green-to-red wipe, solid red", f))
     # G
-    # No WE'RE-alone frame: the owner reads the Getty "WE'RE" frame as the WE'RE READY build (C)
+    # No WE'RE-alone frame (listed before WE'RE BACK in T #14 Getty): removed at the owner's direction
     g = [blank(G)] * (2 if full else 1) + hold(G_rg, 11 if full else 3)
     g += ([G_gr, G_gr, G_rg, G_rg] * 2) if full else [G_gr, G_rg, G_gr, G_rg]
     seg.append(("G", "WE'RE BACK - green flash, WE'RE BACK, words swap colours", g))

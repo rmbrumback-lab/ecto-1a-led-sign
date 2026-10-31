@@ -48,7 +48,7 @@ The IDs match prodestrian's A–L frames. It's one loop: 22 seconds in the singl
 
 1. **GHOSTBUSTERS** slides up in red, shimmers in green, rapidly swaps red/green about 16 times, then goes solid green.
 2. **FOR HIRE…** wipes in from the green, in red inside a **green border**, then a green wipe.
-3. **WE'RE READY**, built word by word: WE'RE first, then READY.
+3. **WE'RE READY**, wiped in from the green.
 4. **TO BELIEVE YOU**: the highlight moves word by word: TO (green), BELIEVE (amber), then YOU. YOU's colour is my guess. It then wipes down as **CALL JL5-2020** (amber) slides in from the top.
 5. A red wipe, then **GHOSTBUSTERS** in green with the shimmer, wiping from green to red, then solid red.
 6. A green flash → **WE'RE BACK**, with the words swapping colours.
@@ -124,7 +124,6 @@ These frames are confirmed to exist, but some details aren't:
 
 * the font and colour of **WE'RE READY**, the colour of **GONNA**, and the exact letter shapes of WHO YA / GONNA / CALL?;
 * YOU's highlight colour, and the speed of the word-by-word highlight;
-* whether WE'RE READY really builds word by word. I've read the "WE'RE"-alone frame in prodestrian's Getty breakdown as WE'RE READY building up, rather than as part of WE'RE BACK;
 * the US! arrowhead shape (the premiere frames are heavily blurred);
 * the exact look of the wipes, shimmer and lines → boxes graphic (all inferred);
 * the exact timing of everything before CALL? (J–L are timed from the deleted-scene clip; the two-part version uses 2-second holds based on the measured CALL JL5-2020 hold).
