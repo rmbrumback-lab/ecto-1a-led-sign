@@ -11,9 +11,9 @@ Building on the incredible research in @prodestrian's [Screen Accurate ECTO-1A D
 
 * **A ready-to-load file for CoolLED1248 LED panels** (the cheap Bluetooth panels sold on AliExpress and Amazon), 16×96 size.
 * **Open frame data** (GIF, PNG frames, sprite sheet, JSON, and an Arduino/C header) so you can drive any LED sign, app, or scratch-built replica.
-* **A full attribution audit**: every screen, colour and effect is traced to a post or a reference image from the thread.
+* **A full attribution audit with evidence cards**: every screen, colour and effect is traced to a post or a reference image, shown side by side with the recreation.
 
-My rule was simple: **if it isn't documented, it isn't in the animation.** The one exception is clearly labelled as inferred, with the evidence behind it.
+My rule: **everything is attributed.** Where the look of an effect isn't documented, it's clearly labelled as *inferred*, with the evidence behind the guess.
 
 ![preview](https://raw.githubusercontent.com/rmbrumback-lab/ecto-1a-led-sign/main/docs/images/preview_96x16.gif)
 
@@ -42,11 +42,11 @@ Thanks also to **auc0le** ([JT-Edit](https://github.com/auc0le/JT-Edit)) and **U
 
 The IDs match prodestrian's A–L frames. It's one 22-second loop:
 
-1. **GHOSTBUSTERS** slides up in red, turns green, rapidly swaps red/green about 16 times, then goes solid green.
-2. **FOR HIRE…** in red inside a **green border**, then solid green.
+1. **GHOSTBUSTERS** slides up in red, shimmers in green, rapidly swaps red/green about 16 times, then goes solid green.
+2. **FOR HIRE…** wipes in from the green, in red inside a **green border**, then a green wipe.
 3. **WE'RE READY**.
 4. **TO BELIEVE YOU**, in the three colour states seen across the film and premiere shots. It then wipes down as **CALL JL5-2020** (amber) slides in from the top.
-5. Solid red, then **GHOSTBUSTERS** in green, red, then solid red.
+5. A red wipe, then **GHOSTBUSTERS** in green with the shimmer, wiping from green to red, then solid red.
 6. **WE'RE** (red) → green flash → **WE'RE BACK**, with the words swapping colours.
 7. The **five lines → green boxes** graphic. This is my *inferred* reconstruction; see below.
 8. **WHO YA** and **GONNA**, then red **CALL?**, which slides up and out. The sign then goes dark briefly.
@@ -55,23 +55,27 @@ The IDs match prodestrian's A–L frames. It's one 22-second loop:
 
 ---
 
-## What I left out, and what I inferred
+## What I inferred, and why
 
-Two things are known to happen on the real sign, but nobody has documented *what they look like*. Rather than invent them, I left them out:
+Three things are confirmed to happen on the real sign, but nobody has documented exactly *what they look like*. I've reconstructed them as best guesses, labelled as such everywhere:
 
-* **The shimmer** on GHOSTBUSTERS. The green frame is held where it happens.
-* **The direction of the colour wipes.** Each is shown as one solid frame of the reported colour.
+**1. The colour wipes.** The thread confirms each wipe and its colour: green into FOR HIRE…, green before WE'RE READY, red into the second GHOSTBUSTERS, and green-to-red within it. Nobody records the direction. In the deleted-scene clip, red sweeps in **from the left** on this sign during the lines → boxes graphic, so I've drawn every wipe left to right.
 
-I also dropped the possible upside-down flip in GHOSTBUSTERS, since the thread only says "possibly".
+**2. The shimmer.** It's confirmed on green GHOSTBUSTERS: for a few seconds before the red/green swaps (Getty footage), and after the red wipe (film; the behind-the-scenes footage shows GHOSTBUSTERS, shimmer, GHOSTBUSTERS again). I couldn't measure the thread's shimmer GIFs, so it's rendered as random per-pixel sparkle.
 
-**One inferred section: the five lines → green boxes.** This one I did reconstruct, but it's a best guess, not a measurement:
-
+**3. The five lines → green boxes.**
 * **Confirmed:**
   * five vertical lines that wipe across and are replaced by green boxes, looping (prodestrian's breakdown of the Getty premiere footage);
   * in the deleted-scene clip, the order red fill → green growing out from inside each section → red sweeping back from the left → green again, with dark dividers during red and red dividers during green.
 * **Inferred:** the clip only shows the right third of the sign, out of focus. I assumed five 16-column sections; the clip's spacing measures 14–15 columns, which fits. The full-height fill and number of steps are also my assumptions.
 
+![wipes and shimmer](https://raw.githubusercontent.com/rmbrumback-lab/ecto-1a-led-sign/main/docs/images/wipes_shimmer_steps.png)
+
 ![lines to boxes](https://raw.githubusercontent.com/rmbrumback-lab/ecto-1a-led-sign/main/docs/images/lines_boxes_steps.png)
+
+I dropped one thing outright: the possible upside-down flip in GHOSTBUSTERS, since the thread only says "possibly".
+
+**Every element has an evidence card** in the repo, showing the source extract (credited to its poster here and the rights holder) beside my rendering, marked sourced / measured / estimate / inferred: https://github.com/rmbrumback-lab/ecto-1a-led-sign/tree/main/docs/evidence
 
 **If anyone has clear footage of the shimmer, the wipes, or a sharp full-width shot of the lines → boxes, post it and I'll replace the guesses with the real thing.**
 
@@ -117,7 +121,7 @@ These frames are confirmed to exist, but some details aren't:
 * the font and colour of **WE'RE READY**, the colour of **GONNA**, and the exact letter shapes of WHO YA / GONNA / CALL?;
 * the order of the TO BELIEVE YOU colour states;
 * the US! arrowhead shape (the premiere frames are heavily blurred);
-* the exact geometry of the lines → boxes graphic (inferred);
+* the exact look of the wipes, shimmer and lines → boxes graphic (all inferred);
 * the timing of everything before WHO YA (J–L are timed from the deleted-scene clip).
 
 Each one is marked in the attribution audit. **A clear shot of GONNA, or a sharp full-width shot of the lines → boxes graphic, would settle most of what's left.** If you have them, please post them.
@@ -136,6 +140,6 @@ Each one is marked in the attribution audit. **A clear shot of GONNA, or a sharp
 * The `docs/PORTING.md` guide covers making a pixel-exact GIF, scaling to other panel sizes, and driving true red/green LEDs for a full-size replica.
 * **Other CoolLED sizes:** the generator script is included. Change two numbers and re-run it.
 
-Code and data are MIT-licensed. I haven't included any film frames or the reference photos in the repo; those stay here in the thread.
+Code and data are MIT-licensed. The small credited source extracts on the evidence cards belong to their owners and aren't covered by that licence.
 
 If you load it on a panel, I'd love to see a photo. 👻

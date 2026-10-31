@@ -2,7 +2,7 @@
 
 Every screen, text, colour and effect in the animation is listed here with its source.
 
-**Rule applied (v4):** an element stays only if a reference shows it, or the GBFans thread reports it as an observation. Reports hedged as "possibly", "seems", "my guess" or "?" don't count. Where something is confirmed to exist but nobody has documented *how it looks*, it is **not rendered**, because rendering it would mean inventing it. **One exception, at Ryan's request:** the lines → boxes graphic (G2) is rendered as a clearly labelled **inferred** reconstruction, with its sourced and inferred parts separated below.
+**Rule applied (v4):** an element stays only if a reference shows it, or the GBFans thread reports it as an observation. Reports hedged as "possibly", "seems", "my guess" or "?" don't count. Where something is confirmed to exist but nobody has documented *how it looks*, it is **not rendered**, because rendering it would mean inventing it. **Exceptions, at Ryan's request (v6–v7):** three effects that are confirmed to exist but whose look is undocumented are rendered as clearly labelled **inferred** reconstructions: the lines → boxes graphic (G2), the colour wipes, and the shimmer. Their sourced and inferred parts are separated below. Visual evidence for every row is in [evidence/](evidence/), one card per element.
 
 Sources:
 
@@ -20,6 +20,7 @@ Sources:
   - P14: book scan, WE'RE BACK
   - P15: Getty close-up, thin amber "WE"/"VE"
   - P16: Getty close-up, red O, amber BELIEVE
+  - Credits and rights holders for every image: [evidence/README.md](evidence/README.md)
 - **V1** — deleted-scene GIF (Hardemeyer at the museum): 181 frames, 14.8 s, 654×376. It matches the thread's description of `i.imgur.com/yjkGYPb.gif`. The sign sits out of focus behind the actors and is partly blocked, so letter shapes can't be read, but colours, transitions and timing can. Colours were calibrated against elements already confirmed: US! red (green/red ratio 0.65), the arrows green (0.95), CALL JL5-2020 amber (0.85). Frame numbers below refer to V1.
 
 ## Hardware
@@ -83,17 +84,17 @@ Sources:
 | L slides down, A slides up in red | rendered | ✅ **kept** | T #14 (film 01:23:17); museum shot 00:49:44 |
 | A: bounce (slides up/down while swapping) | rendered | ❌ **removed** | T #14 says it "seems to", from a blurry shot |
 | A: upside-down flip | rendered | ❌ **removed** | T #14 says "possibly"; T #3 marks it "?" |
-| A: shimmer before the swaps | not shown | ⏸ **not rendered**, held green instead | T #14 (Getty): shimmer clearly present, but its appearance is undocumented |
+| A: shimmer before the swaps | not shown | ⚠️ **INFERRED (v7)**: random per-pixel sparkle over 3 steps, then GHOSTBUSTERS again in green | T #14 (Getty): shimmer clearly present for a few seconds before the swaps. Its look is undocumented, so sparkle is the inference. |
 | A: rapid red/green swaps | 10 | ✅ **16 swaps** | T #14: "about 16 times" |
-| A→B: solid green, then B | rendered as a wipe | ✅ **solid green frame, then B** | T #14. Wipe direction is undocumented, so no sweep is drawn. |
+| A→B: solid green, then B | rendered as a wipe | ⚠️ **solid green (sourced), then B wiped in left to right (INFERRED, v7)** | T #14 ("solid green frame, which wipes to frame B"). Direction inferred from the left-to-right sweep in V1 frames 20–23. |
 | B: border chase animation | rendered | ❌ **removed**, border static | Motion was inferred from uneven dots in P2 and isn't documented |
-| B→C: green wipe | sweep | ✅ **solid green frame, then C** | T #14 (Getty: solid green wipe). Direction undocumented. |
+| B→C: green wipe | sweep | ⚠️ **green covers B left to right, solid green, C wiped in (INFERRED direction, v7)** | T #14 (Getty: solid green wipe). Direction inferred from V1. |
 | C→D transition | green wipe | ❌ **removed**, straight cut | No source for this transition |
 | D: colour states | rendered | ✅ kept | P3, P8, P16 |
 | D→E: D wipes down, E slides in from the top | rendered | ✅ kept | T #14 (film 01:24:46; Getty) |
-| E→F: red wipe | sweep | ✅ **solid red frame, then F** | T #14. Direction undocumented. |
-| F: shimmer | random dropout | ⏸ **not rendered**, held green | T #14 (film 01:23:28). Appearance undocumented. |
-| F: green-to-red wipe | half-sweep | ✅ **cut green → red** | T #14. Direction undocumented. |
+| E→F: red wipe | sweep | ⚠️ **red covers E left to right, solid red, F wiped in green (INFERRED direction, v7)** | T #14 ("transitions out with a red wipe into frame F"). Direction inferred from V1. |
+| F: shimmer | random dropout | ⚠️ **INFERRED (v7)**: green, 2-step sparkle, green again | T #14 (film 01:23:28); T #3 behind-the-scenes ("GHOSTBUSTERS, then shimmer, then GHOSTBUSTERS again"). Look inferred. |
+| F: green-to-red wipe | half-sweep | ⚠️ **left-to-right half step, then red (INFERRED direction, v7)** | T #14 (Getty: F "wiping from green to red"). Direction inferred from V1. |
 | F→G: solid red | rendered | ✅ kept | T #14 (Getty) |
 | G: "WE'RE" red → green flash → WE'RE BACK → words swap | rendered | ✅ kept | T #14 (Getty) |
 | Five lines sweeping, then green boxes | rendered | ⚠️ **rendered as an INFERRED reconstruction (v6)** | **Confirmed by V1** (frames 6–31, about 1.9 s, just before WHO YA): green boxes, red vertical lines, segments filling red with dark dividers, then green with red dividers, repeating. Only the right third of the sign is visible and the LEDs aren't resolved, so line positions, segment widths and step timing can't be measured. v6 reconstructs it at Ryan's request: **sourced** — five lines, each wiping across then replaced by a green box, looping (T #14); red fill with dark dividers, green growing outward from points inside each section with red dividers, red sweeping back in from the left, green again (V1 frames 8–30). Seed spacing of about 21 px at about 1.46 px/column is 14–15 columns, consistent with 5 × 16. **Inferred** — 16-column sections, divider in each section's first column, full-height fill, 9 steps of 200 ms (V1 shows about 1.9 s). |
@@ -114,7 +115,7 @@ J (blank), K and L are **measured from V1**, rounded to 200 ms frames. V1 is a G
 These would replace estimates with facts:
 
 - clear frames of **GONNA**, and sharp frames of WHO YA / CALL? for letter shapes;
-- a clear look at the **shimmer**;
+- a clear look at the **shimmer**, to replace the inferred sparkle;
 - a sharp, full-width view of the **lines → boxes** graphic, to replace the inferred geometry with measured geometry;
-- the **direction of the wipes**;
+- the **direction of the wipes**, to confirm the inferred left-to-right sweep;
 - whether the **FOR HIRE border** moves.

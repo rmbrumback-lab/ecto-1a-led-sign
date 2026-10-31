@@ -56,7 +56,7 @@ font_sheet("bold_wide", FONTS["bold_wide"], G)
 font_sheet("thin", FONTS["thin"], Y)
 
 # Storyboard: a representative frame from each segment
-pick = {"A": 2, "B": 0, "C": 0, "D": 3, "E": 0, "F": 0, "G": 4, "G2": 3,
+pick = {"A": 2, "B": 1, "C": 1, "D": 3, "E": 0, "F": 1, "G": 4, "G2": 3,
         "H": 0, "I": 0, "J": 0, "K": 3, "L": 2}
 segs = build_segments()
 scale, lab_w = 7, 430
@@ -97,7 +97,7 @@ print("doc images written to", os.path.abspath(OUT))
 g2 = [fr for sid, _, fr in segs if sid == "G2"][0]
 labels = ["1 red line wipes", "2 half filled", "3 full red, dark dividers",
           "4 green grows from centres", "5 full green, red dividers", "6 red sweeps back from left",
-          "7 full red", "8 green grows again", "9 full green"]
+          "7 full red", "8 full green again"]
 steps = [led_image(f, 6) for f in g2]
 lh = steps[0].height + 22
 im = Image.new("RGB", (steps[0].width + 330, lh * len(steps) + 40), BG)
@@ -108,3 +108,21 @@ for i, (st, lab) in enumerate(zip(steps, labels)):
     im.paste(st, (10, y))
     d.text((st.width + 22, y + st.height // 2 - 8), lab, fill=(200, 200, 200), font=font_obj(14))
 im.save(os.path.join(OUT, "lines_boxes_steps.png"))
+
+# Inferred wipes and shimmer: example frames (our rendering only)
+from ecto1a.generate import blank, wipe_cover, wipe_reveal, shimmer, narrow, thin, recolor, R as _R, G as _G, Y as _Y
+_A = recolor(narrow("GHOSTBUSTERS", _R), _G)
+_E = thin("CALL JL5-2020", _Y)
+ex = [(thin("CALL JL5-2020", _Y), "E: CALL JL5-2020"), (wipe_cover(_E, _R), "red wipe covers E (left to right)"),
+      (blank(_R), "solid red (sourced)"), (wipe_reveal(_A, _R), "F revealed from red (left to right)"),
+      (_A, "F: GHOSTBUSTERS green")] + [(f, lab) for f, lab in zip(shimmer(_A, (0.4, 0.7), seed=2020), ["shimmer 40% (inferred)", "shimmer 70% (inferred)"])] + [(_A, "GHOSTBUSTERS again")]
+tiles = [led_image(f, 5) for f, _ in ex]
+lh = tiles[0].height + 20
+im = Image.new("RGB", (tiles[0].width + 360, lh * len(tiles) + 40), BG)
+d = ImageDraw.Draw(im)
+d.text((10, 8), "Wipes and shimmer: INFERRED reconstructions, 200 ms per step", fill=(235, 235, 235), font=font_obj(16))
+for i, (t, (_, lab)) in enumerate(zip(tiles, ex)):
+    y = 34 + i * lh
+    im.paste(t, (10, y))
+    d.text((t.width + 22, y + t.height // 2 - 8), lab, fill=(200, 200, 200), font=font_obj(14))
+im.save(os.path.join(OUT, "wipes_shimmer_steps.png"))

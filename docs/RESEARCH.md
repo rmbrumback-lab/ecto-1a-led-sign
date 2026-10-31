@@ -80,11 +80,20 @@ At Ryan's request, the lines → boxes graphic was reconstructed rather than omi
 - **Scale check:** the clip's seed spacing is 14–15 columns against the 16 that five even sections imply.
 - **Frame budget:** to fit the 9 new frames inside the 113-frame upload limit, the estimated holds in A–G and I were shortened. The measured J–L timings were left as they were.
 
+## v7: inferred wipes and shimmer, evidence cards
+
+At Ryan's request, the remaining undocumented effects were reconstructed, and the evidence was published:
+
+- **Wipes:** each solid frame that stood in for a wipe is now a left-to-right sweep. The colour advances over the old message, then the new one is revealed. Direction is inferred from the red sweep entering from the left in the deleted-scene clip.
+- **Shimmer:** rendered as seeded random per-pixel sparkle on green GHOSTBUSTERS. In A it comes before the swaps (Getty); in F it sits between two plain green frames (film, behind-the-scenes).
+- **Evidence:** `docs/evidence/` holds one card per element, with a credited source extract beside our rendering, plus the full PDF. These extracts are excluded from the MIT licence.
+- **Frame budget:** the extra frames were paid for from estimated holds (B, C, D, E, G, H) and one inferred G2 step. The measured J–L timings were left as they were. Still 113 frames.
+
 ## Open questions
 
 - GONNA's colour, and sharp frames of WHO YA / GONNA / CALL? for letter shapes.
 - Whether the FOR HIRE border animates.
-- What the shimmer looks like, and the direction of the wipes.
+- What the shimmer really looks like, and the real wipe direction (both currently inferred).
 - The real geometry of the lines → boxes graphic (currently inferred).
 - A sharp frame of the US! arrows.
 - True film timing. Uninterrupted footage of the full loop isn't known to exist.

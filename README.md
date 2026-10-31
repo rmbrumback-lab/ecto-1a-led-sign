@@ -11,7 +11,7 @@ A frame-by-frame recreation of the roof-mounted dot-matrix sign from the **Ecto-
 | Sign model | 80 × 7 pixels, red + green (both lit = amber) |
 | Sequence | 13 segments, 113 frames, 22.6 s loop at 200 ms/frame |
 | Fonts | 3, traced from reference photos |
-| Attribution | every element traced to a source — [ATTRIBUTION.md](docs/ATTRIBUTION.md) |
+| Attribution | every element traced to a source — [ATTRIBUTION.md](docs/ATTRIBUTION.md), with [evidence cards](docs/evidence/) showing each source extract beside our rendering |
 | CoolLED file | `aniType 1` (3-bit colour), 65,088 bytes, inside the app's upload limits |
 | Verified | Byte-for-byte encoder match with app-exported files; decoded with zero errors by JT-Edit's own import code |
 
@@ -32,7 +32,7 @@ This project builds directly on research by the GBFans community. See **[Credits
 - [Legal](#legal)
 
 Detailed documentation:
-[Design](docs/DESIGN.md) · [JT file format](docs/JT_FORMAT.md) · [Porting guide](docs/PORTING.md) · [Attribution audit](docs/ATTRIBUTION.md) · [Validation](docs/VALIDATION.md) · [Research log](docs/RESEARCH.md) · [GBFans post](docs/GBFANS_POST.md)
+[Design](docs/DESIGN.md) · [JT file format](docs/JT_FORMAT.md) · [Porting guide](docs/PORTING.md) · [Attribution audit](docs/ATTRIBUTION.md) · [Evidence cards](docs/evidence/) · [Validation](docs/VALIDATION.md) · [Research log](docs/RESEARCH.md) · [GBFans post](docs/GBFANS_POST.md)
 
 ---
 
@@ -60,12 +60,12 @@ Use the files in [`dist/`](dist/): GIF, per-frame PNGs, sprite sheet, JSON, or a
 
 | ID | Shows | Effect | Time |
 |---|---|---|---|
-| A | GHOSTBUSTERS | rises in red, green, 16 rapid red/green swaps, solid green | 4.4 s |
-| B | FOR HIRE… | red text inside a green border; solid green | 1.0 s |
-| C | WE'RE READY | font and colour unknown (shown thin, amber) | 0.8 s |
+| A | GHOSTBUSTERS | rises in red, shimmer on green *(inferred look)*, 16 rapid red/green swaps, solid green | 4.4 s |
+| B | FOR HIRE… | wiped in from green *(inferred, left to right)*; red text inside a green border; green wipe out | 1.0 s |
+| C | WE'RE READY | wiped in from green *(inferred)*; font and colour unknown (shown thin, amber) | 0.8 s |
 | D | TO BELIEVE YOU | thin font, the three observed colour states; wipes down as E slides in | 1.6 s |
-| E | CALL JL5-2020 | thin font, amber; solid red | 1.0 s |
-| F | GHOSTBUSTERS | green, red, solid red | 1.2 s |
+| E | CALL JL5-2020 | thin font, amber; red wipe out *(inferred, left to right)* | 1.0 s |
+| F | GHOSTBUSTERS | wiped in green from red, shimmer *(inferred look)*, green, green→red wipe, solid red | 1.2 s |
 | G | WE'RE BACK | "WE'RE" red, green flash, then WE'RE (red) BACK (green), words swap colours | 1.8 s |
 | G2 | (graphic) | **inferred reconstruction:** five red lines wipe across, green boxes grow, red sweeps back, green again | 1.8 s |
 | H | WHO YA | red | 0.6 s |
@@ -76,7 +76,13 @@ Use the files in [`dist/`](dist/): GIF, per-frame PNGs, sprite sheet, JSON, or a
 
 The segment IDs follow the A–L scheme from the GBFans reference thread.
 
-**Inferred, not measured.** The **five lines → green boxes** graphic (G2) is a best-effort reconstruction. The thread confirms what happens and the deleted-scene clip confirms the colours, phase order and approximate spacing, but the exact geometry is inferred (16-column sections, full-height fill, step counts). Two other effects are known to exist but still aren't drawn: the **shimmer** (in A and F) and the **direction of the colour wipes**. Drawing them would mean inventing them. Instead, the confirmed frame is held, or a solid colour frame stands in for the wipe. See [docs/ATTRIBUTION.md](docs/ATTRIBUTION.md).
+**Three inferred reconstructions.** These effects are confirmed to exist, but their exact look isn't documented, so they're best-effort reconstructions, labelled *inferred* everywhere:
+
+- **Five lines → green boxes (G2).** The colours, phase order and approximate spacing come from the deleted-scene clip. The geometry is inferred: 16-column sections, full-height fill, step counts.
+- **Colour wipes** (A→B, B→C, E→F, and green→red in F). The colours are sourced. The direction is inferred as left to right, because red sweeps in from the left on this sign in the clip.
+- **Shimmer** (A and F). When and where it happens is sourced; its look is inferred as random per-pixel sparkle.
+
+See [docs/ATTRIBUTION.md](docs/ATTRIBUTION.md) and the [evidence cards](docs/evidence/). Drawing them would mean inventing them. Instead, the confirmed frame is held, or a solid colour frame stands in for the wipe. See [docs/ATTRIBUTION.md](docs/ATTRIBUTION.md).
 
 ---
 
@@ -110,7 +116,8 @@ The project went through four iterations as more reference material surfaced. Th
 | CALL JL5-2020 thin font, amber | **Sourced** | Premiere close-ups |
 | US! red with inward green arrows | **Sourced (shape approximate)** | Heavily motion-blurred premiere frames |
 | Slides, 16 red/green swaps, solid colour frames, word colour swaps, arrow blink | **Sourced** | Thread's frame-by-frame descriptions |
-| Shimmer, wipe direction | **Not rendered** | Exist, but appearance undocumented |
+| Wipes: occurrence and colours / direction and steps | **Sourced** / **Inferred** | Thread (Getty, film) / left-to-right sweep seen in the clip |
+| Shimmer: occurrence (A, F) / look | **Sourced** / **Inferred** | Thread (Getty, film, behind-the-scenes) / random sparkle |
 | WE'RE READY font and colour | **Unknown** (shown thin, amber) | No clear reference |
 | WHO YA and CALL? colour (red) | **Sourced** | Deleted-scene clip, colour-calibrated |
 | J–L timing (blank, arrow blink, centre reveal, holds) | **Sourced** | Deleted-scene clip, measured |
@@ -145,7 +152,7 @@ Pixel values everywhere are **0 = off, 1 = red, 2 = green, 3 = red + green**. On
 
 - **Apps that import GIFs:** use `ecto1a_80x7.gif`, or build a crisp 80×7 GIF from the PNG frames.
 - **Apps that import frame images:** `frames_80x7/frame_000.png` … `frame_112.png`, each shown for 200 ms. Many frames repeat; `ecto1a_playlist.json` gives the deduplicated version with durations.
-- **Arduino / ESP32 / Pi:** `ecto1a_frames.h` has 35 unique frames at 140 bytes each (4.8 KB), plus a 65-step playlist.
+- **Arduino / ESP32 / Pi:** `ecto1a_frames.h` has 46 unique frames at 140 bytes each (6.3 KB), plus a 76-step playlist.
 - **Your own code:** `ecto1a_frames.json`.
 
 Step-by-step recipes (GIF building, scaling to other panel sizes, Arduino example, red/green-only hardware) are in **[docs/PORTING.md](docs/PORTING.md)**.
@@ -190,4 +197,4 @@ Project by **Ryan Brumback**, built with AI assistance (Anthropic's Claude).
 
 Fan project for non-commercial use. *Ghostbusters*, *Ghostbusters II*, Ecto-1 and related marks are the property of Columbia Pictures / Sony Pictures. This project is not affiliated with or endorsed by them.
 
-Reference photos and film frames are not redistributed here; see the GBFans thread. Code and generated data are released under the [MIT License](LICENSE).
+Code and generated data are released under the [MIT License](LICENSE). The small source extracts in [`docs/evidence/`](docs/evidence/) are third-party images (film stills, Getty Images news footage, a book scan), included only for attribution and comparison, with credits. They are **not** covered by the MIT licence.

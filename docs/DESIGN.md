@@ -82,7 +82,7 @@ The order and the transitions come from the thread's analysis of the film (timec
 | US! → CALL JL5-2020 | text revealed outward from the centre, in 2 steps, while the arrows stay lit | V1 frames 132–137 |
 | D wipes down as E slides in from the top | E above D on a 15-row strip, viewed at offsets 5, then 2 | film 01:24:46; Getty clip |
 | Red/green swaps (A) | the same glyphs alternate colour every frame, 16 times | Getty clip: "about 16 times" |
-| Colour wipe (A→B, B→C, E→F) | **one solid frame of the reported colour**, then the next message. No sweep is drawn because the wipe direction is undocumented. | thread reports the colours |
+| Colour wipe (A→B, B→C, E→F, F green→red) | **INFERRED (v7):** the colour advances **left to right** over the old message in a half step, then a solid frame (where the thread reports one), then the new message is revealed left to right. The colours are sourced. The direction is inferred from the left-to-right red sweep on this sign in V1 frames 20–23. | thread reports the colours |
 | Green → red (F) | cut | thread |
 | Solid red (F→G), green flash (G) | one solid frame | Getty clip |
 | Word colour swap (G) | WE'RE/BACK alternate red/green | Getty clip |
@@ -98,22 +98,26 @@ Rendered as a best-effort reconstruction. The thread describes five vertical lin
 | 1–3 | red line → half fill → full red; dark dividers | red wipe fill with dark dividers (V1 8–14); "each one wipes across" (thread) | 5 sections × 16 columns; divider in each section's column 0; left-to-right; 3 steps |
 | 4–5 | green grows from each section's centre to full; dividers red | green growing outward from points in each section, red dividers (V1 15–19) | growth from the exact centre; full height; 2 steps |
 | 6–7 | red sweeps back from the left → full red | red re-entering from the left of each section (V1 20–25) | half then full; 2 steps |
-| 8–9 | green grows again → full green | second green phase (V1 26–30); "loops multiple times" (thread) | 2 steps; loop count 1.5 |
+| 8 | full green again | second green phase (V1 26–30); "loops multiple times" (thread) | 1 step (v7, to fit the wipes); loop count 1.5 |
 
 Scale check: the green seeds are about 21 px apart at about 1.46 px per column (taken from the width of CALL JL5-2020 in the same shot). That is 14–15 columns, consistent with five 16-column sections.
 
 ![Lines → boxes reconstruction vs clip](images/lines_boxes_steps.png)
 
+### Inferred: shimmer (A and F)
+
+The thread reports GHOSTBUSTERS shimmering while green: in A for a few seconds before the red/green swaps (Getty clip), and in F after the red wipe (film 01:23:28; behind-the-scenes footage shows GHOSTBUSTERS, the shimmer, then GHOSTBUSTERS again). Nobody has documented its look, so it is rendered as **random per-pixel sparkle**: lit pixels drop out with rising, then falling, probability (A: 30%, 60%, 30%; F: 40%, 70%). A fixed seed keeps it reproducible.
+
+![Wipes and shimmer](images/wipes_shimmer_steps.png)
+
 ### Known but not rendered
 
 | Effect | Where | Why it's not drawn |
 |---|---|---|
-| Shimmer | A (before the swaps), F | its look is undocumented; the green frame is held instead |
-| Wipe motion | A→B, B→C, E→F, F | direction is undocumented |
 | Possible slide/flip in A | A | the thread hedges it ("seems", "possibly") |
 
 ## 5. Timing
 
 The CoolLED1248 format has **one delay for the whole animation**. Holds are therefore made by repeating frames. The upload protocol limits a 16×96 animation to 113 frames (65,535 bytes ÷ 576 bytes per frame).
 
-At 200 ms per frame this gives a 22.6-second loop of 113 frames, exactly at the upload limit. **J–L are timed from the deleted-scene clip (V1)**: CALL? about 0.8 s, blank 0.8 s, US! 3.2 s with arrows, CALL JL5-2020 about 2.4 s including the reveal. **All other durations are estimates.** Holds of 0.4–1.0 s were shortened to fit the measured segments and the inferred G2 graphic within the 113-frame limit, and are likely shorter than the real sign's. A microcontroller build is not bound by the frame limit: use `ecto1a_playlist.json` and stretch the holds.
+At 200 ms per frame this gives a 22.6-second loop of 113 frames, exactly at the upload limit. **J–L are timed from the deleted-scene clip (V1)**: CALL? about 0.8 s, blank 0.8 s, US! 3.2 s with arrows, CALL JL5-2020 about 2.4 s including the reveal. **All other durations are estimates.** Holds of 0.4–0.8 s were shortened to fit the measured segments and the inferred G2 graphic, wipes and shimmer within the 113-frame limit, and are likely shorter than the real sign's. A microcontroller build is not bound by the frame limit: use `ecto1a_playlist.json` and stretch the holds.

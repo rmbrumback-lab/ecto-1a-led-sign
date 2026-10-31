@@ -16,6 +16,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import random
 
 W, H = 80, 7
 OFF, R, G, Y = 0, 1, 2, 3
@@ -183,6 +184,30 @@ def border(f):
     return out
 
 
+def colmix(a, b, x):
+    """Columns < x from a, the rest from b."""
+    return [ra[:x] + rb[x:] for ra, rb in zip(a, b)]
+
+
+def wipe_cover(old, colour, x=W // 2):
+    """INFERRED wipe, left to right: a solid colour advances over the old frame (one half step).
+    Direction inferred from the left-to-right red sweep seen in the deleted-scene clip (V1)."""
+    return colmix(blank(colour), old, x)
+
+
+def wipe_reveal(new, colour, x=W // 2):
+    """INFERRED wipe, left to right: the new frame is revealed from a solid colour (one half step)."""
+    return colmix(new, blank(colour), x)
+
+
+def shimmer(f, probs, seed):
+    """INFERRED shimmer: lit pixels randomly drop out and return (seeded, so reproducible).
+    The shimmer is reported in the thread (film, deleted scene, behind-the-scenes, premiere),
+    but its appearance is undocumented; random per-pixel sparkle is the inference."""
+    rng = random.Random(seed)
+    return [[[v if (v and rng.random() > p) else OFF for v in row] for row in f] for p in probs]
+
+
 def hold(f, n):
     return [f] * n
 
@@ -195,7 +220,7 @@ def lines_boxes():
     by a green box, looping (GBFans thread, Getty analysis); red wipe fill with dark dividers, green
     growing outward from points inside each section with red dividers, red sweeping back in from
     the left, green again (deleted-scene clip V1, frames 8-30, ~1.9 s; seed spacing ~14-15 cols).
-    Inferred: 16-column sections, divider in column 0 of each, full-height fill, step counts.
+    Inferred: 16-column sections, divider in column 0 of each, full-height fill, step counts (8).
     """
     SEG, N = 16, 5
 
@@ -226,8 +251,7 @@ def lines_boxes():
     # 3. red sweeps back in from the left of each section
     out.append(with_divider(frame(lambda c: R if c <= 8 else G), R))
     out.append(frame(lambda c: R))
-    # 4. green grows again (loop)
-    out.append(with_divider(frame(lambda c: G if abs(c - c0) <= 3 else R), R))
+    # 4. green again (loop)
     out.append(with_divider(frame(lambda c: G), R))
     return out
 
@@ -242,9 +266,9 @@ def reveal_centre(new, old_keep, half):
 def build_segments():
     """Return [(id, label, [frames])] in playback order. Ids follow the GBFans A-L scheme.
 
-    Only attributable elements are rendered; see docs/ATTRIBUTION.md. Effects known to exist
-    but whose appearance is undocumented (shimmer, wipe direction) are not drawn; the lines ->
-    boxes graphic is an INFERRED reconstruction. Holds for H-L follow timings measured
+    Every element is attributed in docs/ATTRIBUTION.md. Three effects whose appearance is not
+    documented are rendered as INFERRED reconstructions at the owner's request: the colour wipes
+    (left to right), the shimmer (random sparkle) and the lines -> boxes graphic. Holds for H-L follow timings measured
     from the deleted-scene clip (V1); holds elsewhere are estimates sized to the 113-frame
     upload limit.
     """
@@ -269,23 +293,28 @@ def build_segments():
 
     seg = []
     a = [shift(A_r, 4), shift(A_r, 2)] + hold(A_r, 1)          # rises in red after L slides out (V1)
-    a += hold(A_g, 2)                                          # green (shimmer here not rendered)
+    a += shimmer(A_g, (0.3, 0.6, 0.3), seed=1989)              # shimmer on green (INFERRED look)
+    a += hold(A_g, 1)                                          # GHOSTBUSTERS again in green
     a += [A_r if i % 2 == 0 else A_g for i in range(16)]       # ~16 rapid swaps, ends green
     a += [blank(G)]                                            # solid green
-    seg.append(("A", "GHOSTBUSTERS - rises red, green, 16 red/green swaps, solid green", a))
-    seg.append(("B", "FOR HIRE... - red, green border; solid green", hold(B, 4) + [blank(G)]))
-    seg.append(("C", "WE'RE READY - thin; cut to D", hold(C, 4)))
+    seg.append(("A", "GHOSTBUSTERS - rises red, shimmer (inferred), green, 16 red/green swaps, solid green", a))
+    seg.append(("B", "FOR HIRE... - wiped in from green (inferred L-R); green border; green wipe out",
+                [wipe_reveal(B, G)] + hold(B, 2) + [wipe_cover(B, G), blank(G)]))
+    seg.append(("C", "WE'RE READY - wiped in from green (inferred L-R); cut to D",
+                [wipe_reveal(C, G)] + hold(C, 3)))
     seg.append(("D", "TO BELIEVE YOU - thin, observed colour states; wipes down as E slides in",
-                hold(D_red, 2) + hold(D_tog, 2) + hold(D_bely, 2)
+                hold(D_red, 2) + hold(D_tog, 2) + hold(D_bely, 1)
                 + [stack(E, D_red, 5), stack(E, D_red, 2)]))
-    seg.append(("E", "CALL JL5-2020 - thin, amber; solid red", hold(E, 4) + [blank(R)]))
-    seg.append(("F", "GHOSTBUSTERS - green (shimmer not rendered), red, solid red",
-                hold(A_g, 3) + hold(A_r, 2) + [blank(R)]))
+    seg.append(("E", "CALL JL5-2020 - thin, amber; red wipe out (inferred L-R)",
+                hold(E, 3) + [wipe_cover(E, R), blank(R)]))
+    seg.append(("F", "GHOSTBUSTERS - wiped in green from red, shimmer (inferred), green, green-to-red wipe, solid red",
+                [wipe_reveal(A_g, R), A_g] + shimmer(A_g, (0.4, 0.7), seed=2020) + [A_g]
+                + [colmix(A_r, A_g, W // 2), A_r, blank(R)]))
     seg.append(("G", "WE'RE BACK - WE'RE red, green flash, WE'RE BACK, words swap colours",
-                hold(G_were, 2) + [blank(G)] + hold(G_rg, 2) + [G_gr, G_rg, G_gr, G_rg]))
+                hold(G_were, 2) + [blank(G)] + hold(G_rg, 1) + [G_gr, G_rg, G_gr, G_rg]))
     seg.append(("G2", "Five lines wipe across, green boxes grow, red sweeps back, green again (INFERRED)",
                 lines_boxes()))
-    seg.append(("H", "WHO YA - red", hold(Hf, 3)))
+    seg.append(("H", "WHO YA - red", hold(Hf, 2)))
     seg.append(("I", "GONNA", hold(I, 2)))
     seg.append(("J", "CALL? - red; slides up and out; blank ~0.8 s",
                 hold(J, 4) + [shift(J, -3), shift(J, -6)] + hold(blank(), 4)))
