@@ -95,9 +95,16 @@ At Ryan's request, the remaining undocumented effects were reconstructed, and th
 - **Two-part build:** a second, screen-timed version is split into two CoolLED files that play in order. Part 1 is A–F (112 frames); Part 2 is G–L (109 frames); 44.2 s in total. It uses measured J–L timing, 2.0 s message holds (from the measured CALL hold), the thread's "few seconds" shimmer, and three passes of lines → boxes. The single-file build is kept.
 - Full-timing JSON and GIF exports were added for other apps.
 
+## v9: word-by-word builds
+
+- **TO BELIEVE YOU (correction):** v8 misread Ryan's note and kept YOU red. The highlight now moves word by word: TO (green), BELIEVE (amber), YOU (green, inferred colour), with the other words red. The stills each show exactly one word highlighted.
+- **WE'RE READY:** now built word by word, WE'RE first and then READY. This mirrors the sign's WE'RE-alone build of WE'RE BACK (Getty, thread post #14), following Ryan's inference.
+- Still 113 frames (single) and 112 + 109 (two-part).
+
 ## Open questions
 
 - GONNA's colour, and sharp frames of WHO YA / GONNA / CALL? for letter shapes.
+- YOU's highlight colour, and whether WE'RE READY really builds word by word.
 - Whether the FOR HIRE border animates.
 - What the shimmer really looks like, and the real wipe direction (both currently inferred).
 - The real geometry of the lines → boxes graphic (currently inferred).

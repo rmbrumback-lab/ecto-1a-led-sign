@@ -49,7 +49,8 @@ During development, its output was also compared pixel-by-pixel with the generat
 | `test_two_parts_within_limits` | Part 1 and Part 2 each ≤ 113 frames and ≤ 65,535 bytes |
 | `test_two_parts_cover_full_sequence_in_order` | Part 1 + Part 2 equals the full screen-timed sequence, frame for frame |
 | `test_dist_parts_are_current` | the committed part files equal freshly generated output |
-| `test_you_stays_red_in_to_believe_you` | YOU is red in every TO BELIEVE YOU frame, in both builds |
+| `test_to_believe_you_highlights_one_word_at_a_time` | at most one word highlighted per frame, in the order TO → BELIEVE → YOU, in both builds |
+| `test_were_ready_builds_word_by_word` | WE'RE appears alone before READY, in both builds |
 
 ## Not yet verified
 

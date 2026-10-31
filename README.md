@@ -64,8 +64,8 @@ Use the files in [`dist/`](dist/): GIF, per-frame PNGs, sprite sheet, JSON, or a
 |---|---|---|---|
 | A | GHOSTBUSTERS | rises in red, shimmer on green *(inferred look)*, 16 rapid red/green swaps, solid green | 4.4 s |
 | B | FOR HIRE… | wiped in from green *(inferred, left to right)*; red text inside a green border; green wipe out | 1.0 s |
-| C | WE'RE READY | wiped in from green *(inferred)*; font and colour unknown (shown thin, amber) | 0.8 s |
-| D | TO BELIEVE YOU | thin font; **TO and BELIEVE alternate colours (green / amber) while YOU stays red**; wipes down as E slides in | 1.4 s |
+| C | WE'RE READY | wiped in from green *(inferred)*; **WE'RE first, then READY** *(inferred word-by-word build)*; font and colour unknown (shown thin, amber) | 0.8 s |
+| D | TO BELIEVE YOU | thin font; **the highlight moves word by word: TO (green), BELIEVE (amber), YOU (green, inferred)**, with the other words red; wipes down as E slides in | 1.4 s |
 | E | CALL JL5-2020 | thin font, amber; red wipe out *(inferred, left to right)* | 1.0 s |
 | F | GHOSTBUSTERS | wiped in green from red, shimmer *(inferred look)*, green, green→red wipe, solid red | 1.2 s |
 | G | WE'RE BACK | "WE'RE" red, green flash, then WE'RE (red) BACK (green), words swap colours | 1.8 s |
@@ -114,8 +114,9 @@ The project went through four iterations as more reference material surfaced. Th
 | GHOSTBUSTERS font + red / red-green flashing | **Sourced** | Night still, sampled on grid |
 | WE'RE BACK font, layout (cols 0–79), red/green split | **Sourced** | Hi-res book scan, read pixel-for-pixel |
 | FOR HIRE… red with green border | **Sourced** | Night still |
-| TO BELIEVE YOU thin font + 3 colour states; YOU always red | **Sourced** | Film still, museum still, premiere close-up |
-| TO / BELIEVE colour alternation (YOU unchanged) | **Sourced** (owner observation) / order and rate **estimated** | Ryan's observation; consistent with all three stills |
+| TO BELIEVE YOU thin font; TO green and BELIEVE amber, each with the other words red | **Sourced** | Film still, museum still, premiere close-up |
+| Word-by-word highlight TO → BELIEVE → YOU | **Sourced** (owner observation) / YOU's colour and the rate **inferred** | Ryan's observation; consistent with the stills, where one word at a time is lit |
+| WE'RE READY built word by word (WE'RE, then READY) | **Inferred** | Same build seen for WE'RE BACK ("WE'RE" alone first, Getty); Ryan's inference |
 | Two-part screen timings | **Measured** (J–L), **sourced** (16 swaps; shimmer "a few seconds") / **estimated** (2.0 s message holds, from the measured 2.1 s CALL JL5-2020 hold) | Deleted-scene clip; thread |
 | CALL JL5-2020 thin font, amber | **Sourced** | Premiere close-ups |
 | US! red with inward green arrows | **Sourced (shape approximate)** | Heavily motion-blurred premiere frames |
@@ -139,7 +140,7 @@ The project went through four iterations as more reference material surfaced. Th
 | [`dist/Ecto-1A_GB2_16x96.jt`](dist/Ecto-1A_GB2_16x96.jt) | CoolLED1248 animation, 16×96 panel, single file (compressed timing) |
 | [`dist/two_part/Ecto-1A_GB2_16x96_Part1.jt`](dist/two_part/Ecto-1A_GB2_16x96_Part1.jt), [`Part2.jt`](dist/two_part/Ecto-1A_GB2_16x96_Part2.jt) | Screen-timed version as two CoolLED files: Part 1 = A–F, Part 2 = G–L |
 | [`dist/two_part/ecto1a_96x16_full.gif`](dist/two_part/ecto1a_96x16_full.gif) | Preview of the screen-timed version (both parts) |
-| [`dist/two_part/ecto1a_full_frames.json`](dist/two_part/ecto1a_full_frames.json), [`ecto1a_full_playlist.json`](dist/two_part/ecto1a_full_playlist.json) | Screen-timed frames for other apps (221 frames / 61 unique) |
+| [`dist/two_part/ecto1a_full_frames.json`](dist/two_part/ecto1a_full_frames.json), [`ecto1a_full_playlist.json`](dist/two_part/ecto1a_full_playlist.json) | Screen-timed frames for other apps (221 frames / 63 unique) |
 | [`dist/ecto1a_96x16_panel.gif`](dist/ecto1a_96x16_panel.gif) | Preview as it appears on the panel |
 | [`dist/ecto1a_80x7.gif`](dist/ecto1a_80x7.gif) | Native 80×7 LED-style preview |
 | [`dist/frames_80x7/`](dist/frames_80x7/) | 113 PNGs, 1 image pixel = 1 sign pixel |
@@ -159,7 +160,7 @@ Pixel values everywhere are **0 = off, 1 = red, 2 = green, 3 = red + green**. On
 
 - **Apps that import GIFs:** use `ecto1a_80x7.gif`, or build a crisp 80×7 GIF from the PNG frames.
 - **Apps that import frame images:** `frames_80x7/frame_000.png` … `frame_112.png`, each shown for 200 ms. Many frames repeat; `ecto1a_playlist.json` gives the deduplicated version with durations.
-- **Arduino / ESP32 / Pi:** `ecto1a_frames.h` has 46 unique frames at 140 bytes each (6.3 KB), plus a 78-step playlist.
+- **Arduino / ESP32 / Pi:** `ecto1a_frames.h` has 48 unique frames at 140 bytes each (6.6 KB), plus a 79-step playlist.
 - **Your own code:** `ecto1a_frames.json`, or the screen-timed `two_part/ecto1a_full_frames.json` / `ecto1a_full_playlist.json`. These aren't bound by CoolLED's frame limit, so they're the better choice for microcontroller builds.
 
 Step-by-step recipes (GIF building, scaling to other panel sizes, Arduino example, red/green-only hardware) are in **[docs/PORTING.md](docs/PORTING.md)**.

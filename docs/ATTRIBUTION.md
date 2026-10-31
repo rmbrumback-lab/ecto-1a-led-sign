@@ -68,8 +68,9 @@ Sources:
 | A: red, rapid red/green swaps, settles green | ✅ | T #14: film 01:22:59; Getty clip, about 16 swaps; P1 |
 | B: red text, green border | ✅ | P2 |
 | C: WE'RE READY colour **and font** | ⚠️ **unknown**, shown thin amber | P15 could be WE'RE or BELIEVE's "VE" |
-| D: all red / TO green / BELIEVE amber, **YOU always red** | ✅ states observed | P8, P3, P16 (YOU is red in P3 and P16). |
-| D: TO and BELIEVE alternate colours; YOU never changes | ✅ **owner observation** (Ryan) | Consistent with all three stills. Order and rate are **estimated**: all red → TO green ↔ BELIEVE amber (alternating) → all red. |
+| C: built word by word (WE'RE, then READY) | ⚠️ **INFERRED (v9)** | WE'RE BACK is built the same way ("WE'RE" alone first, T #14 Getty). Ryan's inference that WE'RE READY does the same. WE'RE appears where it sits in the full phrase. |
+| D: all red / TO green (rest red) / BELIEVE amber (rest red) | ✅ states observed | P8, P3, P16 |
+| D: highlight moves word by word, TO → BELIEVE → YOU | ✅ **owner observation** (Ryan) | Consistent with P3 and P16, where exactly one word is highlighted. **YOU's highlight colour is INFERRED** as green, continuing TO green → BELIEVE amber. The rate is estimated. |
 | E, L: amber | ✅ | P12, P13, P7 |
 | F: green, then red | ✅ | T #14 |
 | G: WE'RE red then BACK green, words swapping | ✅ | T #14 (Getty); P4, P14 |
@@ -119,7 +120,7 @@ Sources:
 | A swaps | 16 frames | **sourced**, T #14 |
 | A shimmer | 1.6 s; F shimmer 1.2 s | T #14 says "a few seconds"; **estimated** within that |
 | Message holds (B, C, E, H, I) | 2.0 s each | **estimated** from the measured 2.1 s hold of CALL JL5-2020 (V1) |
-| D colour alternation | 2.0 s plus the push | **estimated** |
+| D word-by-word highlight | 2.4 s plus the push | **estimated** |
 | G2 lines → boxes | 3 passes, 5.4 s | **inferred**; T #14 says it "loops multiple times" |
 | Wipes | 2 half-steps each side | **inferred** |
 

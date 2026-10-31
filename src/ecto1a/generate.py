@@ -296,10 +296,16 @@ def build_segments(profile="single"):
     A_r = narrow("GHOSTBUSTERS", R)
     A_g = recolor(A_r, G)
     B = border(narrow("FOR HIRE...", R, gap=2, space=6))
-    C = thin("WE'RE READY", Y)                      # font/colour unknown (estimate)
+    s = "WE'RE READY"
+    C = thin(s, Y)                                  # font/colour unknown (estimate)
+    # Built word by word: WE'RE first, then READY (INFERRED from the sign's WE'RE-alone build of
+    # WE'RE BACK, T #14 Getty; owner's inference). WE'RE sits where it does in the full phrase.
+    C_were = thin(s, per_word(s, [Y, OFF]))
     s = "TO BELIEVE YOU"
-    # YOU stays red in every reference (P3, P8, P16); only TO and BELIEVE change (owner observation)
-    D_red, D_tog, D_bely = (thin(s, per_word(s, c)) for c in ([R, R, R], [G, R, R], [R, Y, R]))
+    # One word highlighted at a time: TO (green, P3), BELIEVE (amber, P16), YOU (green, INFERRED
+    # colour); the other words stay red, as in P3/P16. Sequential highlight: owner observation.
+    D_red, D_to, D_bel, D_you = (thin(s, per_word(s, c)) for c in
+                                 ([R, R, R], [G, R, R], [R, Y, R], [R, R, G]))
     E = thin("CALL JL5-2020", Y)
     s = "WE'RE BACK"
     G_were = wide("WE'RE", R, start=0)
@@ -329,12 +335,12 @@ def build_segments(profile="single"):
                 wipe_steps(None, B, G, 0, WS) + hold(B, MSG or 2)
                 + wipe_steps(B, None, G, 2 if full else 1, WS)))
     # C
-    seg.append(("C", "WE'RE READY - wiped in from green (inferred L-R); cut to D",
-                wipe_steps(None, C, G, 0, WS) + hold(C, MSG or 3)))
-    # D: TO and BELIEVE alternate colours, YOU stays red
-    d = (hold(D_red, 2) + (hold(D_tog, 2) + hold(D_bely, 2)) * 2 + hold(D_red, 2)) if full \
-        else [D_red, D_tog, D_bely, D_tog, D_bely]
-    seg.append(("D", "TO BELIEVE YOU - TO and BELIEVE alternate colours, YOU stays red; wipes down as E slides in",
+    seg.append(("C", "WE'RE READY - wiped in from green (inferred L-R); WE'RE first, then READY (inferred)",
+                wipe_steps(None, C_were, G, 0, WS) + hold(C_were, 3 if full else 1) + hold(C, 7 if full else 2)))
+    # D: one word highlighted at a time, TO -> BELIEVE -> YOU
+    d = (hold(D_red, 2) + hold(D_to, 2) + hold(D_bel, 2) + hold(D_you, 2) + hold(D_red, 4)) if full \
+        else [D_red, D_to, D_bel, D_you, D_red]
+    seg.append(("D", "TO BELIEVE YOU - highlight moves word by word: TO, BELIEVE, YOU; wipes down as E slides in",
                 d + [stack(E, D_red, 5), stack(E, D_red, 2)]))
     # E
     seg.append(("E", "CALL JL5-2020 - thin, amber; red wipe out (inferred L-R)",

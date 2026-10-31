@@ -84,10 +84,26 @@ def test_dist_parts_are_current():
             assert json.load(fh) == g.encode_jt(part)[0]
 
 
-def test_you_stays_red_in_to_believe_you():
-    # YOU is red in every reference; only TO and BELIEVE change colour
+def test_to_believe_you_highlights_one_word_at_a_time():
+    # TO, then BELIEVE, then YOU; the other words stay red (P3, P16)
+    spans = {"TO": range(0, 15), "BELIEVE": range(15, 58), "YOU": range(58, 80)}
     for prof in g.PROFILES:
         d = [fr for sid, _, fr in g.build_segments(prof) if sid == "D"][0][:-2]   # skip push frames
+        order = []
         for f in d:
-            you = {f[y][x] for y in range(g.H) for x in range(60, 80) if f[y][x]}
-            assert you == {g.R}
+            lit = [w for w, xs in spans.items()
+                   if {f[y][x] for y in range(g.H) for x in xs if f[y][x]} - {g.R}]
+            assert len(lit) <= 1
+            if lit and (not order or order[-1] != lit[0]):
+                order.append(lit[0])
+        assert order[:3] == ["TO", "BELIEVE", "YOU"]
+
+
+def test_were_ready_builds_word_by_word():
+    for prof in g.PROFILES:
+        c = [fr for sid, _, fr in g.build_segments(prof) if sid == "C"][0]
+        first_full = next(f for f in c if any(f[y][x] for y in range(g.H) for x in range(g.W)) and
+                          not any(v == g.G for row in f for v in row))
+        # first clean frame shows WE'RE only: READY's columns (right half) dark
+        assert not any(first_full[y][x] for y in range(g.H) for x in range(46, g.W))
+        assert any(c[-1][y][x] for y in range(g.H) for x in range(46, g.W))

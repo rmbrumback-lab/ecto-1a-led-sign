@@ -52,11 +52,11 @@ imgs[0].save("ecto1a_exact.gif", save_all=True, append_images=imgs[1:],
 }
 ```
 
-`ecto1a_playlist.json` contains the same metadata. It stores `unique_frames` (46) and a `playlist` of `{"frame": index, "ms": duration}` (78 steps). Use it when memory matters or when you want to stretch holds to film-like timing: multiply `ms` on steps longer than 400 ms.
+`ecto1a_playlist.json` contains the same metadata. It stores `unique_frames` (48) and a `playlist` of `{"frame": index, "ms": duration}` (79 steps). Use it when memory matters or when you want to stretch holds to film-like timing: multiply `ms` on steps longer than 400 ms.
 
 ## Arduino / C (`ecto1a_frames.h`)
 
-- `ecto1a_frames[ECTO1A_UNIQUE_FRAMES][140]` (46 frames): 2 bits per pixel, 4 pixels per byte, MSB first, row-major. Each row is 20 bytes.
+- `ecto1a_frames[ECTO1A_UNIQUE_FRAMES][140]` (48 frames): 2 bits per pixel, 4 pixels per byte, MSB first, row-major. Each row is 20 bytes.
 - `ecto1a_playlist[ECTO1A_STEPS][2]` (56 steps): `{unique frame index, duration ms}`.
 - Marked `PROGMEM`. On AVR, read with `pgm_read_byte` / `pgm_read_word`.
 
