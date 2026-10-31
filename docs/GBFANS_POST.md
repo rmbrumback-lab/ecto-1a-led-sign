@@ -2,7 +2,7 @@
 GBFans post draft (Discourse markdown). Suggested title:
   "Screen-accurate ECTO-1A sign animation — CoolLED file + open data for any LED build"
 Suggested category: Equipment > Ectomobiles. Reply in the reference thread too, linking here.
-REPO_URL and RAW_URL are filled in automatically when the repo is published.
+Repository: https://github.com/rmbrumback-lab/ecto-1a-led-sign
 -->
 
 # Screen-accurate ECTO-1A sign animation — CoolLED file + open data for any LED build
@@ -15,11 +15,11 @@ Building on the incredible research in @prodestrian's [Screen Accurate ECTO-1A D
 
 My rule was simple: **if it isn't documented, it isn't in the animation.** No invented effects.
 
-![preview](RAW_URL/docs/images/preview_96x16.gif)
+![preview](https://raw.githubusercontent.com/rmbrumback-lab/ecto-1a-led-sign/main/docs/images/preview_96x16.gif)
 
-**Download + docs:** REPO_URL
-**Direct CoolLED file:** REPO_URL/raw/main/dist/Ecto-1A_GB2_16x96.jt
-**Attribution audit:** REPO_URL/blob/main/docs/ATTRIBUTION.md
+**Download + docs:** https://github.com/rmbrumback-lab/ecto-1a-led-sign
+**Direct CoolLED file:** https://github.com/rmbrumback-lab/ecto-1a-led-sign/raw/main/dist/Ecto-1A_GB2_16x96.jt
+**Attribution audit:** https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/ATTRIBUTION.md
 
 ---
 
@@ -38,7 +38,7 @@ Thanks also to **auc0le** ([JT-Edit](https://github.com/auc0le/JT-Edit)) and **U
 
 ## What the sign does (as recreated)
 
-![storyboard](RAW_URL/docs/images/storyboard.png)
+![storyboard](https://raw.githubusercontent.com/rmbrumback-lab/ecto-1a-led-sign/main/docs/images/storyboard.png)
 
 The IDs match prodestrian's A–L frames. It's one 22-second loop:
 
@@ -78,7 +78,7 @@ I also dropped the possible upside-down flip in GHOSTBUSTERS, since the thread o
   * **Bold narrow** for GHOSTBUSTERS, which runs edge to edge.
   * **Thin 5×7** for CALL JL5-2020 and TO BELIEVE YOU.
 
-![bold wide font](RAW_URL/docs/images/font_bold_wide.png)
+![bold wide font](https://raw.githubusercontent.com/rmbrumback-lab/ecto-1a-led-sign/main/docs/images/font_bold_wide.png)
 
 * **FOR HIRE…** has a green border.
 * **CALL JL5-2020** is amber. You can see both colours lit in the Getty close-up.
@@ -87,7 +87,7 @@ I also dropped the possible upside-down flip in GHOSTBUSTERS, since the thread o
 
 **4. The green offset.** The panel version uses two panel rows per sign row. That let me draw the green half a pixel lower than the red, just like the real sign, where "BACK" doesn't line up with "WE'RE":
 
-![offset](RAW_URL/docs/images/offset_closeup.png)
+![offset](https://raw.githubusercontent.com/rmbrumback-lab/ecto-1a-led-sign/main/docs/images/offset_closeup.png)
 
 ---
 
