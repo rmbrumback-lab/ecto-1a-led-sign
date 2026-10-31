@@ -68,7 +68,8 @@ Sources:
 | A: red, rapid red/green swaps, settles green | ✅ | T #14: film 01:22:59; Getty clip, about 16 swaps; P1 |
 | B: red text, green border | ✅ | P2 |
 | C: WE'RE READY colour **and font** | ⚠️ **unknown**, shown thin amber | P15 could be WE'RE or BELIEVE's "VE" |
-| D: all red / TO green / BELIEVE amber | ✅ states observed | P8, P3, P16. Order of the states is not documented. |
+| D: all red / TO green / BELIEVE amber, **YOU always red** | ✅ states observed | P8, P3, P16 (YOU is red in P3 and P16). |
+| D: TO and BELIEVE alternate colours; YOU never changes | ✅ **owner observation** (Ryan) | Consistent with all three stills. Order and rate are **estimated**: all red → TO green ↔ BELIEVE amber (alternating) → all red. |
 | E, L: amber | ✅ | P12, P13, P7 |
 | F: green, then red | ✅ | T #14 |
 | G: WE'RE red then BACK green, words swapping | ✅ | T #14 (Getty); P4, P14 |
@@ -108,7 +109,21 @@ Sources:
 
 ## Timing
 
-J (blank), K and L are **measured from V1**, rounded to 200 ms frames. V1 is a GIF, so its timing is assumed close to, but not guaranteed to be, real time. All other durations are **estimates**, sized to fit the CoolLED upload limit of 113 frames at 16×96. The 16 swaps follow T #14.
+**Single file (113 frames):** J (blank), K and L are **measured from V1**, rounded to 200 ms frames. V1 is a GIF, so its timing is assumed close to, but not guaranteed to be, real time. All other durations are **estimates**, compressed to fit the 113-frame CoolLED upload limit. The 16 swaps follow T #14.
+
+**Two-part, screen-timed version (112 + 109 frames, 44.2 s):** there are no frame-budget compromises.
+
+| Element | Duration | Basis |
+|---|---|---|
+| J, K, L | as measured (2.0 s, 3.2 s, 3.0 s) | **measured**, V1 |
+| A swaps | 16 frames | **sourced**, T #14 |
+| A shimmer | 1.6 s; F shimmer 1.2 s | T #14 says "a few seconds"; **estimated** within that |
+| Message holds (B, C, E, H, I) | 2.0 s each | **estimated** from the measured 2.1 s hold of CALL JL5-2020 (V1) |
+| D colour alternation | 2.0 s plus the push | **estimated** |
+| G2 lines → boxes | 3 passes, 5.4 s | **inferred**; T #14 says it "loops multiple times" |
+| Wipes | 2 half-steps each side | **inferred** |
+
+Part 1 = A–F, Part 2 = G–L. The parts join at the WE'RE BACK cut, and Part 2's ending (CALL JL5-2020 sliding down) leads straight into Part 1's opening (GHOSTBUSTERS rising).
 
 ## How to help
 

@@ -213,7 +213,7 @@ def hold(f, n):
 
 
 # --------------------------------------------------------------------------- sequence
-def lines_boxes():
+def lines_boxes(full=False):
     """INFERRED reconstruction of the "five lines -> green boxes" graphic (see docs/ATTRIBUTION.md).
 
     Sourced: five vertical lines spread across the sign, each wiping across before being replaced
@@ -252,6 +252,8 @@ def lines_boxes():
     out.append(with_divider(frame(lambda c: R if c <= 8 else G), R))
     out.append(frame(lambda c: R))
     # 4. green again (loop)
+    if full:
+        out.append(with_divider(frame(lambda c: G if abs(c - c0) <= 3 else R), R))
     out.append(with_divider(frame(lambda c: G), R))
     return out
 
@@ -263,20 +265,40 @@ def reveal_centre(new, old_keep, half):
     return [[new[y][x] if lo <= x < hi else old_keep[y][x] for x in range(W)] for y in range(H)]
 
 
-def build_segments():
+PROFILES = ("single", "full")
+
+
+def wipe_steps(old, new, colour, solid, steps):
+    """INFERRED left-to-right wipe: colour covers old in `steps` half-steps, optional solid
+    frames, then new is revealed from the colour in `steps` steps. old/new may be None."""
+    xs = [round(W * (i + 1) / (steps + 1)) for i in range(steps)]
+    out = [wipe_cover(old, colour, x) for x in xs] if old is not None else []
+    out += [blank(colour)] * solid
+    out += [wipe_reveal(new, colour, x) for x in xs] if new is not None else []
+    return out
+
+
+def build_segments(profile="single"):
     """Return [(id, label, [frames])] in playback order. Ids follow the GBFans A-L scheme.
+
+    profile="single": one CoolLED file, compressed to the 113-frame upload limit.
+    profile="full":   screen-timed version, split into two files (Part 1 = A-F, Part 2 = G-L),
+                      each within the 113-frame limit, played back to back.
 
     Every element is attributed in docs/ATTRIBUTION.md. Three effects whose appearance is not
     documented are rendered as INFERRED reconstructions at the owner's request: the colour wipes
-    (left to right), the shimmer (random sparkle) and the lines -> boxes graphic. Holds for H-L follow timings measured
-    from the deleted-scene clip (V1); holds elsewhere are estimates sized to the 113-frame
-    upload limit.
+    (left to right), the shimmer (random sparkle) and the lines -> boxes graphic. Timings for J-L
+    are measured from the deleted-scene clip (V1). In "full", other message holds use 2.0 s, based
+    on the measured CALL JL5-2020 hold (2.1 s); the 16 swaps follow the thread; the shimmer runs
+    "a few seconds" (thread). These remain estimates where marked.
     """
+    full = profile == "full"
     A_r = narrow("GHOSTBUSTERS", R)
     A_g = recolor(A_r, G)
     B = border(narrow("FOR HIRE...", R, gap=2, space=6))
     C = thin("WE'RE READY", Y)                      # font/colour unknown (estimate)
     s = "TO BELIEVE YOU"
+    # YOU stays red in every reference (P3, P8, P16); only TO and BELIEVE change (owner observation)
     D_red, D_tog, D_bely = (thin(s, per_word(s, c)) for c in ([R, R, R], [G, R, R], [R, Y, R]))
     E = thin("CALL JL5-2020", Y)
     s = "WE'RE BACK"
@@ -291,39 +313,67 @@ def build_segments():
     arrows_only = wide(k, [G, OFF, OFF, OFF, OFF, OFF, G], space=6)
     L = E
 
+    MSG = 10 if full else None                 # 2.0 s message hold in the full profile
+    WS = 2 if full else 1                      # wipe half-steps
     seg = []
-    a = [shift(A_r, 4), shift(A_r, 2)] + hold(A_r, 1)          # rises in red after L slides out (V1)
-    a += shimmer(A_g, (0.3, 0.6, 0.3), seed=1989)              # shimmer on green (INFERRED look)
-    a += hold(A_g, 1)                                          # GHOSTBUSTERS again in green
-    a += [A_r if i % 2 == 0 else A_g for i in range(16)]       # ~16 rapid swaps, ends green
-    a += [blank(G)]                                            # solid green
+
+    # A
+    a = [shift(A_r, 4), shift(A_r, 2)] + hold(A_r, 3 if full else 1)   # rises red after L (V1)
+    a += shimmer(A_g, (0.2, 0.4, 0.6, 0.7, 0.6, 0.4, 0.3, 0.2) if full else (0.3, 0.6, 0.3), seed=1989)
+    a += hold(A_g, 3 if full else 1)                                   # GHOSTBUSTERS again, green
+    a += [A_r if i % 2 == 0 else A_g for i in range(16)]               # ~16 rapid swaps, ends green
+    a += [blank(G)] * (2 if full else 1)                               # solid green
     seg.append(("A", "GHOSTBUSTERS - rises red, shimmer (inferred), green, 16 red/green swaps, solid green", a))
+    # B
     seg.append(("B", "FOR HIRE... - wiped in from green (inferred L-R); green border; green wipe out",
-                [wipe_reveal(B, G)] + hold(B, 2) + [wipe_cover(B, G), blank(G)]))
+                wipe_steps(None, B, G, 0, WS) + hold(B, MSG or 2)
+                + wipe_steps(B, None, G, 2 if full else 1, WS)))
+    # C
     seg.append(("C", "WE'RE READY - wiped in from green (inferred L-R); cut to D",
-                [wipe_reveal(C, G)] + hold(C, 3)))
-    seg.append(("D", "TO BELIEVE YOU - thin, observed colour states; wipes down as E slides in",
-                hold(D_red, 2) + hold(D_tog, 2) + hold(D_bely, 1)
-                + [stack(E, D_red, 5), stack(E, D_red, 2)]))
+                wipe_steps(None, C, G, 0, WS) + hold(C, MSG or 3)))
+    # D: TO and BELIEVE alternate colours, YOU stays red
+    d = (hold(D_red, 2) + (hold(D_tog, 2) + hold(D_bely, 2)) * 2 + hold(D_red, 2)) if full \
+        else [D_red, D_tog, D_bely, D_tog, D_bely]
+    seg.append(("D", "TO BELIEVE YOU - TO and BELIEVE alternate colours, YOU stays red; wipes down as E slides in",
+                d + [stack(E, D_red, 5), stack(E, D_red, 2)]))
+    # E
     seg.append(("E", "CALL JL5-2020 - thin, amber; red wipe out (inferred L-R)",
-                hold(E, 3) + [wipe_cover(E, R), blank(R)]))
-    seg.append(("F", "GHOSTBUSTERS - wiped in green from red, shimmer (inferred), green, green-to-red wipe, solid red",
-                [wipe_reveal(A_g, R), A_g] + shimmer(A_g, (0.4, 0.7), seed=2020) + [A_g]
-                + [colmix(A_r, A_g, W // 2), A_r, blank(R)]))
-    seg.append(("G", "WE'RE BACK - WE'RE red, green flash, WE'RE BACK, words swap colours",
-                hold(G_were, 2) + [blank(G)] + hold(G_rg, 1) + [G_gr, G_rg, G_gr, G_rg]))
+                hold(E, MSG or 3) + wipe_steps(E, None, R, 2 if full else 1, WS)))
+    # F
+    f = wipe_steps(None, A_g, R, 0, WS) + hold(A_g, 3 if full else 1)
+    f += shimmer(A_g, (0.3, 0.5, 0.7, 0.7, 0.5, 0.3) if full else (0.4, 0.7), seed=2020)
+    f += hold(A_g, 3 if full else 1)
+    f += ([colmix(A_r, A_g, 27), colmix(A_r, A_g, 54)] if full else [colmix(A_r, A_g, W // 2)])
+    f += hold(A_r, 4 if full else 1) + [blank(R)] * (2 if full else 1)
+    seg.append(("F", "GHOSTBUSTERS - wiped in green from red, shimmer (inferred), green, green-to-red wipe, solid red", f))
+    # G
+    g = hold(G_were, 5 if full else 2) + [blank(G)] * (2 if full else 1) + hold(G_rg, 6 if full else 1)
+    g += ([G_gr, G_gr, G_rg, G_rg] * 2) if full else [G_gr, G_rg, G_gr, G_rg]
+    seg.append(("G", "WE'RE BACK - WE'RE red, green flash, WE'RE BACK, words swap colours", g))
+    # G2
     seg.append(("G2", "Five lines wipe across, green boxes grow, red sweeps back, green again (INFERRED)",
-                lines_boxes()))
-    seg.append(("H", "WHO YA - red", hold(Hf, 2)))
-    seg.append(("I", "GONNA", hold(I, 2)))
+                lines_boxes(full=True) * 3 if full else lines_boxes()))
+    seg.append(("H", "WHO YA - red", hold(Hf, MSG or 2)))
+    seg.append(("I", "GONNA", hold(I, MSG or 2)))
     seg.append(("J", "CALL? - red; slides up and out; blank ~0.8 s",
                 hold(J, 4) + [shift(J, -3), shift(J, -6)] + hold(blank(), 4)))
     seg.append(("K", "US! - red alone, then green arrows (on ~1.2 s, off ~0.8 s, on)",
                 hold(K_off, 3) + hold(K_on, 6) + hold(K_off, 4) + hold(K_on, 3)))
     seg.append(("L", "CALL JL5-2020 - reveals from centre (arrows stay), holds ~2 s, slides down",
                 [reveal_centre(L, arrows_only, 8), reveal_centre(L, arrows_only, 16)]
-                + hold(L, 10) + [shift(L, 3), shift(L, 6)]))
+                + hold(L, 11 if full else 10) + [shift(L, 3), shift(L, 6)]))
     return seg
+
+
+PART1 = ("A", "B", "C", "D", "E", "F")
+PART2 = ("G", "G2", "H", "I", "J", "K", "L")
+
+
+def build_parts():
+    segs = build_segments("full")
+    p1 = [f for sid, _, fr in segs if sid in PART1 for f in fr]
+    p2 = [f for sid, _, fr in segs if sid in PART2 for f in fr]
+    return p1, p2
 
 
 def build():
@@ -523,7 +573,42 @@ def export_all(out):
     pan = [led_image(f, 6, offset=True) for f in frames]
     pan[0].save(os.path.join(out, "ecto1a_96x16_panel.gif"), save_all=True, append_images=pan[1:],
                 duration=DELAY_MS, loop=0)
+    export_two_part(os.path.join(out, "two_part"))
     return segs, frames
+
+
+def export_two_part(out):
+    """Screen-timed version as two CoolLED files (Part 1 = A-F, Part 2 = G-L), plus
+    full-timing JSON and GIF previews for other apps."""
+    os.makedirs(out, exist_ok=True)
+    segs = build_segments("full")
+    p1, p2 = build_parts()
+    for name, fr in (("Part1", p1), ("Part2", p2)):
+        jt, _ = encode_jt(fr)
+        with open(os.path.join(out, f"Ecto-1A_GB2_16x96_{name}.jt"), "w") as fh:
+            json.dump(jt, fh, separators=(",", ":"))
+        pan = [led_image(f, 6, offset=True) for f in fr]
+        pan[0].save(os.path.join(out, f"ecto1a_96x16_{name}.gif"), save_all=True,
+                    append_images=pan[1:], duration=DELAY_MS, loop=0)
+    frames = p1 + p2
+    timeline, i = [], 0
+    for sid, label, fr in segs:
+        timeline.append({"id": sid, "part": 1 if sid in PART1 else 2, "label": label,
+                         "first_frame": i, "frames": len(fr), "duration_ms": len(fr) * DELAY_MS})
+        i += len(fr)
+    uniq, plist = playlist(frames)
+    meta = {"width": W, "height": H, "frame_ms": DELAY_MS, "profile": "full (screen-timed)",
+            "pixel_values": {"0": "off", "1": "red", "2": "green", "3": "red+green (amber)"},
+            "frames_total": len(frames), "loop_ms": len(frames) * DELAY_MS,
+            "part1_frames": len(p1), "part2_frames": len(p2), "timeline": timeline}
+    with open(os.path.join(out, "ecto1a_full_frames.json"), "w") as fh:
+        json.dump({**meta, "frames": frames}, fh, separators=(",", ":"))
+    with open(os.path.join(out, "ecto1a_full_playlist.json"), "w") as fh:
+        json.dump({**meta, "unique_frames": uniq,
+                   "playlist": [{"frame": a, "ms": b} for a, b in plist]}, fh, separators=(",", ":"))
+    led = [led_image(f, 6, offset=True) for f in frames]
+    led[0].save(os.path.join(out, "ecto1a_96x16_full.gif"), save_all=True, append_images=led[1:],
+                duration=DELAY_MS, loop=0)
 
 
 if __name__ == "__main__":

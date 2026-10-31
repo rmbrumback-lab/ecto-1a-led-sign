@@ -18,7 +18,11 @@ My rule: **everything is attributed.** Where the look of an effect isn't documen
 ![preview](https://raw.githubusercontent.com/rmbrumback-lab/ecto-1a-led-sign/main/docs/images/preview_96x16.gif)
 
 **Download + docs:** https://github.com/rmbrumback-lab/ecto-1a-led-sign
-**Direct CoolLED file:** https://github.com/rmbrumback-lab/ecto-1a-led-sign/raw/main/dist/Ecto-1A_GB2_16x96.jt
+**CoolLED files (pick one):**
+* Single file (compressed timing, 22.6 s): https://github.com/rmbrumback-lab/ecto-1a-led-sign/raw/main/dist/Ecto-1A_GB2_16x96.jt
+* Two files, screen-timed (44.2 s). Load both and play Part 1 then Part 2:
+  * https://github.com/rmbrumback-lab/ecto-1a-led-sign/raw/main/dist/two_part/Ecto-1A_GB2_16x96_Part1.jt
+  * https://github.com/rmbrumback-lab/ecto-1a-led-sign/raw/main/dist/two_part/Ecto-1A_GB2_16x96_Part2.jt
 **Attribution audit:** https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/ATTRIBUTION.md
 
 ---
@@ -40,12 +44,12 @@ Thanks also to **auc0le** ([JT-Edit](https://github.com/auc0le/JT-Edit)) and **U
 
 ![storyboard](https://raw.githubusercontent.com/rmbrumback-lab/ecto-1a-led-sign/main/docs/images/storyboard.png)
 
-The IDs match prodestrian's A–L frames. It's one 22-second loop:
+The IDs match prodestrian's A–L frames. It's one loop: 22 seconds in the single file, or 44 seconds in the two-part screen-timed version.
 
 1. **GHOSTBUSTERS** slides up in red, shimmers in green, rapidly swaps red/green about 16 times, then goes solid green.
 2. **FOR HIRE…** wipes in from the green, in red inside a **green border**, then a green wipe.
 3. **WE'RE READY**.
-4. **TO BELIEVE YOU**, in the three colour states seen across the film and premiere shots. It then wipes down as **CALL JL5-2020** (amber) slides in from the top.
+4. **TO BELIEVE YOU**: TO and BELIEVE alternate colours (green / amber) while YOU stays red, matching every still we have. It then wipes down as **CALL JL5-2020** (amber) slides in from the top.
 5. A red wipe, then **GHOSTBUSTERS** in green with the shimmer, wiping from green to red, then solid red.
 6. **WE'RE** (red) → green flash → **WE'RE BACK**, with the words swapping colours.
 7. The **five lines → green boxes** graphic. This is my *inferred* reconstruction; see below.
@@ -119,10 +123,10 @@ I dropped one thing outright: the possible upside-down flip in GHOSTBUSTERS, sin
 These frames are confirmed to exist, but some details aren't:
 
 * the font and colour of **WE'RE READY**, the colour of **GONNA**, and the exact letter shapes of WHO YA / GONNA / CALL?;
-* the order of the TO BELIEVE YOU colour states;
+* the order and speed of the TO / BELIEVE colour alternation;
 * the US! arrowhead shape (the premiere frames are heavily blurred);
 * the exact look of the wipes, shimmer and lines → boxes graphic (all inferred);
-* the timing of everything before WHO YA (J–L are timed from the deleted-scene clip).
+* the exact timing of everything before CALL? (J–L are timed from the deleted-scene clip; the two-part version uses 2-second holds based on the measured CALL JL5-2020 hold).
 
 Each one is marked in the attribution audit. **A clear shot of GONNA, or a sharp full-width shot of the lines → boxes graphic, would settle most of what's left.** If you have them, please post them.
 
@@ -130,7 +134,7 @@ Each one is marked in the attribution audit. **A clear shot of GONNA, or a sharp
 
 ## Using it
 
-* **CoolLED1248 (16×96):** download the `.jt` to your phone (Android), tap it, and open with CoolLED1248. The app versions that support `.jt` import are 2.x. iOS import isn't confirmed yet.
+* **CoolLED1248 (16×96):** download the `.jt` to your phone (Android), tap it, and open with CoolLED1248. A single file holds at most 113 frames, so the single-file version compresses the timing. If your panel can play two programmes in a row, use **Part 1 + Part 2** for screen-accurate timing. The app versions that support `.jt` import are 2.x. iOS import isn't confirmed yet.
 * **Any other sign or app:** the repo's `dist/` folder has:
   * `frames_80x7/` — 113 PNGs, 200 ms each
   * a sprite sheet

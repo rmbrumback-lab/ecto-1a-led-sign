@@ -1,6 +1,6 @@
-# Attribution evidence (v7)
+# Attribution evidence (v8)
 
-One card per element of the animation, showing a small source extract beside our rendering, with the claim, source and status. The full pack is in one PDF: [Ecto-1A_Attribution_Evidence_v7.pdf](Ecto-1A_Attribution_Evidence_v7.pdf). The written audit is in [../ATTRIBUTION.md](../ATTRIBUTION.md).
+One card per element of the animation, showing a small source extract beside our rendering, with the claim, source and status. The full pack is in one PDF: [Ecto-1A_Attribution_Evidence_v8.pdf](Ecto-1A_Attribution_Evidence_v8.pdf). The written audit is in [../ATTRIBUTION.md](../ATTRIBUTION.md).
 
 | # | Element | Status |
 |---|---|---|
@@ -12,7 +12,7 @@ One card per element of the animation, showing a small source extract beside our
 | 6 | [A. GHOSTBUSTERS: ~16 rapid red/green swaps, settles green, solid green](06-a-ghostbusters-16-rapid-red-green-swaps-settles-.png) | SOURCED |
 | 7 | [B. FOR HIRE... in red inside a green border](07-b-for-hire-in-red-inside-a-green-border.png) | SOURCED |
 | 8 | [C. WE'RE READY](08-c-we-re-ready.png) | ESTIMATE |
-| 9 | [D. TO BELIEVE YOU: three colour states](09-d-to-believe-you-three-colour-states.png) | SOURCED |
+| 9 | [D. TO BELIEVE YOU: TO and BELIEVE alternate, YOU stays red](09-d-to-believe-you-to-and-believe-alternate-you-st.png) | SOURCED |
 | 10 | [D -> E. TO BELIEVE YOU wipes down as CALL JL5-2020 slides in from the top](10-d-e-to-believe-you-wipes-down-as-call-jl5-2020-s.png) | SOURCED |
 | 11 | [E / L. CALL JL5-2020 in amber](11-e-l-call-jl5-2020-in-amber.png) | SOURCED |
 | 12 | [Colour wipes: A->B and B->C (green), E->F (red), F green->red](12-colour-wipes-a-b-and-b-c-green-e-f-red-f-green-r.png) | INFERRED |
@@ -26,7 +26,7 @@ One card per element of the animation, showing a small source extract beside our
 | 20 | [K -> L. CALL JL5-2020 opens from centre, arrows lit](20-k-l-call-jl5-2020-opens-from-centre-arrows-lit.png) | MEASURED |
 | 21 | [L. CALL JL5-2020 holds ~2 s, then slides down](21-l-call-jl5-2020-holds-2-s-then-slides-down.png) | MEASURED |
 | 22 | [Shimmer on green GHOSTBUSTERS (A and F)](22-shimmer-on-green-ghostbusters-a-and-f.png) | INFERRED |
-| 23 | [Timing](23-timing.png) | ESTIMATE |
+| 23 | [Timing: single file and two-part screen-timed build](23-timing-single-file-and-two-part-screen-timed-bui.png) | ESTIMATE |
 
 **Status key:**
 - **SOURCED:** shown in a reference image, or reported as an observation in the GBFans thread.
@@ -48,3 +48,5 @@ The source extracts are small crops of third-party images, used here only to att
 | V1 | Deleted museum-scene GIF, 181 frames | *Ghostbusters II* (1989), Columbia Pictures / Sony Pictures | Matches the thread's link to `i.imgur.com/yjkGYPb.gif` (prodestrian, post #3) |
 
 Thread: [Screen Accurate ECTO-1A Dot Matrix LED Sign (Reference)](https://forum.gbfans.com/t/screen-accurate-ecto-1a-dot-matrix-led-sign-reference/26454). If you're a rights holder and want an extract removed, please open an issue.
+
+One element also rests on an owner observation rather than an image: TO and BELIEVE alternate colours while YOU stays red (card 9).

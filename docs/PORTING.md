@@ -20,7 +20,8 @@ The base timing is **200 ms per frame**. The full loop is 113 frames, or 22.6 s.
 | App that imports a sprite sheet | `ecto1a_spritesheet_80x7.png`, 80 × 7 per frame, stacked vertically |
 | Arduino / ESP32 / Teensy | `ecto1a_frames.h` |
 | Raspberry Pi, web, Python, JS | `ecto1a_frames.json` or `ecto1a_playlist.json` |
-| CoolLED1248, 16×96 | `Ecto-1A_GB2_16x96.jt` |
+| CoolLED1248, 16×96 | `Ecto-1A_GB2_16x96.jt` (single file), or `two_part/…Part1.jt` + `…Part2.jt` played in order (screen-timed) |
+| Screen-timed data for any app | `two_part/ecto1a_full_frames.json`, `two_part/ecto1a_full_playlist.json` (221 frames, 44.2 s) |
 | CoolLED1248, other size | regenerate (see the README) |
 
 `ecto1a_80x7.gif` and `ecto1a_96x16_panel.gif` are **LED-style previews** (round dots, 8× scale). Apps that rescale a GIF onto their own grid want a **pixel-exact** GIF instead, where 1 image pixel equals 1 LED:
@@ -51,7 +52,7 @@ imgs[0].save("ecto1a_exact.gif", save_all=True, append_images=imgs[1:],
 }
 ```
 
-`ecto1a_playlist.json` contains the same metadata. It stores `unique_frames` (46) and a `playlist` of `{"frame": index, "ms": duration}` (76 steps). Use it when memory matters or when you want to stretch holds to film-like timing: multiply `ms` on steps longer than 400 ms.
+`ecto1a_playlist.json` contains the same metadata. It stores `unique_frames` (46) and a `playlist` of `{"frame": index, "ms": duration}` (78 steps). Use it when memory matters or when you want to stretch holds to film-like timing: multiply `ms` on steps longer than 400 ms.
 
 ## Arduino / C (`ecto1a_frames.h`)
 

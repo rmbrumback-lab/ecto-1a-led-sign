@@ -89,6 +89,12 @@ At Ryan's request, the remaining undocumented effects were reconstructed, and th
 - **Evidence:** `docs/evidence/` holds one card per element, with a credited source extract beside our rendering, plus the full PDF. These extracts are excluded from the MIT licence.
 - **Frame budget:** the extra frames were paid for from estimated holds (B, C, D, E, G, H) and one inferred G2 step. The measured J–L timings were left as they were. Still 113 frames.
 
+## v8: TO BELIEVE YOU alternation; two-part screen-timed build
+
+- **TO BELIEVE YOU:** following Ryan's observation, TO and BELIEVE now alternate colours (green / amber) while YOU stays red. That matches all three stills, where YOU is always red.
+- **Two-part build:** a second, screen-timed version is split into two CoolLED files that play in order. Part 1 is A–F (112 frames); Part 2 is G–L (109 frames); 44.2 s in total. It uses measured J–L timing, 2.0 s message holds (from the measured CALL hold), the thread's "few seconds" shimmer, and three passes of lines → boxes. The single-file build is kept.
+- Full-timing JSON and GIF exports were added for other apps.
+
 ## Open questions
 
 - GONNA's colour, and sharp frames of WHO YA / GONNA / CALL? for letter shapes.

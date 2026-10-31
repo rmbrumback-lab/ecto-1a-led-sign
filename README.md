@@ -4,15 +4,17 @@ A frame-by-frame recreation of the roof-mounted dot-matrix sign from the **Ecto-
 
 ![Preview on a 16×96 panel](docs/images/preview_96x16.gif)
 
-**Download:** [`dist/Ecto-1A_GB2_16x96.jt`](dist/Ecto-1A_GB2_16x96.jt) — open it in the CoolLED1248 app (16×96 panel), no editing needed.
+**Download (pick one):**
+- **Single file:** [`Ecto-1A_GB2_16x96.jt`](dist/Ecto-1A_GB2_16x96.jt). The whole loop fits in one file, so timing is compressed (22.6 s).
+- **Two files, screen-timed:** [`Part1.jt`](dist/two_part/Ecto-1A_GB2_16x96_Part1.jt) + [`Part2.jt`](dist/two_part/Ecto-1A_GB2_16x96_Part2.jt). Load both onto the panel to play in order. With twice the frames, the holds follow real timings (44.2 s).
 
 | | |
 |---|---|
 | Sign model | 80 × 7 pixels, red + green (both lit = amber) |
-| Sequence | 13 segments, 113 frames, 22.6 s loop at 200 ms/frame |
+| Sequence | 13 segments. Single file: 113 frames, 22.6 s. Two-part: 112 + 109 frames, 44.2 s. All at 200 ms/frame |
 | Fonts | 3, traced from reference photos |
 | Attribution | every element traced to a source — [ATTRIBUTION.md](docs/ATTRIBUTION.md), with [evidence cards](docs/evidence/) showing each source extract beside our rendering |
-| CoolLED file | `aniType 1` (3-bit colour), 65,088 bytes, inside the app's upload limits |
+| CoolLED files | `aniType 1` (3-bit colour). Single: 65,088 bytes. Part 1: 64,512. Part 2: 62,784. All inside the app's 65,535-byte upload limit |
 | Verified | Byte-for-byte encoder match with app-exported files; decoded with zero errors by JT-Edit's own import code |
 
 This project builds directly on research by the GBFans community. See **[Credits](#credits)**.
@@ -40,9 +42,9 @@ Detailed documentation:
 
 ### CoolLED1248 (16×96 panel)
 
-1. Download [`Ecto-1A_GB2_16x96.jt`](dist/Ecto-1A_GB2_16x96.jt) to your phone.
+1. Download either the single file [`Ecto-1A_GB2_16x96.jt`](dist/Ecto-1A_GB2_16x96.jt), or both [`Part1`](dist/two_part/Ecto-1A_GB2_16x96_Part1.jt) and [`Part2`](dist/two_part/Ecto-1A_GB2_16x96_Part2.jt), to your phone.
 2. **Android:** open your Files app, tap the file, choose **Open with → CoolLED1248**. App versions 2.x import `.jt` files; if an import fails, the JT-Edit author recommends version 2.1.4.
-3. Send it to the panel from the app.
+3. Send it to the panel from the app. For the two-part version, import both and add them to the panel's playlist in order: **Part 1, then Part 2**. Part 2 ends with CALL JL5-2020 sliding down, and Part 1 opens with GHOSTBUSTERS rising, so the loop is seamless.
 
 > **iOS:** `.jt` import on iOS has not been confirmed. As a workaround, load the file into the browser-based [JT-Edit](https://jt-edit.com/) editor.
 
@@ -63,7 +65,7 @@ Use the files in [`dist/`](dist/): GIF, per-frame PNGs, sprite sheet, JSON, or a
 | A | GHOSTBUSTERS | rises in red, shimmer on green *(inferred look)*, 16 rapid red/green swaps, solid green | 4.4 s |
 | B | FOR HIRE… | wiped in from green *(inferred, left to right)*; red text inside a green border; green wipe out | 1.0 s |
 | C | WE'RE READY | wiped in from green *(inferred)*; font and colour unknown (shown thin, amber) | 0.8 s |
-| D | TO BELIEVE YOU | thin font, the three observed colour states; wipes down as E slides in | 1.6 s |
+| D | TO BELIEVE YOU | thin font; **TO and BELIEVE alternate colours (green / amber) while YOU stays red**; wipes down as E slides in | 1.4 s |
 | E | CALL JL5-2020 | thin font, amber; red wipe out *(inferred, left to right)* | 1.0 s |
 | F | GHOSTBUSTERS | wiped in green from red, shimmer *(inferred look)*, green, green→red wipe, solid red | 1.2 s |
 | G | WE'RE BACK | "WE'RE" red, green flash, then WE'RE (red) BACK (green), words swap colours | 1.8 s |
@@ -112,7 +114,9 @@ The project went through four iterations as more reference material surfaced. Th
 | GHOSTBUSTERS font + red / red-green flashing | **Sourced** | Night still, sampled on grid |
 | WE'RE BACK font, layout (cols 0–79), red/green split | **Sourced** | Hi-res book scan, read pixel-for-pixel |
 | FOR HIRE… red with green border | **Sourced** | Night still |
-| TO BELIEVE YOU thin font + 3 colour states | **Sourced** | Film still, museum still, premiere close-up |
+| TO BELIEVE YOU thin font + 3 colour states; YOU always red | **Sourced** | Film still, museum still, premiere close-up |
+| TO / BELIEVE colour alternation (YOU unchanged) | **Sourced** (owner observation) / order and rate **estimated** | Ryan's observation; consistent with all three stills |
+| Two-part screen timings | **Measured** (J–L), **sourced** (16 swaps; shimmer "a few seconds") / **estimated** (2.0 s message holds, from the measured 2.1 s CALL JL5-2020 hold) | Deleted-scene clip; thread |
 | CALL JL5-2020 thin font, amber | **Sourced** | Premiere close-ups |
 | US! red with inward green arrows | **Sourced (shape approximate)** | Heavily motion-blurred premiere frames |
 | Slides, 16 red/green swaps, solid colour frames, word colour swaps, arrow blink | **Sourced** | Thread's frame-by-frame descriptions |
@@ -132,7 +136,10 @@ The project went through four iterations as more reference material surfaced. Th
 
 | Path | What |
 |---|---|
-| [`dist/Ecto-1A_GB2_16x96.jt`](dist/Ecto-1A_GB2_16x96.jt) | CoolLED1248 animation, 16×96 panel |
+| [`dist/Ecto-1A_GB2_16x96.jt`](dist/Ecto-1A_GB2_16x96.jt) | CoolLED1248 animation, 16×96 panel, single file (compressed timing) |
+| [`dist/two_part/Ecto-1A_GB2_16x96_Part1.jt`](dist/two_part/Ecto-1A_GB2_16x96_Part1.jt), [`Part2.jt`](dist/two_part/Ecto-1A_GB2_16x96_Part2.jt) | Screen-timed version as two CoolLED files: Part 1 = A–F, Part 2 = G–L |
+| [`dist/two_part/ecto1a_96x16_full.gif`](dist/two_part/ecto1a_96x16_full.gif) | Preview of the screen-timed version (both parts) |
+| [`dist/two_part/ecto1a_full_frames.json`](dist/two_part/ecto1a_full_frames.json), [`ecto1a_full_playlist.json`](dist/two_part/ecto1a_full_playlist.json) | Screen-timed frames for other apps (221 frames / 61 unique) |
 | [`dist/ecto1a_96x16_panel.gif`](dist/ecto1a_96x16_panel.gif) | Preview as it appears on the panel |
 | [`dist/ecto1a_80x7.gif`](dist/ecto1a_80x7.gif) | Native 80×7 LED-style preview |
 | [`dist/frames_80x7/`](dist/frames_80x7/) | 113 PNGs, 1 image pixel = 1 sign pixel |
@@ -152,8 +159,8 @@ Pixel values everywhere are **0 = off, 1 = red, 2 = green, 3 = red + green**. On
 
 - **Apps that import GIFs:** use `ecto1a_80x7.gif`, or build a crisp 80×7 GIF from the PNG frames.
 - **Apps that import frame images:** `frames_80x7/frame_000.png` … `frame_112.png`, each shown for 200 ms. Many frames repeat; `ecto1a_playlist.json` gives the deduplicated version with durations.
-- **Arduino / ESP32 / Pi:** `ecto1a_frames.h` has 46 unique frames at 140 bytes each (6.3 KB), plus a 76-step playlist.
-- **Your own code:** `ecto1a_frames.json`.
+- **Arduino / ESP32 / Pi:** `ecto1a_frames.h` has 46 unique frames at 140 bytes each (6.3 KB), plus a 78-step playlist.
+- **Your own code:** `ecto1a_frames.json`, or the screen-timed `two_part/ecto1a_full_frames.json` / `ecto1a_full_playlist.json`. These aren't bound by CoolLED's frame limit, so they're the better choice for microcontroller builds.
 
 Step-by-step recipes (GIF building, scaling to other panel sizes, Arduino example, red/green-only hardware) are in **[docs/PORTING.md](docs/PORTING.md)**.
 

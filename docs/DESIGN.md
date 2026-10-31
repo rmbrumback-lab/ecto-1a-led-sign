@@ -59,7 +59,7 @@ The sign uses three fonts. They were identified by enlarging the reference still
 | A GHOSTBUSTERS | red; green; ~16 red/green swaps; settles green | night still (red); thread: film 01:22:59 and Getty clip |
 | B FOR HIRE… | red text, green border | night still |
 | C WE'RE READY | **unknown**, shown amber (font also unconfirmed) | no clear reference |
-| D TO BELIEVE YOU | all red / TO green / BELIEVE amber, in that order | three observed states; the order is not documented |
+| D TO BELIEVE YOU | all red → TO green ↔ BELIEVE amber (alternating) → all red; **YOU always red** | three observed states (P3, P8, P16); the alternation is Ryan's observation; order and rate are estimated |
 | E / L CALL JL5-2020 | amber | premiere close-ups (red and green clusters both lit) |
 | F GHOSTBUSTERS | green, then red | thread (film 01:23:28; Getty clip) |
 | G WE'RE BACK | WE'RE red, BACK green, then swapped | book scan; thread (Getty clip) |
@@ -121,3 +121,7 @@ The thread reports GHOSTBUSTERS shimmering while green: in A for a few seconds b
 The CoolLED1248 format has **one delay for the whole animation**. Holds are therefore made by repeating frames. The upload protocol limits a 16×96 animation to 113 frames (65,535 bytes ÷ 576 bytes per frame).
 
 At 200 ms per frame this gives a 22.6-second loop of 113 frames, exactly at the upload limit. **J–L are timed from the deleted-scene clip (V1)**: CALL? about 0.8 s, blank 0.8 s, US! 3.2 s with arrows, CALL JL5-2020 about 2.4 s including the reveal. **All other durations are estimates.** Holds of 0.4–0.8 s were shortened to fit the measured segments and the inferred G2 graphic, wipes and shimmer within the 113-frame limit, and are likely shorter than the real sign's. A microcontroller build is not bound by the frame limit: use `ecto1a_playlist.json` and stretch the holds.
+
+### Two-part, screen-timed version
+
+CoolLED panels can store several programmes and play them in order, so a second build splits the loop into **two files**, each within the 113-frame limit. Part 1 covers A–F (112 frames, 22.4 s) and Part 2 covers G–L (109 frames, 21.8 s), for 44.2 s in total. That doubles the frame budget, so the holds follow real timings: measured values for J–L, 2.0 s message holds based on the measured 2.1 s CALL JL5-2020 hold, a 1.2–1.6 s shimmer (the thread says "a few seconds"), two-step wipes, and three passes of the lines → boxes graphic. Per-element bases are in [ATTRIBUTION.md](ATTRIBUTION.md#timing).

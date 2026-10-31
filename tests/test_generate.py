@@ -60,3 +60,34 @@ def test_dist_jt_is_current():
     path = os.path.join(os.path.dirname(__file__), "..", "dist", "Ecto-1A_GB2_16x96.jt")
     with open(path) as fh:
         assert json.load(fh) == JT
+
+
+def test_two_parts_within_limits():
+    p1, p2 = g.build_parts()
+    for part in (p1, p2):
+        jt, _ = g.encode_jt(part)
+        assert jt[0]["data"]["frameNum"] <= 113
+        assert len(jt[0]["data"]["aniData"]) <= 65535
+
+
+def test_two_parts_cover_full_sequence_in_order():
+    p1, p2 = g.build_parts()
+    full = [f for _, _, fr in g.build_segments("full") for f in fr]
+    assert p1 + p2 == full
+
+
+def test_dist_parts_are_current():
+    p1, p2 = g.build_parts()
+    base = os.path.join(os.path.dirname(__file__), "..", "dist", "two_part")
+    for name, part in (("Part1", p1), ("Part2", p2)):
+        with open(os.path.join(base, f"Ecto-1A_GB2_16x96_{name}.jt")) as fh:
+            assert json.load(fh) == g.encode_jt(part)[0]
+
+
+def test_you_stays_red_in_to_believe_you():
+    # YOU is red in every reference; only TO and BELIEVE change colour
+    for prof in g.PROFILES:
+        d = [fr for sid, _, fr in g.build_segments(prof) if sid == "D"][0][:-2]   # skip push frames
+        for f in d:
+            you = {f[y][x] for y in range(g.H) for x in range(60, 80) if f[y][x]}
+            assert you == {g.R}
