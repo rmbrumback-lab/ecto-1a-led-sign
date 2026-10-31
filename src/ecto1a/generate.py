@@ -298,8 +298,8 @@ def build_segments(profile="single"):
     B = border(narrow("FOR HIRE...", R, gap=2, space=6))
     s = "WE'RE READY"
     C = thin(s, Y)                                  # font/colour unknown (estimate)
-    # Built word by word: WE'RE first, then READY (INFERRED from the sign's WE'RE-alone build of
-    # WE'RE BACK, T #14 Getty; owner's inference). WE'RE sits where it does in the full phrase.
+    # Built word by word: WE'RE first, then READY (INFERRED). Evidence: the "WE'RE"-alone frame in
+    # the Getty clip (T #14), which the owner attributes to this build rather than to WE'RE BACK.
     C_were = thin(s, per_word(s, [Y, OFF]))
     s = "TO BELIEVE YOU"
     # One word highlighted at a time: TO (green, P3), BELIEVE (amber, P16), YOU (green, INFERRED
@@ -308,7 +308,6 @@ def build_segments(profile="single"):
                                  ([R, R, R], [G, R, R], [R, Y, R], [R, R, G]))
     E = thin("CALL JL5-2020", Y)
     s = "WE'RE BACK"
-    G_were = wide("WE'RE", R, start=0)
     G_rg, G_gr = wide(s, per_word(s, [R, G])), wide(s, per_word(s, [G, R]))
     Hf = wide("WHO YA", R)      # red: measured in V1
     I = wide("GONNA", R)        # colour unknown (estimate); not visible in V1
@@ -353,9 +352,10 @@ def build_segments(profile="single"):
     f += hold(A_r, 4 if full else 1) + [blank(R)] * (2 if full else 1)
     seg.append(("F", "GHOSTBUSTERS - wiped in green from red, shimmer (inferred), green, green-to-red wipe, solid red", f))
     # G
-    g = hold(G_were, 5 if full else 2) + [blank(G)] * (2 if full else 1) + hold(G_rg, 6 if full else 1)
+    # No WE'RE-alone frame: the owner reads the Getty "WE'RE" frame as the WE'RE READY build (C)
+    g = [blank(G)] * (2 if full else 1) + hold(G_rg, 11 if full else 3)
     g += ([G_gr, G_gr, G_rg, G_rg] * 2) if full else [G_gr, G_rg, G_gr, G_rg]
-    seg.append(("G", "WE'RE BACK - WE'RE red, green flash, WE'RE BACK, words swap colours", g))
+    seg.append(("G", "WE'RE BACK - green flash, WE'RE BACK, words swap colours", g))
     # G2
     seg.append(("G2", "Five lines wipe across, green boxes grow, red sweeps back, green again (INFERRED)",
                 lines_boxes(full=True) * 3 if full else lines_boxes()))

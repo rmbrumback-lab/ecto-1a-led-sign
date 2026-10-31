@@ -101,6 +101,10 @@ At Ryan's request, the remaining undocumented effects were reconstructed, and th
 - **WE'RE READY:** now built word by word, WE'RE first and then READY. This mirrors the sign's WE'RE-alone build of WE'RE BACK (Getty, thread post #14), following Ryan's inference.
 - Still 113 frames (single) and 112 + 109 (two-part).
 
+## v10: WE'RE-alone frame moved
+
+- WE'RE BACK no longer opens with "WE'RE" alone. At Ryan's direction, that frame from the thread's Getty description is treated as evidence of the WE'RE READY build (WE'RE, then READY), not as part of WE'RE BACK. WE'RE BACK now opens with the green flash. The freed frames lengthen the WE'RE BACK hold. Frame counts are unchanged.
+
 ## Open questions
 
 - GONNA's colour, and sharp frames of WHO YA / GONNA / CALL? for letter shapes.

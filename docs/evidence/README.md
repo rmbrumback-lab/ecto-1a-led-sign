@@ -1,6 +1,6 @@
-# Attribution evidence (v9)
+# Attribution evidence (v10)
 
-One card per element of the animation, showing a small source extract beside our rendering, with the claim, source and status. The full pack is in one PDF: [Ecto-1A_Attribution_Evidence_v9.pdf](Ecto-1A_Attribution_Evidence_v9.pdf). The written audit is in [../ATTRIBUTION.md](../ATTRIBUTION.md).
+One card per element of the animation, showing a small source extract beside our rendering, with the claim, source and status. The full pack is in one PDF: [Ecto-1A_Attribution_Evidence_v10.pdf](Ecto-1A_Attribution_Evidence_v10.pdf). The written audit is in [../ATTRIBUTION.md](../ATTRIBUTION.md).
 
 | # | Element | Status |
 |---|---|---|
@@ -17,7 +17,7 @@ One card per element of the animation, showing a small source extract beside our
 | 11 | [E / L. CALL JL5-2020 in amber](11-e-l-call-jl5-2020-in-amber.png) | SOURCED |
 | 12 | [Colour wipes: A->B and B->C (green), E->F (red), F green->red](12-colour-wipes-a-b-and-b-c-green-e-f-red-f-green-r.png) | INFERRED |
 | 13 | [F. GHOSTBUSTERS green, then red](13-f-ghostbusters-green-then-red.png) | SOURCED |
-| 14 | [G. WE'RE -> green flash -> WE'RE BACK, words swap colours](14-g-we-re-green-flash-we-re-back-words-swap-colour.png) | SOURCED |
+| 14 | [G. Green flash -> WE'RE BACK, words swap colours](14-g-green-flash-we-re-back-words-swap-colours.png) | SOURCED |
 | 15 | [G2. Five lines -> green boxes](15-g2-five-lines-green-boxes.png) | INFERRED |
 | 16 | [H. WHO YA in red](16-h-who-ya-in-red.png) | MEASURED |
 | 17 | [I. GONNA](17-i-gonna.png) | ESTIMATE |

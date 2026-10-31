@@ -68,12 +68,12 @@ Sources:
 | A: red, rapid red/green swaps, settles green | ✅ | T #14: film 01:22:59; Getty clip, about 16 swaps; P1 |
 | B: red text, green border | ✅ | P2 |
 | C: WE'RE READY colour **and font** | ⚠️ **unknown**, shown thin amber | P15 could be WE'RE or BELIEVE's "VE" |
-| C: built word by word (WE'RE, then READY) | ⚠️ **INFERRED (v9)** | WE'RE BACK is built the same way ("WE'RE" alone first, T #14 Getty). Ryan's inference that WE'RE READY does the same. WE'RE appears where it sits in the full phrase. |
+| C: built word by word (WE'RE, then READY) | ⚠️ **INFERRED (v9–v10)** | The thread's Getty description has a "WE'RE"-alone frame (T #14). Ryan attributes it to the WE'RE READY build-up rather than to WE'RE BACK, so it appears here. WE'RE sits where it does in the full phrase. |
 | D: all red / TO green (rest red) / BELIEVE amber (rest red) | ✅ states observed | P8, P3, P16 |
 | D: highlight moves word by word, TO → BELIEVE → YOU | ✅ **owner observation** (Ryan) | Consistent with P3 and P16, where exactly one word is highlighted. **YOU's highlight colour is INFERRED** as green, continuing TO green → BELIEVE amber. The rate is estimated. |
 | E, L: amber | ✅ | P12, P13, P7 |
 | F: green, then red | ✅ | T #14 |
-| G: WE'RE red then BACK green, words swapping | ✅ | T #14 (Getty); P4, P14 |
+| G: WE'RE red and BACK green, words swapping | ✅ | T #14 (Getty); P4, P14 |
 | H: WHO YA colour | ✅ **red** | V1 frames 44–57: green/red ratio 0.62, matching known red |
 | I: GONNA colour | ⚠️ **unknown**, shown red | Not visible in V1 |
 | J: CALL? colour | ✅ **red** | V1 frames 66–75: ratio 0.60 |
@@ -98,7 +98,8 @@ Sources:
 | F: shimmer | random dropout | ⚠️ **INFERRED (v7)**: green, 2-step sparkle, green again | T #14 (film 01:23:28); T #3 behind-the-scenes ("GHOSTBUSTERS, then shimmer, then GHOSTBUSTERS again"). Look inferred. |
 | F: green-to-red wipe | half-sweep | ⚠️ **left-to-right half step, then red (INFERRED direction, v7)** | T #14 (Getty: F "wiping from green to red"). Direction inferred from V1. |
 | F→G: solid red | rendered | ✅ kept | T #14 (Getty) |
-| G: "WE'RE" red → green flash → WE'RE BACK → words swap | rendered | ✅ kept | T #14 (Getty) |
+| G: green flash → WE'RE BACK → words swap | rendered | ✅ kept | T #14 (Getty) |
+| G: "WE'RE" alone before the green flash | rendered (v2–v9) | ❌ **removed (v10)** | T #14 lists it before WE'RE BACK, but Ryan judges it doesn't belong there. The frame is reassigned as evidence for the WE'RE READY build (C). |
 | Five lines sweeping, then green boxes | rendered | ⚠️ **rendered as an INFERRED reconstruction (v6)** | **Confirmed by V1** (frames 6–31, about 1.9 s, just before WHO YA): green boxes, red vertical lines, segments filling red with dark dividers, then green with red dividers, repeating. Only the right third of the sign is visible and the LEDs aren't resolved, so line positions, segment widths and step timing can't be measured. v6 reconstructs it at Ryan's request: **sourced** — five lines, each wiping across then replaced by a green box, looping (T #14); red fill with dark dividers, green growing outward from points inside each section with red dividers, red sweeping back in from the left, green again (V1 frames 8–30). Seed spacing of about 21 px at about 1.46 px/column is 14–15 columns, consistent with 5 × 16. **Inferred** — 16-column sections, divider in each section's first column, full-height fill, 9 steps of 200 ms (V1 shows about 1.9 s). |
 | J slides upward, then K | rendered | ✅ kept | T #14 (Getty) |
 | Blank sign between CALL? and US! | not shown | ✅ **added**, about 0.8 s | V1 frames 81–90 (800 ms) |

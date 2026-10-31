@@ -58,7 +58,7 @@ The sign uses three fonts. They were identified by enlarging the reference still
 |---|---|---|
 | A GHOSTBUSTERS | red; green; ~16 red/green swaps; settles green | night still (red); thread: film 01:22:59 and Getty clip |
 | B FOR HIRE… | red text, green border | night still |
-| C WE'RE READY | **unknown**, shown amber (font also unconfirmed); built word by word, WE'RE then READY (**inferred**) | no clear reference; the build mirrors WE'RE BACK's WE'RE-alone frame |
+| C WE'RE READY | **unknown**, shown amber (font also unconfirmed); built word by word, WE'RE then READY (**inferred**) | no clear reference; the build is based on the Getty "WE'RE"-alone frame, which Ryan attributes to WE'RE READY |
 | D TO BELIEVE YOU | all red → TO green → BELIEVE amber → YOU green (**inferred colour**) → all red; the other words stay red | states in P3, P8, P16; the word-by-word order is Ryan's observation; the rate is estimated |
 | E / L CALL JL5-2020 | amber | premiere close-ups (red and green clusters both lit) |
 | F GHOSTBUSTERS | green, then red | thread (film 01:23:28; Getty clip) |
@@ -84,7 +84,7 @@ The order and the transitions come from the thread's analysis of the film (timec
 | Red/green swaps (A) | the same glyphs alternate colour every frame, 16 times | Getty clip: "about 16 times" |
 | Colour wipe (A→B, B→C, E→F, F green→red) | **INFERRED (v7):** the colour advances **left to right** over the old message in a half step, then a solid frame (where the thread reports one), then the new message is revealed left to right. The colours are sourced. The direction is inferred from the left-to-right red sweep on this sign in V1 frames 20–23. | thread reports the colours |
 | Green → red (F) | cut | thread |
-| Solid red (F→G), green flash (G) | one solid frame | Getty clip |
+| Solid red (F→G), green flash opening G | one solid frame each | Getty clip |
 | Word colour swap (G) | WE'RE/BACK alternate red/green | Getty clip |
 | Static border (B) | perimeter pixels green where the text is unlit | FOR HIRE still |
 | Arrow blink (K) | arrows on/off over 5 frames | Getty clip |
