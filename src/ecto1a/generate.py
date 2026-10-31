@@ -188,6 +188,50 @@ def hold(f, n):
 
 
 # --------------------------------------------------------------------------- sequence
+def lines_boxes():
+    """INFERRED reconstruction of the "five lines -> green boxes" graphic (see docs/ATTRIBUTION.md).
+
+    Sourced: five vertical lines spread across the sign, each wiping across before being replaced
+    by a green box, looping (GBFans thread, Getty analysis); red wipe fill with dark dividers, green
+    growing outward from points inside each section with red dividers, red sweeping back in from
+    the left, green again (deleted-scene clip V1, frames 8-30, ~1.9 s; seed spacing ~14-15 cols).
+    Inferred: 16-column sections, divider in column 0 of each, full-height fill, step counts.
+    """
+    SEG, N = 16, 5
+
+    def frame(fill):                       # fill(seg_col) -> colour for columns 1..15
+        f = blank()
+        for k in range(N):
+            for c in range(1, SEG):
+                v = fill(c)
+                for y in range(H):
+                    f[y][k * SEG + c] = v
+        return f
+
+    def with_divider(f, colour):
+        for k in range(N):
+            for y in range(H):
+                f[y][k * SEG] = colour
+        return f
+
+    c0 = SEG // 2                            # section centre (col 8)
+    out = []
+    # 1. a red line wipes across each section, leaving red fill (dark dividers)
+    out.append(frame(lambda c: R if c == 1 else OFF))
+    out.append(frame(lambda c: R if c <= 8 else OFF))
+    out.append(frame(lambda c: R))
+    # 2. green box grows outward from each section's centre (dividers red)
+    out.append(with_divider(frame(lambda c: G if abs(c - c0) <= 3 else R), R))
+    out.append(with_divider(frame(lambda c: G), R))
+    # 3. red sweeps back in from the left of each section
+    out.append(with_divider(frame(lambda c: R if c <= 8 else G), R))
+    out.append(frame(lambda c: R))
+    # 4. green grows again (loop)
+    out.append(with_divider(frame(lambda c: G if abs(c - c0) <= 3 else R), R))
+    out.append(with_divider(frame(lambda c: G), R))
+    return out
+
+
 def reveal_centre(new, old_keep, half):
     """New frame revealed outward from the centre column; outside the revealed span the
     old frame's pixels (old_keep) stay lit. Seen in the deleted-scene clip for US! -> CALL."""
@@ -199,9 +243,10 @@ def build_segments():
     """Return [(id, label, [frames])] in playback order. Ids follow the GBFans A-L scheme.
 
     Only attributable elements are rendered; see docs/ATTRIBUTION.md. Effects known to exist
-    but whose appearance is undocumented (shimmer, wipe direction, lines -> boxes geometry)
-    are not drawn. Holds for H-L follow timings measured from the deleted-scene clip (V1);
-    holds elsewhere are estimates sized to the 113-frame upload limit.
+    but whose appearance is undocumented (shimmer, wipe direction) are not drawn; the lines ->
+    boxes graphic is an INFERRED reconstruction. Holds for H-L follow timings measured
+    from the deleted-scene clip (V1); holds elsewhere are estimates sized to the 113-frame
+    upload limit.
     """
     A_r = narrow("GHOSTBUSTERS", R)
     A_g = recolor(A_r, G)
@@ -223,23 +268,25 @@ def build_segments():
     L = E
 
     seg = []
-    a = [shift(A_r, 4), shift(A_r, 2)] + hold(A_r, 2)          # rises in red after L slides out (V1)
-    a += hold(A_g, 3)                                          # green (shimmer here not rendered)
+    a = [shift(A_r, 4), shift(A_r, 2)] + hold(A_r, 1)          # rises in red after L slides out (V1)
+    a += hold(A_g, 2)                                          # green (shimmer here not rendered)
     a += [A_r if i % 2 == 0 else A_g for i in range(16)]       # ~16 rapid swaps, ends green
     a += [blank(G)]                                            # solid green
     seg.append(("A", "GHOSTBUSTERS - rises red, green, 16 red/green swaps, solid green", a))
-    seg.append(("B", "FOR HIRE... - red, green border; solid green", hold(B, 5) + [blank(G)]))
-    seg.append(("C", "WE'RE READY - thin; cut to D", hold(C, 5)))
+    seg.append(("B", "FOR HIRE... - red, green border; solid green", hold(B, 4) + [blank(G)]))
+    seg.append(("C", "WE'RE READY - thin; cut to D", hold(C, 4)))
     seg.append(("D", "TO BELIEVE YOU - thin, observed colour states; wipes down as E slides in",
                 hold(D_red, 2) + hold(D_tog, 2) + hold(D_bely, 2)
                 + [stack(E, D_red, 5), stack(E, D_red, 2)]))
-    seg.append(("E", "CALL JL5-2020 - thin, amber; solid red", hold(E, 5) + [blank(R)]))
+    seg.append(("E", "CALL JL5-2020 - thin, amber; solid red", hold(E, 4) + [blank(R)]))
     seg.append(("F", "GHOSTBUSTERS - green (shimmer not rendered), red, solid red",
-                hold(A_g, 4) + hold(A_r, 2) + [blank(R)]))
+                hold(A_g, 3) + hold(A_r, 2) + [blank(R)]))
     seg.append(("G", "WE'RE BACK - WE'RE red, green flash, WE'RE BACK, words swap colours",
-                hold(G_were, 2) + [blank(G)] + hold(G_rg, 3) + [G_gr, G_rg, G_gr, G_rg]))
+                hold(G_were, 2) + [blank(G)] + hold(G_rg, 2) + [G_gr, G_rg, G_gr, G_rg]))
+    seg.append(("G2", "Five lines wipe across, green boxes grow, red sweeps back, green again (INFERRED)",
+                lines_boxes()))
     seg.append(("H", "WHO YA - red", hold(Hf, 3)))
-    seg.append(("I", "GONNA", hold(I, 3)))
+    seg.append(("I", "GONNA", hold(I, 2)))
     seg.append(("J", "CALL? - red; slides up and out; blank ~0.8 s",
                 hold(J, 4) + [shift(J, -3), shift(J, -6)] + hold(blank(), 4)))
     seg.append(("K", "US! - red alone, then green arrows (on ~1.2 s, off ~0.8 s, on)",

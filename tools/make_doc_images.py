@@ -56,7 +56,7 @@ font_sheet("bold_wide", FONTS["bold_wide"], G)
 font_sheet("thin", FONTS["thin"], Y)
 
 # Storyboard: a representative frame from each segment
-pick = {"A": 2, "B": 0, "C": 0, "D": 3, "E": 0, "F": 0, "G": 4,
+pick = {"A": 2, "B": 0, "C": 0, "D": 3, "E": 0, "F": 0, "G": 4, "G2": 3,
         "H": 0, "I": 0, "J": 0, "K": 3, "L": 2}
 segs = build_segments()
 scale, lab_w = 7, 430
@@ -92,3 +92,19 @@ for i_ in imgs:
     im.paste(i_, (0, y)); y += i_.height + 8
 im.save(os.path.join(OUT, "hero.png"))
 print("doc images written to", os.path.abspath(OUT))
+
+# Inferred lines -> boxes graphic: every step, labelled (our rendering only; no film frames)
+g2 = [fr for sid, _, fr in segs if sid == "G2"][0]
+labels = ["1 red line wipes", "2 half filled", "3 full red, dark dividers",
+          "4 green grows from centres", "5 full green, red dividers", "6 red sweeps back from left",
+          "7 full red", "8 green grows again", "9 full green"]
+steps = [led_image(f, 6) for f in g2]
+lh = steps[0].height + 22
+im = Image.new("RGB", (steps[0].width + 330, lh * len(steps) + 40), BG)
+d = ImageDraw.Draw(im)
+d.text((10, 8), "Lines -> boxes (G2): INFERRED reconstruction, 200 ms per step", fill=(235, 235, 235), font=font_obj(16))
+for i, (st, lab) in enumerate(zip(steps, labels)):
+    y = 34 + i * lh
+    im.paste(st, (10, y))
+    d.text((st.width + 22, y + st.height // 2 - 8), lab, fill=(200, 200, 200), font=font_obj(14))
+im.save(os.path.join(OUT, "lines_boxes_steps.png"))

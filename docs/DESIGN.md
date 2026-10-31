@@ -89,12 +89,26 @@ The order and the transitions come from the thread's analysis of the film (timec
 | Static border (B) | perimeter pixels green where the text is unlit | FOR HIRE still |
 | Arrow blink (K) | arrows on/off over 5 frames | Getty clip |
 
+### Inferred: five lines → green boxes (G2)
+
+Rendered as a best-effort reconstruction. The thread describes five vertical lines, each wiping across before being replaced by a green box, looping several times. The deleted-scene clip (V1, frames 8–30, about 1.9 s) shows the right third of the sign, out of focus.
+
+| Step | Frame | Sourced from V1 / thread | Inferred |
+|---|---|---|---|
+| 1–3 | red line → half fill → full red; dark dividers | red wipe fill with dark dividers (V1 8–14); "each one wipes across" (thread) | 5 sections × 16 columns; divider in each section's column 0; left-to-right; 3 steps |
+| 4–5 | green grows from each section's centre to full; dividers red | green growing outward from points in each section, red dividers (V1 15–19) | growth from the exact centre; full height; 2 steps |
+| 6–7 | red sweeps back from the left → full red | red re-entering from the left of each section (V1 20–25) | half then full; 2 steps |
+| 8–9 | green grows again → full green | second green phase (V1 26–30); "loops multiple times" (thread) | 2 steps; loop count 1.5 |
+
+Scale check: the green seeds are about 21 px apart at about 1.46 px per column (taken from the width of CALL JL5-2020 in the same shot). That is 14–15 columns, consistent with five 16-column sections.
+
+![Lines → boxes reconstruction vs clip](images/lines_boxes_steps.png)
+
 ### Known but not rendered
 
 | Effect | Where | Why it's not drawn |
 |---|---|---|
 | Shimmer | A (before the swaps), F | its look is undocumented; the green frame is held instead |
-| Five sweeping lines → green boxes | between G and H | **confirmed in V1**: red lines, then red and green fills with dividers. But only a third of the sign is visible, and it's out of focus, so the geometry isn't recoverable |
 | Wipe motion | A→B, B→C, E→F, F | direction is undocumented |
 | Possible slide/flip in A | A | the thread hedges it ("seems", "possibly") |
 
@@ -102,4 +116,4 @@ The order and the transitions come from the thread's analysis of the film (timec
 
 The CoolLED1248 format has **one delay for the whole animation**. Holds are therefore made by repeating frames. The upload protocol limits a 16×96 animation to 113 frames (65,535 bytes ÷ 576 bytes per frame).
 
-At 200 ms per frame this gives a 22.4-second loop of 112 frames. **J–L are timed from the deleted-scene clip (V1)**: CALL? about 0.8 s, blank 0.8 s, US! 3.2 s with arrows, CALL JL5-2020 about 2.4 s including the reveal. **All other durations are estimates.** Holds of 0.6–1.2 s were shortened to fit the measured segments within the 113-frame limit, and are likely shorter than the real sign's. A microcontroller build is not bound by the frame limit: use `ecto1a_playlist.json` and stretch the holds.
+At 200 ms per frame this gives a 22.6-second loop of 113 frames, exactly at the upload limit. **J–L are timed from the deleted-scene clip (V1)**: CALL? about 0.8 s, blank 0.8 s, US! 3.2 s with arrows, CALL JL5-2020 about 2.4 s including the reveal. **All other durations are estimates.** Holds of 0.4–1.0 s were shortened to fit the measured segments and the inferred G2 graphic within the 113-frame limit, and are likely shorter than the real sign's. A microcontroller build is not bound by the frame limit: use `ecto1a_playlist.json` and stretch the holds.

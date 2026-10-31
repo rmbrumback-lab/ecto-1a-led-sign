@@ -2,7 +2,7 @@
 
 Every screen, text, colour and effect in the animation is listed here with its source.
 
-**Rule applied (v4):** an element stays only if a reference shows it, or the GBFans thread reports it as an observation. Reports hedged as "possibly", "seems", "my guess" or "?" don't count. Where something is confirmed to exist but nobody has documented *how it looks*, it is **not rendered**, because rendering it would mean inventing it.
+**Rule applied (v4):** an element stays only if a reference shows it, or the GBFans thread reports it as an observation. Reports hedged as "possibly", "seems", "my guess" or "?" don't count. Where something is confirmed to exist but nobody has documented *how it looks*, it is **not rendered**, because rendering it would mean inventing it. **One exception, at Ryan's request:** the lines → boxes graphic (G2) is rendered as a clearly labelled **inferred** reconstruction, with its sourced and inferred parts separated below.
 
 Sources:
 
@@ -96,7 +96,7 @@ Sources:
 | F: green-to-red wipe | half-sweep | ✅ **cut green → red** | T #14. Direction undocumented. |
 | F→G: solid red | rendered | ✅ kept | T #14 (Getty) |
 | G: "WE'RE" red → green flash → WE'RE BACK → words swap | rendered | ✅ kept | T #14 (Getty) |
-| Five lines sweeping, then green boxes | rendered | ❌ **still not rendered** | **Confirmed by V1** (frames 6–31, about 1.9 s, just before WHO YA): green boxes, red vertical lines, segments filling red with dark dividers, then green with red dividers, repeating. Only the right third of the sign is visible and the LEDs aren't resolved, so line positions, segment widths and step timing still can't be reproduced accurately. |
+| Five lines sweeping, then green boxes | rendered | ⚠️ **rendered as an INFERRED reconstruction (v6)** | **Confirmed by V1** (frames 6–31, about 1.9 s, just before WHO YA): green boxes, red vertical lines, segments filling red with dark dividers, then green with red dividers, repeating. Only the right third of the sign is visible and the LEDs aren't resolved, so line positions, segment widths and step timing can't be measured. v6 reconstructs it at Ryan's request: **sourced** — five lines, each wiping across then replaced by a green box, looping (T #14); red fill with dark dividers, green growing outward from points inside each section with red dividers, red sweeping back in from the left, green again (V1 frames 8–30). Seed spacing of about 21 px at about 1.46 px/column is 14–15 columns, consistent with 5 × 16. **Inferred** — 16-column sections, divider in each section's first column, full-height fill, 9 steps of 200 ms (V1 shows about 1.9 s). |
 | J slides upward, then K | rendered | ✅ kept | T #14 (Getty) |
 | Blank sign between CALL? and US! | not shown | ✅ **added**, about 0.8 s | V1 frames 81–90 (800 ms) |
 | US! appears before the arrows | not shown | ✅ **added**, about 0.6 s | V1 frames 91–98 (640 ms) |
@@ -114,6 +114,7 @@ J (blank), K and L are **measured from V1**, rounded to 200 ms frames. V1 is a G
 These would replace estimates with facts:
 
 - clear frames of **GONNA**, and sharp frames of WHO YA / CALL? for letter shapes;
-- a clear look at the **shimmer**, and a sharp, full-width view of the **lines → boxes** graphic (V1 confirms it but can't resolve it);
+- a clear look at the **shimmer**;
+- a sharp, full-width view of the **lines → boxes** graphic, to replace the inferred geometry with measured geometry;
 - the **direction of the wipes**;
 - whether the **FOR HIRE border** moves.

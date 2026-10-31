@@ -71,11 +71,21 @@ A 181-frame GIF of the deleted museum scene was analysed frame by frame. Colours
 - **Video-confirmed:** L slides down and red GHOSTBUSTERS rises.
 - **Lines → boxes:** confirmed to exist, in red lines and red/green fills with dividers, but still not rendered. Only a third of the sign is visible and it is out of focus.
 
+## v6: inferred lines → boxes
+
+At Ryan's request, the lines → boxes graphic was reconstructed rather than omitted, and is labelled **inferred** throughout.
+
+- **Sourced:** the thread's description, plus the clip's phase order, colours and seed spacing.
+- **Inferred:** 5 × 16-column sections, divider placement, full-height fill and step counts.
+- **Scale check:** the clip's seed spacing is 14–15 columns against the 16 that five even sections imply.
+- **Frame budget:** to fit the 9 new frames inside the 113-frame upload limit, the estimated holds in A–G and I were shortened. The measured J–L timings were left as they were.
+
 ## Open questions
 
 - GONNA's colour, and sharp frames of WHO YA / GONNA / CALL? for letter shapes.
 - Whether the FOR HIRE border animates.
-- What the shimmer and the lines → boxes graphic actually look like, and the direction of the wipes.
+- What the shimmer looks like, and the direction of the wipes.
+- The real geometry of the lines → boxes graphic (currently inferred).
 - A sharp frame of the US! arrows.
 - True film timing. Uninterrupted footage of the full loop isn't known to exist.
 
