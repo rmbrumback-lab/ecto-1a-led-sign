@@ -188,50 +188,65 @@ def hold(f, n):
 
 
 # --------------------------------------------------------------------------- sequence
+def reveal_centre(new, old_keep, half):
+    """New frame revealed outward from the centre column; outside the revealed span the
+    old frame's pixels (old_keep) stay lit. Seen in the deleted-scene clip for US! -> CALL."""
+    lo, hi = W // 2 - half, W // 2 + half
+    return [[new[y][x] if lo <= x < hi else old_keep[y][x] for x in range(W)] for y in range(H)]
+
+
 def build_segments():
     """Return [(id, label, [frames])] in playback order. Ids follow the GBFans A-L scheme.
 
     Only attributable elements are rendered; see docs/ATTRIBUTION.md. Effects known to exist
-    but whose appearance is undocumented (shimmer, wipe direction, lines -> boxes) are not drawn.
+    but whose appearance is undocumented (shimmer, wipe direction, lines -> boxes geometry)
+    are not drawn. Holds for H-L follow timings measured from the deleted-scene clip (V1);
+    holds elsewhere are estimates sized to the 113-frame upload limit.
     """
     A_r = narrow("GHOSTBUSTERS", R)
     A_g = recolor(A_r, G)
     B = border(narrow("FOR HIRE...", R, gap=2, space=6))
-    C = thin("WE'RE READY", Y)                      # colour unknown (estimate)
+    C = thin("WE'RE READY", Y)                      # font/colour unknown (estimate)
     s = "TO BELIEVE YOU"
     D_red, D_tog, D_bely = (thin(s, per_word(s, c)) for c in ([R, R, R], [G, R, R], [R, Y, R]))
     E = thin("CALL JL5-2020", Y)
     s = "WE'RE BACK"
     G_were = wide("WE'RE", R, start=0)
     G_rg, G_gr = wide(s, per_word(s, [R, G])), wide(s, per_word(s, [G, R]))
-    Hf, I, J = wide("WHO YA", G), wide("GONNA", R), wide("CALL?", G)   # font/colour estimated
+    Hf = wide("WHO YA", R)      # red: measured in V1
+    I = wide("GONNA", R)        # colour unknown (estimate); not visible in V1
+    J = wide("CALL?", R)        # red: measured in V1
     k = "> US! <"
     K_on = wide(k, [G, OFF, R, R, R, OFF, G], space=6)
     K_off = wide(k, [OFF, OFF, R, R, R, OFF, OFF], space=6)
+    arrows_only = wide(k, [G, OFF, OFF, OFF, OFF, OFF, G], space=6)
     L = E
 
     seg = []
-    a = [shift(A_r, 4), shift(A_r, 2)] + hold(A_r, 4)          # rises in red after L slides out
-    a += hold(A_g, 5)                                          # green (shimmer here not rendered)
+    a = [shift(A_r, 4), shift(A_r, 2)] + hold(A_r, 2)          # rises in red after L slides out (V1)
+    a += hold(A_g, 3)                                          # green (shimmer here not rendered)
     a += [A_r if i % 2 == 0 else A_g for i in range(16)]       # ~16 rapid swaps, ends green
     a += [blank(G)]                                            # solid green
     seg.append(("A", "GHOSTBUSTERS - rises red, green, 16 red/green swaps, solid green", a))
-    seg.append(("B", "FOR HIRE... - red, green border; solid green", hold(B, 7) + [blank(G)]))
-    seg.append(("C", "WE'RE READY - thin; cut to D", hold(C, 7)))
+    seg.append(("B", "FOR HIRE... - red, green border; solid green", hold(B, 5) + [blank(G)]))
+    seg.append(("C", "WE'RE READY - thin; cut to D", hold(C, 5)))
     seg.append(("D", "TO BELIEVE YOU - thin, observed colour states; wipes down as E slides in",
-                hold(D_red, 3) + hold(D_tog, 3) + hold(D_bely, 3)
+                hold(D_red, 2) + hold(D_tog, 2) + hold(D_bely, 2)
                 + [stack(E, D_red, 5), stack(E, D_red, 2)]))
-    seg.append(("E", "CALL JL5-2020 - thin, amber; solid red", hold(E, 7) + [blank(R)]))
+    seg.append(("E", "CALL JL5-2020 - thin, amber; solid red", hold(E, 5) + [blank(R)]))
     seg.append(("F", "GHOSTBUSTERS - green (shimmer not rendered), red, solid red",
-                hold(A_g, 6) + hold(A_r, 2) + [blank(R)]))
+                hold(A_g, 4) + hold(A_r, 2) + [blank(R)]))
     seg.append(("G", "WE'RE BACK - WE'RE red, green flash, WE'RE BACK, words swap colours",
-                hold(G_were, 3) + [blank(G)] + hold(G_rg, 4) + [G_gr, G_rg, G_gr, G_rg]))
-    seg.append(("H", "WHO YA", hold(Hf, 4)))
-    seg.append(("I", "GONNA", hold(I, 4)))
-    seg.append(("J", "CALL? - slides up and out", hold(J, 4) + [shift(J, -3), shift(J, -6)]))
-    seg.append(("K", "US! - red, blinking green arrows pointing in", [K_on, K_off, K_on, K_off, K_on]))
-    seg.append(("L", "CALL JL5-2020 - slides down; GHOSTBUSTERS rises to loop",
-                hold(L, 5) + [shift(L, 3), shift(L, 6)]))
+                hold(G_were, 2) + [blank(G)] + hold(G_rg, 3) + [G_gr, G_rg, G_gr, G_rg]))
+    seg.append(("H", "WHO YA - red", hold(Hf, 3)))
+    seg.append(("I", "GONNA", hold(I, 3)))
+    seg.append(("J", "CALL? - red; slides up and out; blank ~0.8 s",
+                hold(J, 4) + [shift(J, -3), shift(J, -6)] + hold(blank(), 4)))
+    seg.append(("K", "US! - red alone, then green arrows (on ~1.2 s, off ~0.8 s, on)",
+                hold(K_off, 3) + hold(K_on, 6) + hold(K_off, 4) + hold(K_on, 3)))
+    seg.append(("L", "CALL JL5-2020 - reveals from centre (arrows stay), holds ~2 s, slides down",
+                [reveal_centre(L, arrows_only, 8), reveal_centre(L, arrows_only, 16)]
+                + hold(L, 10) + [shift(L, 3), shift(L, 6)]))
     return seg
 
 

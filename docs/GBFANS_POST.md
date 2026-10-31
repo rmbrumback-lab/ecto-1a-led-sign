@@ -48,8 +48,9 @@ The IDs match prodestrian's A–L frames. It's one 22-second loop:
 4. **TO BELIEVE YOU**, in the three colour states seen across the film and premiere shots. It then wipes down as **CALL JL5-2020** (amber) slides in from the top.
 5. Solid red, then **GHOSTBUSTERS** in green, red, then solid red.
 6. **WE'RE** (red) → green flash → **WE'RE BACK**, with the words swapping colours.
-7. **WHO YA**, **GONNA**, **CALL?** (which slides up and out), then **US!** with blinking arrows pointing in.
-8. **CALL JL5-2020** slides down, and GHOSTBUSTERS rises to start again.
+7. **WHO YA** and **GONNA**, then red **CALL?**, which slides up and out. The sign then goes dark briefly.
+8. **US!** appears on its own, then the green arrows come on, off and on again.
+9. **CALL JL5-2020** opens out from the centre while the arrows are still lit, holds, slides down, and GHOSTBUSTERS rises to start again.
 
 ---
 
@@ -59,7 +60,7 @@ Three things are known to happen on the real sign, but nobody has documented *wh
 
 * **The shimmer** on GHOSTBUSTERS. The green frame is held where it happens.
 * **The direction of the colour wipes.** Each is shown as one solid frame of the reported colour.
-* **The five lines that sweep and turn into green boxes**, between WE'RE BACK and WHO YA. We only have a written description, with no line colour, positions or box size.
+* **The five lines that sweep and turn into green boxes**, between WE'RE BACK and WHO YA. The deleted-scene clip confirms it (red lines, then red and green fills with dividers), but only a third of the sign is in shot, out of focus. I can't get the line positions or segment widths right yet.
 
 I also dropped the possible upside-down flip in GHOSTBUSTERS, since the thread only says "possibly". **If anyone has clear footage of any of these, post it and I'll add them properly.**
 
@@ -85,7 +86,14 @@ I also dropped the possible upside-down flip in GHOSTBUSTERS, since the thread o
 * **TO BELIEVE YOU** shows three different colour states.
 * The green shapes beside **US!** are arrows pointing *in* at the word.
 
-**4. The green offset.** The panel version uses two panel rows per sign row. That let me draw the green half a pixel lower than the red, just like the real sign, where "BACK" doesn't line up with "WE'RE":
+**4. The deleted-scene clip.** I went through the Hardemeyer deleted-scene GIF frame by frame, all 181 frames, calibrating colours against things we already know (red US!, green arrows, amber CALL). It showed:
+
+* **WHO YA** and **CALL?** are **red**.
+* After CALL?, the sign goes **dark for about 0.8 s**.
+* **US!** appears alone first; the arrows then come on for about 1.2 s, go off for 0.8 s, and come back.
+* **CALL JL5-2020 opens out from the centre** while the arrows are still lit. You can see "JL5" between the arrows, then "L JL5-20", then the full text. It holds about 2 s, then slides down as red GHOSTBUSTERS rises.
+
+**5. The green offset.** The panel version uses two panel rows per sign row. That let me draw the green half a pixel lower than the red, just like the real sign, where "BACK" doesn't line up with "WE'RE":
 
 ![offset](https://raw.githubusercontent.com/rmbrumback-lab/ecto-1a-led-sign/main/docs/images/offset_closeup.png)
 
@@ -95,12 +103,12 @@ I also dropped the possible upside-down flip in GHOSTBUSTERS, since the thread o
 
 These frames are confirmed to exist, but some details aren't:
 
-* the font and colours of **WE'RE READY**, **WHO YA**, **GONNA** and **CALL?**;
+* the font and colour of **WE'RE READY**, the colour of **GONNA**, and the exact letter shapes of WHO YA / GONNA / CALL?;
 * the order of the TO BELIEVE YOU colour states;
 * the US! arrowhead shape (the premiere frames are heavily blurred);
-* all the timing.
+* the timing of everything before WHO YA (J–L are timed from the deleted-scene clip).
 
-Each one is marked in the attribution audit. **Clear shots of WHO YA, GONNA or CALL? would settle most of this.** If you have them, please post them.
+Each one is marked in the attribution audit. **A clear shot of GONNA, or a sharp full-width shot of the lines → boxes graphic, would settle most of what's left.** If you have them, please post them.
 
 ---
 
@@ -108,7 +116,7 @@ Each one is marked in the attribution audit. **Clear shots of WHO YA, GONNA or C
 
 * **CoolLED1248 (16×96):** download the `.jt` to your phone (Android), tap it, and open with CoolLED1248. The app versions that support `.jt` import are 2.x. iOS import isn't confirmed yet.
 * **Any other sign or app:** the repo's `dist/` folder has:
-  * `frames_80x7/` — 109 PNGs, 200 ms each
+  * `frames_80x7/` — 112 PNGs, 200 ms each
   * a sprite sheet
   * `ecto1a_frames.json` — every frame as 0/1/2/3 values (off/red/green/both, the same scheme prodestrian proposed)
   * `ecto1a_playlist.json` — deduplicated

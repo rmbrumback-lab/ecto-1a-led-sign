@@ -58,9 +58,22 @@ Every element was checked against the thread text and the reference photos (see 
   - F's green→red is now a cut.
 - **Flagged as unknown:** the colours of WE'RE READY, WHO YA, GONNA and CALL?, and all timing.
 
+## v5: deleted-scene clip analysis
+
+A 181-frame GIF of the deleted museum scene was analysed frame by frame. Colours were calibrated against confirmed elements (red US!, green arrows, amber CALL JL5-2020).
+
+- **Corrected:** WHO YA and CALL? are **red** (v4 showed them green).
+- **Added, with measured timing:**
+  - the sign goes blank for about 0.8 s after CALL?;
+  - US! appears alone for about 0.6 s before the arrows;
+  - the arrows show on about 1.2 s, off about 0.8 s, then on again;
+  - CALL JL5-2020 is revealed outward from the centre while the arrows are still lit, then holds about 2 s.
+- **Video-confirmed:** L slides down and red GHOSTBUSTERS rises.
+- **Lines → boxes:** confirmed to exist, in red lines and red/green fills with dividers, but still not rendered. Only a third of the sign is visible and it is out of focus.
+
 ## Open questions
 
-- The WHO YA, GONNA and CALL? frames: their font and colours, if reference images exist.
+- GONNA's colour, and sharp frames of WHO YA / GONNA / CALL? for letter shapes.
 - Whether the FOR HIRE border animates.
 - What the shimmer and the lines → boxes graphic actually look like, and the direction of the wipes.
 - A sharp frame of the US! arrows.

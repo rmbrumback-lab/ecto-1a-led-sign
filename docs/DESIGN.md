@@ -63,7 +63,9 @@ The sign uses three fonts. They were identified by enlarging the reference still
 | E / L CALL JL5-2020 | amber | premiere close-ups (red and green clusters both lit) |
 | F GHOSTBUSTERS | green, then red | thread (film 01:23:28; Getty clip) |
 | G WE'RE BACK | WE'RE red, BACK green, then swapped | book scan; thread (Getty clip) |
-| H WHO YA / I GONNA / J CALL? | **unknown**, shown green / red / green | thread had crops; not supplied |
+| H WHO YA | red | deleted-scene clip V1, measured |
+| I GONNA | **unknown**, shown red | not visible in V1 |
+| J CALL? | red | V1, measured |
 | K US! | red word, green arrows | premiere frames |
 
 ## 4. Sequence and effects
@@ -75,7 +77,9 @@ The order and the transitions come from the thread's analysis of the film (timec
 | Effect | Implementation | Source |
 |---|---|---|
 | L slides down, A slides up (red) | content shifted 2–3 rows per frame | film 01:23:17; museum arrival |
-| J slides up and out | as above | Getty clip |
+| J slides up and out, then blank about 0.8 s | as above; then 4 blank frames | Getty clip; V1 |
+| US! alone, then arrows on/off/on | 3 frames alone; arrows 6 on, 4 off, 3 on | V1 |
+| US! → CALL JL5-2020 | text revealed outward from the centre, in 2 steps, while the arrows stay lit | V1 frames 132–137 |
 | D wipes down as E slides in from the top | E above D on a 15-row strip, viewed at offsets 5, then 2 | film 01:24:46; Getty clip |
 | Red/green swaps (A) | the same glyphs alternate colour every frame, 16 times | Getty clip: "about 16 times" |
 | Colour wipe (A→B, B→C, E→F) | **one solid frame of the reported colour**, then the next message. No sweep is drawn because the wipe direction is undocumented. | thread reports the colours |
@@ -90,7 +94,7 @@ The order and the transitions come from the thread's analysis of the film (timec
 | Effect | Where | Why it's not drawn |
 |---|---|---|
 | Shimmer | A (before the swaps), F | its look is undocumented; the green frame is held instead |
-| Five sweeping lines → green boxes | between G and H | described in words only: line colour, positions, box size and timing are unknown |
+| Five sweeping lines → green boxes | between G and H | **confirmed in V1**: red lines, then red and green fills with dividers. But only a third of the sign is visible, and it's out of focus, so the geometry isn't recoverable |
 | Wipe motion | A→B, B→C, E→F, F | direction is undocumented |
 | Possible slide/flip in A | A | the thread hedges it ("seems", "possibly") |
 
@@ -98,4 +102,4 @@ The order and the transitions come from the thread's analysis of the film (timec
 
 The CoolLED1248 format has **one delay for the whole animation**. Holds are therefore made by repeating frames. The upload protocol limits a 16×96 animation to 113 frames (65,535 bytes ÷ 576 bytes per frame).
 
-At 200 ms per frame this gives a 21.8-second loop of 109 frames. **All durations are estimates.** No uninterrupted footage of the full loop is known, and message holds of 0.8–1.4 s are likely shorter than the real sign's. A microcontroller build is not bound by the frame limit: use `ecto1a_playlist.json` and stretch the holds.
+At 200 ms per frame this gives a 22.4-second loop of 112 frames. **J–L are timed from the deleted-scene clip (V1)**: CALL? about 0.8 s, blank 0.8 s, US! 3.2 s with arrows, CALL JL5-2020 about 2.4 s including the reveal. **All other durations are estimates.** Holds of 0.6–1.2 s were shortened to fit the measured segments within the 113-frame limit, and are likely shorter than the real sign's. A microcontroller build is not bound by the frame limit: use `ecto1a_playlist.json` and stretch the holds.

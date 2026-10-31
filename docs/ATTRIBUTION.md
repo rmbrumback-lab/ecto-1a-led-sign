@@ -20,6 +20,7 @@ Sources:
   - P14: book scan, WE'RE BACK
   - P15: Getty close-up, thin amber "WE"/"VE"
   - P16: Getty close-up, red O, amber BELIEVE
+- **V1** — deleted-scene GIF (Hardemeyer at the museum): 181 frames, 14.8 s, 654×376. It matches the thread's description of `i.imgur.com/yjkGYPb.gif`. The sign sits out of focus behind the actors and is partly blocked, so letter shapes can't be read, but colours, transitions and timing can. Colours were calibrated against elements already confirmed: US! red (green/red ratio 0.65), the arrows green (0.95), CALL JL5-2020 amber (0.85). Frame numbers below refer to V1.
 
 ## Hardware
 
@@ -37,7 +38,7 @@ Sources:
 | Bold narrow, FOR HIRE… | ✅ kept | P2 |
 | Bold wide B, A, C, K | ✅ kept, pixel-exact | P14 |
 | Bold wide W, E, ', R | ✅ kept | P14 (red, softer focus) |
-| Bold wide H, O, Y, G, N, L, U, S, ?, ! | ⚠️ kept, **glyphs estimated** | No reference supplied. WHO YA / GONNA / CALL? / US! need these letters. |
+| Bold wide H, O, Y, G, N, L, U, S, ?, ! | ⚠️ kept, **glyphs estimated** | V1 shows WHO YA, CALL? and US! in a bold style, but too blurred to read letter shapes |
 | Thin 5×7 font family | ✅ kept | P12, P13, P16 (CALL, BELIEVE, O) |
 | Thin glyphs not seen in a reference (e.g. R, A, D, Y, T, U) | ⚠️ kept, standard 5×7 forms | Family confirmed; individual letters not seen |
 
@@ -70,7 +71,9 @@ Sources:
 | E, L: amber | ✅ | P12, P13, P7 |
 | F: green, then red | ✅ | T #14 |
 | G: WE'RE red then BACK green, words swapping | ✅ | T #14 (Getty); P4, P14 |
-| H, I, J colours | ⚠️ **unknown**, shown green / red / green | Thread had crops; not supplied here |
+| H: WHO YA colour | ✅ **red** | V1 frames 44–57: green/red ratio 0.62, matching known red |
+| I: GONNA colour | ⚠️ **unknown**, shown red | Not visible in V1 |
+| J: CALL? colour | ✅ **red** | V1 frames 66–75: ratio 0.60 |
 | K: red US!, green arrows | ✅ | P5, P6; T #14 ("green arrows start to blink") |
 
 ## Effects and transitions
@@ -93,20 +96,24 @@ Sources:
 | F: green-to-red wipe | half-sweep | ✅ **cut green → red** | T #14. Direction undocumented. |
 | F→G: solid red | rendered | ✅ kept | T #14 (Getty) |
 | G: "WE'RE" red → green flash → WE'RE BACK → words swap | rendered | ✅ kept | T #14 (Getty) |
-| Five lines sweeping, then green boxes | rendered | ❌ **removed** | T #14 describes it only in words. Line colour, line positions, box size and timing are unknown, so v3.1's version was invented. |
+| Five lines sweeping, then green boxes | rendered | ❌ **still not rendered** | **Confirmed by V1** (frames 6–31, about 1.9 s, just before WHO YA): green boxes, red vertical lines, segments filling red with dark dividers, then green with red dividers, repeating. Only the right third of the sign is visible and the LEDs aren't resolved, so line positions, segment widths and step timing still can't be reproduced accurately. |
 | J slides upward, then K | rendered | ✅ kept | T #14 (Getty) |
-| K: arrows blink | rendered | ✅ kept | T #14 (Getty) |
-| L: slides down | rendered | ✅ kept | T #14 |
+| Blank sign between CALL? and US! | not shown | ✅ **added**, about 0.8 s | V1 frames 81–90 (800 ms) |
+| US! appears before the arrows | not shown | ✅ **added**, about 0.6 s | V1 frames 91–98 (640 ms) |
+| K: arrows blink | rendered | ✅ **retimed**: on about 1.2 s, off 0.8 s, on 0.6 s | V1 frames 99–131 (read visually; the camera moves) |
+| K→L: CALL JL5-2020 revealed outward from the centre while the arrows stay lit | not shown | ✅ **added** | V1 frames 132–137 (470 ms): frame 132 shows "JL5" between the arrows, frame 135 "L JL5-20", then the full text with the arrows off |
+| L: hold | estimate | ✅ **retimed** to about 2 s | V1 frames 138–164 (2,140 ms) |
+| L: slides down, red GHOSTBUSTERS rises | rendered | ✅ kept, **video-confirmed** | T #14; V1 frames 165–170 (390 ms) |
 
 ## Timing
 
-All durations are **estimates**. No uninterrupted footage of the full loop is known (T #3). The 16 swaps follow T #14. Holds are sized to fit the CoolLED upload limit of 113 frames at 16×96.
+J (blank), K and L are **measured from V1**, rounded to 200 ms frames. V1 is a GIF, so its timing is assumed close to, but not guaranteed to be, real time. All other durations are **estimates**, sized to fit the CoolLED upload limit of 113 frames at 16×96. The 16 swaps follow T #14.
 
 ## How to help
 
 These would replace estimates with facts:
 
-- clear frames of **WHO YA, GONNA, CALL?** (the thread has crops);
-- a clear look at the **shimmer** and the **lines → boxes** graphic;
+- clear frames of **GONNA**, and sharp frames of WHO YA / CALL? for letter shapes;
+- a clear look at the **shimmer**, and a sharp, full-width view of the **lines → boxes** graphic (V1 confirms it but can't resolve it);
 - the **direction of the wipes**;
 - whether the **FOR HIRE border** moves.
