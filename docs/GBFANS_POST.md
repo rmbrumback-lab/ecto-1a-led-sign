@@ -3,6 +3,9 @@ GBFans post draft (Discourse markdown). Suggested title:
   "Screen-accurate ECTO-1A sign animation — CoolLED file + open data for any LED build"
 Suggested category: Equipment > Ectomobiles. Reply in the reference thread too, linking here.
 Repository: https://github.com/rmbrumback-lab/ecto-1a-led-sign
+Live topic: https://forum.gbfans.com/t/screen-accurate-ecto-1a-sign-animation-coolled-file-open-data-for-any-led-build/219532
+Note (1 Nov 2026): this copy includes the iOS / two-panel testing line. The live opening post
+couldn't be edited (new-user limits), so the update was posted as reply #4 instead.
 -->
 
 # Screen-accurate ECTO-1A sign animation — CoolLED file + open data for any LED build
