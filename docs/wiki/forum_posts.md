@@ -21,6 +21,10 @@ A record of the GBFans forum posts that shaped the wiki page, kept so future rev
 - **Credit** either at the specific spot or at the bottom of the page. The page does both: footnotes inline, plus Credits and References sections.
 - Wiki pages are living documents: publish and improve.
 
-## Reply to AJ Quick (draft, not yet posted)
+## Replies
 
-> Thanks, AJ, that's really helpful! I've started the page at Ecto-1A LED Sign Boards with the hardware, messages, fonts, sequence, inferred effects, numbered pixel-map plans for every message, a build guide, and credits as footnotes plus a section at the bottom. The images are uploaded directly to the page. For the downloads, I have a single zip (about 590 KB) with the CoolLED files, frame data, Arduino header, plans and font sheets. What's the best way to get it to you for hosting? Until then, the Downloads section links to the GitHub repository. Edits and corrections are very welcome.
+- **Ryan, 1 November 2026:** "Sounds great! I'll start working on the content…"
+
+## Follow-up for when the page is live (draft, not yet posted)
+
+> The Ecto-1A LED Sign Boards page is up: hardware, messages, fonts, sequence, inferred effects, numbered pixel-map plans for every message, a build guide, downloads, and credits. The images are uploaded directly to the page. For hosting the downloads on GBFans, I have a single zip (about 580 KB) with the CoolLED files, frame data, Arduino header, plans and font sheets. What's the best way to get it to you? Until then, the Downloads section links to GitHub. Edits and corrections are very welcome.
