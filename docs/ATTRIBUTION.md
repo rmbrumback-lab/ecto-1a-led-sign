@@ -17,7 +17,7 @@ Sources:
   - P8–P9: museum stills, TO BELIEVE / CALL JL5-
   - P10–P11: deleted-scene GIFs, red GHOS…
   - P12–P13: Getty premiere close-ups, CALL JL5-2020
-  - P14: book scan, WE'RE BACK
+  - P14: book scan, WE'RE BACK (a *Ghostbusters II* production still, Columbia Pictures / Sony; source book unidentified)
   - P15: Getty close-up, thin amber "WE"/"VE"
   - P16: Getty close-up, red O, amber BELIEVE
   - Credits and rights holders for every image: [evidence/README.md](evidence/README.md)

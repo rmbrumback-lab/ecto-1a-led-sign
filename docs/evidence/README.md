@@ -44,7 +44,7 @@ The source extracts are small crops of third-party images, used here only to att
 | P5, P6, P7 | 1989 *Ghostbusters II* premiere footage frames | Getty Images news footage (clip 1032076844); also on YouTube | Footage found by Kingpin (post #7) |
 | P10, P11 | Deleted-scene GIF frames | *Ghostbusters II* (1989), Columbia Pictures / Sony Pictures | prodestrian (post #3) |
 | P12, P13, P15, P16 | Premiere close-up screen grabs (watermarked) | Getty Images, clip 1032076844 | zerosum (post #9) |
-| P14 | Book scan of the WE'RE BACK sign | Publisher of the source book (not identified in the thread) | zerosum (post #10) |
+| P14 | Book scan of the WE'RE BACK sign | *Ghostbusters II* (1989) production still, Columbia Pictures / Sony Pictures. Scanned from a book that isn't named in the thread and couldn't be identified (the scan has no caption or page text). | zerosum (post #10) |
 | V1 | Deleted museum-scene GIF, 181 frames | *Ghostbusters II* (1989), Columbia Pictures / Sony Pictures | Matches the thread's link to `i.imgur.com/yjkGYPb.gif` (prodestrian, post #3) |
 
 Thread: [Screen Accurate ECTO-1A Dot Matrix LED Sign (Reference)](https://forum.gbfans.com/t/screen-accurate-ecto-1a-dot-matrix-led-sign-reference/26454). If you're a rights holder and want an extract removed, please open an issue.
