@@ -145,7 +145,6 @@ On Android, download the file, tap it, and open it with CoolLED1248 (app version
 ### Attribution evidence
 
 - **[Ecto-1A_Attribution_Evidence_v10.pdf](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/Ecto-1A_Attribution_Evidence_v10.pdf)**: one card per element, showing a credited source extract beside the recreation and marking it sourced, measured, estimate or inferred.
-- The written audit: [ATTRIBUTION.md](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/ATTRIBUTION.md).
 
 The source extracts in the PDF (film stills, Getty Images news footage, a book scan) belong to their owners. They are included only for attribution and comparison, and aren't covered by the project's MIT licence.
 
