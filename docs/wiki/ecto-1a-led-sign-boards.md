@@ -140,7 +140,7 @@ All files below are on GitHub. A single zip of the build files will also be host
   - [Ecto-1A_GB2_16x96_Part1.jt](https://github.com/rmbrumback-lab/ecto-1a-led-sign/raw/main/dist/two_part/Ecto-1A_GB2_16x96_Part1.jt) (A–F, 112 frames)
   - [Ecto-1A_GB2_16x96_Part2.jt](https://github.com/rmbrumback-lab/ecto-1a-led-sign/raw/main/dist/two_part/Ecto-1A_GB2_16x96_Part2.jt) (G–L, 109 frames)
 
-On Android, download the file, tap it, and open it with CoolLED1248 (app version 2.x). iOS import isn't confirmed yet.
+On iOS or Android, download the file, tap it, and open it with CoolLED1248 (app version 2.x).
 
 ### Attribution evidence
 
