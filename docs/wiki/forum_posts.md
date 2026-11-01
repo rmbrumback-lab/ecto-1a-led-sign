@@ -30,7 +30,7 @@ A record of the GBFans forum posts that shaped the wiki page, kept so future rev
 
 - **Ryan, 1 November 2026:** "Sounds great! I'll start working on the content…"
 
-## Follow-up for when the page is live (draft v4, not yet posted; scheduled 3:11 PM EST, 1 November 2026)
+## Follow-up for when the page is live (draft v4, not yet posted; scheduled 3:15 PM EST, 1 November 2026, after the 3:11 PM wiki save)
 
 > The Ecto-1A LED Sign Boards page is now up, with the hardware, messages, fonts, sequence, inferred effects, numbered pixel-map plans for every message, a build guide, downloads, and credits. The images are uploaded directly to the page.
 >
