@@ -122,8 +122,8 @@ The plans below show every message as a numbered pixel map. Columns run 0–79 f
 - **CoolLED1248 panels (16 × 96):** these inexpensive Bluetooth panels can load a ready-made animation file. A single file holds at most 113 frames, so there are two versions:
   - a **single file** with compressed timing (22.6 s);
   - a **two-part, screen-timed** version (44.2 s). Load both files and play Part 1 then Part 2.
-  
-  Each board row uses two panel rows, so the green can sit half a pixel lower than the red, as on the real boards.
+
+  Both versions have been tested on two separate 16 × 96 panels. Each board row uses two panel rows, so the green can sit half a pixel lower than the red, as on the real boards.
 - **Arduino, ESP32 and other microcontrollers:** use the C header, or the JSON frame data, which stores every pixel as 0 (off), 1 (red), 2 (green) or 3 (both). A microcontroller isn't limited to 113 frames, so the holds can be stretched to film timing.
 - **RGB matrices (HUB75, WS2812):** map "both" to an amber such as RGB (255, 180, 0). Pure yellow looks greenish on most panels.
 - **Scratch-built replica:** use separate red and green LED clusters in an 80 × 7 grid, drive the two colours independently, and mount the green slightly below the red.

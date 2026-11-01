@@ -98,7 +98,7 @@ See [docs/ATTRIBUTION.md](docs/ATTRIBUTION.md) and the [evidence cards](docs/evi
 
    ![Red/green offset](docs/images/offset_closeup.png)
 
-6. **Validation.** The encoder reproduces four CoolLED1248 app-exported files byte-for-byte. The output is decoded by JT-Edit's own import function with zero mismatches, and a test suite checks the protocol limits and layout facts. See [docs/VALIDATION.md](docs/VALIDATION.md).
+6. **Validation.** The encoder reproduces four CoolLED1248 app-exported files byte-for-byte. The output is decoded by JT-Edit's own import function with zero mismatches, and a test suite checks the protocol limits and layout facts. Both the single file and the two-part files have been tested on two separate physical 16×96 panels, imported from iOS. See [docs/VALIDATION.md](docs/VALIDATION.md).
 
 The project went through four iterations as more reference material surfaced. They are documented in [docs/RESEARCH.md](docs/RESEARCH.md).
 

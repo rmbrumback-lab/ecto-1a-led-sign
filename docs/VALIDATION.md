@@ -1,6 +1,6 @@
 # Validation
 
-The CoolLED1248 format is undocumented by the vendor, so the output was checked against three independent references.
+The CoolLED1248 format is undocumented by the vendor, so the output was checked against three independent references, then tested on real panels.
 
 ## 1. Encoder matches the app's own exports
 
@@ -51,10 +51,9 @@ During development, its output was also compared pixel-by-pixel with the generat
 | `test_dist_parts_are_current` | the committed part files equal freshly generated output |
 | `test_to_believe_you_highlights_one_word_at_a_time` | at most one word highlighted per frame, in the order TO → BELIEVE → YOU, in both builds |
 
-## 4. App import
+## 4. Tested on real hardware
 
-- **iOS:** tested by the project owner on 1 November 2026. The `.jt` file imports into CoolLED1248 and works.
+Tested by the project owner on 1 November 2026:
 
-## Not yet verified
-
-- **On-device playback** on a physical 16×96 panel. The limits above come from the protocol; panel firmware could be stricter.
+- **iOS:** the `.jt` files import into CoolLED1248 and work.
+- **On-device playback:** the single file and the two-part files (Part 1 then Part 2) both play correctly on **two separate** physical 16×96 CoolLED panels. That confirms the 113-frame and 65,535-byte limits hold on real panel firmware.
