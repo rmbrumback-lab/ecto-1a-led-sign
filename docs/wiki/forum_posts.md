@@ -25,6 +25,10 @@ A record of the GBFans forum posts that shaped the wiki page, kept so future rev
 
 - **Ryan, 1 November 2026:** "Sounds great! I'll start working on the content…"
 
-## Follow-up for when the page is live (draft, not yet posted)
+## Follow-up for when the page is live (draft v2, not yet posted)
 
-> The Ecto-1A LED Sign Boards page is up: hardware, messages, fonts, sequence, inferred effects, numbered pixel-map plans for every message, a build guide, downloads, and credits. The images are uploaded directly to the page. For hosting the downloads on GBFans, I have a single zip (about 580 KB) with the CoolLED files, frame data, Arduino header, plans and font sheets. What's the best way to get it to you? Until then, the Downloads section links to GitHub. Edits and corrections are very welcome.
+> The Ecto-1A LED Sign Boards page is now up, with the hardware, messages, fonts, sequence, inferred effects, numbered pixel-map plans for every message, a build guide, downloads, and credits. The images are uploaded directly to the page.
+>
+> For the downloads, I have everything in a single zip file (about 580 KB) that can be hosted on GBFans: the ready-to-load CoolLED files, frame-by-frame data, the Arduino/ESP32 header, the plans and pixel maps, and the font sheets. What's the best way to get it to you?
+>
+> Edits and corrections are very welcome. Thanks again for setting up the page!
