@@ -131,9 +131,67 @@ The plans below show every message as a numbered pixel map. Columns run 0–79 f
 
 ## Downloads
 
-- **Build files (v10.1):** CoolLED files (single and two-part), 80 × 7 PNG frames, JSON frame data and playlist, sprite sheet, Arduino/ESP32 header, these plans, plain-text pixel maps, and font sheets. *(Download to be hosted on GBFans.com.)*
-- **Source code and full documentation:** the open-source repository at [github.com/rmbrumback-lab/ecto-1a-led-sign](https://github.com/rmbrumback-lab/ecto-1a-led-sign). It includes the generator, the file-format notes, validation, and a per-element attribution audit with evidence cards. The code and data are MIT-licensed.
-- **Discussion:** [Screen-accurate ECTO-1A sign animation](https://forum.gbfans.com/t/screen-accurate-ecto-1a-sign-animation-coolled-file-open-data-for-any-led-build/219532) in the forum.
+All files below are on GitHub. A single zip of the build files will also be hosted on GBFans.com.
+
+### CoolLED1248 files (16 × 96 panel)
+
+- **Single file**, compressed timing, 113 frames, 22.6 s: [Ecto-1A_GB2_16x96.jt](https://github.com/rmbrumback-lab/ecto-1a-led-sign/raw/main/dist/Ecto-1A_GB2_16x96.jt)
+- **Two-part, screen-timed**, 44.2 s. Load both and play Part 1 then Part 2:
+  - [Ecto-1A_GB2_16x96_Part1.jt](https://github.com/rmbrumback-lab/ecto-1a-led-sign/raw/main/dist/two_part/Ecto-1A_GB2_16x96_Part1.jt) (A–F, 112 frames)
+  - [Ecto-1A_GB2_16x96_Part2.jt](https://github.com/rmbrumback-lab/ecto-1a-led-sign/raw/main/dist/two_part/Ecto-1A_GB2_16x96_Part2.jt) (G–L, 109 frames)
+
+On Android, download the file, tap it, and open it with CoolLED1248 (app version 2.x). iOS import isn't confirmed yet.
+
+### Attribution evidence
+
+- **[Ecto-1A_Attribution_Evidence_v10.pdf](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/Ecto-1A_Attribution_Evidence_v10.pdf)**: one card per element, showing a credited source extract beside the recreation and marking it sourced, measured, estimate or inferred.
+- The written audit: [ATTRIBUTION.md](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/ATTRIBUTION.md).
+- The individual evidence cards:
+  - [1. Hardware: 80 x 7 red/green matrix, green sits lower](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/01-hardware-80-x-7-red-green-matrix-green-sits-lowe.png) (sourced)
+  - [2. Font: bold narrow (GHOSTBUSTERS, FOR HIRE...)](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/02-font-bold-narrow-ghostbusters-for-hire.png) (sourced)
+  - [3. Font: bold wide (WE'RE BACK, WHO YA, GONNA, CALL?, US!)](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/03-font-bold-wide-we-re-back-who-ya-gonna-call-us.png) (sourced)
+  - [4. Font: thin 5x7 (CALL JL5-2020, TO BELIEVE YOU)](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/04-font-thin-5x7-call-jl5-2020-to-believe-you.png) (sourced)
+  - [5. A. GHOSTBUSTERS: rises in red after CALL JL5-2020 slides down](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/05-a-ghostbusters-rises-in-red-after-call-jl5-2020-.png) (sourced)
+  - [6. A. GHOSTBUSTERS: ~16 rapid red/green swaps, settles green, solid green](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/06-a-ghostbusters-16-rapid-red-green-swaps-settles-.png) (sourced)
+  - [7. B. FOR HIRE... in red inside a green border](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/07-b-for-hire-in-red-inside-a-green-border.png) (sourced)
+  - [8. C. WE'RE READY](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/08-c-we-re-ready.png) (estimate)
+  - [9. D. TO BELIEVE YOU: highlight moves word by word](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/09-d-to-believe-you-highlight-moves-word-by-word.png) (sourced)
+  - [10. D -> E. TO BELIEVE YOU wipes down as CALL JL5-2020 slides in from the top](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/10-d-e-to-believe-you-wipes-down-as-call-jl5-2020-s.png) (sourced)
+  - [11. E / L. CALL JL5-2020 in amber](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/11-e-l-call-jl5-2020-in-amber.png) (sourced)
+  - [12. Colour wipes: A->B and B->C (green), E->F (red), F green->red](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/12-colour-wipes-a-b-and-b-c-green-e-f-red-f-green-r.png) (inferred)
+  - [13. F. GHOSTBUSTERS green, then red](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/13-f-ghostbusters-green-then-red.png) (sourced)
+  - [14. G. Green flash -> WE'RE BACK, words swap colours](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/14-g-green-flash-we-re-back-words-swap-colours.png) (sourced)
+  - [15. G2. Five lines -> green boxes](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/15-g2-five-lines-green-boxes.png) (inferred)
+  - [16. H. WHO YA in red](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/16-h-who-ya-in-red.png) (measured)
+  - [17. I. GONNA](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/17-i-gonna.png) (estimate)
+  - [18. J. CALL? in red, slides up, sign blank ~0.8 s](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/18-j-call-in-red-slides-up-sign-blank-0-8-s.png) (measured)
+  - [19. K. US! alone, then green arrows on / off / on](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/19-k-us-alone-then-green-arrows-on-off-on.png) (measured)
+  - [20. K -> L. CALL JL5-2020 opens from centre, arrows lit](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/20-k-l-call-jl5-2020-opens-from-centre-arrows-lit.png) (measured)
+  - [21. L. CALL JL5-2020 holds ~2 s, then slides down](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/21-l-call-jl5-2020-holds-2-s-then-slides-down.png) (measured)
+  - [22. Shimmer on green GHOSTBUSTERS (A and F)](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/22-shimmer-on-green-ghostbusters-a-and-f.png) (inferred)
+  - [23. Timing: single file and two-part screen-timed build](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/23-timing-single-file-and-two-part-screen-timed-bui.png) (estimate)
+
+The source extracts on the evidence cards (film stills, Getty Images news footage, a book scan) belong to their owners. They are included only for attribution and comparison, and aren't covered by the project's MIT licence.
+
+### Image files
+
+- **Frames:** [113 PNG frames](https://github.com/rmbrumback-lab/ecto-1a-led-sign/tree/main/dist/frames_80x7), 80 × 7, 1 pixel = 1 LED, 200 ms each; [sprite sheet](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/dist/ecto1a_spritesheet_80x7.png).
+- **Animated previews:** [80 × 7 GIF](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/dist/ecto1a_80x7.gif), [16 × 96 panel GIF](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/dist/ecto1a_96x16_panel.gif), [screen-timed GIF](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/dist/two_part/ecto1a_96x16_full.gif).
+- **Plans:** [A: GHOSTBUSTERS](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/plans/plan_A.png), [B: FOR HIRE…](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/plans/plan_B.png), [C: WE'RE READY](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/plans/plan_C.png), [D: TO BELIEVE YOU](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/plans/plan_D.png), [E: CALL JL5-2020](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/plans/plan_E.png), [F: GHOSTBUSTERS (second)](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/plans/plan_F.png), [G: WE'RE BACK](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/plans/plan_G.png), [G2: five lines → boxes](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/plans/plan_G2.png), [H: WHO YA](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/plans/plan_H.png), [I: GONNA](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/plans/plan_I.png), [J: CALL?](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/plans/plan_J.png), [K: US!](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/plans/plan_K.png), [L: CALL JL5-2020 (second)](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/plans/plan_L.png); [plain-text pixel maps](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/plans/ecto1a_pixel_maps.txt); [panel mapping](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/plans/panel_mapping.png).
+- **Fonts:** [bold wide](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/images/font_bold_wide.png), [bold narrow](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/images/font_bold_narrow.png), [thin 5 × 7](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/images/font_thin.png).
+- **Diagrams:** [storyboard](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/images/storyboard.png), [red/green offset close-up](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/images/offset_closeup.png), [wipes and shimmer](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/images/wipes_shimmer_steps.png), [lines → boxes](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/images/lines_boxes_steps.png).
+
+### Code for other platforms
+
+- **[Porting guide](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/PORTING.md):** which file to use for each app or board, building a pixel-exact GIF, an Arduino example, RGB matrices, true red/green hardware, and scaling to other panel sizes.
+- **Arduino / ESP32 / Teensy:** [ecto1a_frames.h](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/dist/ecto1a_frames.h), the deduplicated frames and playlist as `PROGMEM` arrays (2 bits per pixel).
+- **Raspberry Pi, web, Python, JavaScript:** [ecto1a_frames.json](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/dist/ecto1a_frames.json) (every frame), [ecto1a_playlist.json](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/dist/ecto1a_playlist.json) (deduplicated), and the screen-timed [ecto1a_full_frames.json](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/dist/two_part/ecto1a_full_frames.json) / [ecto1a_full_playlist.json](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/dist/two_part/ecto1a_full_playlist.json).
+- **Generator:** [generate.py](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/src/ecto1a/generate.py) builds every frame and export, including CoolLED files for other panel sizes. The [file-format notes](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/JT_FORMAT.md) document the `.jt` format.
+- **Full repository:** [github.com/rmbrumback-lab/ecto-1a-led-sign](https://github.com/rmbrumback-lab/ecto-1a-led-sign), with design notes, validation and the research log. The code and data are MIT-licensed.
+
+### Discussion
+
+- [Screen-accurate ECTO-1A sign animation](https://forum.gbfans.com/t/screen-accurate-ecto-1a-sign-animation-coolled-file-open-data-for-any-led-build/219532) in the forum.
 
 ## Open questions
 
