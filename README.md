@@ -34,7 +34,7 @@ This project builds directly on research by the GBFans community. See **[Credits
 - [Legal](#legal)
 
 Detailed documentation:
-[Design](docs/DESIGN.md) · [JT file format](docs/JT_FORMAT.md) · [Porting guide](docs/PORTING.md) · [Attribution audit](docs/ATTRIBUTION.md) · [Evidence cards](docs/evidence/) · [Validation](docs/VALIDATION.md) · [Research log](docs/RESEARCH.md) · [GBFans post](docs/GBFANS_POST.md)
+[Design](docs/DESIGN.md) · [JT file format](docs/JT_FORMAT.md) · [Porting guide](docs/PORTING.md) · [Attribution audit](docs/ATTRIBUTION.md) · [Evidence cards](docs/evidence/) · [Validation](docs/VALIDATION.md) · [Research log](docs/RESEARCH.md) · [GBFans post](docs/GBFANS_POST.md) · [Build plans](docs/plans/) · [GBFans wiki page draft](docs/wiki/ecto-1a-led-sign-boards.md)
 
 ---
 
