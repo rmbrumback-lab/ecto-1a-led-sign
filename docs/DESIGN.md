@@ -8,16 +8,16 @@ This document records how every element of the recreation was decided: what the 
 |---|---|---|
 | Resolution | 80 × 7 pixels | GBFans thread (counted from film frames) |
 | Pixel | a cluster of 4 LEDs, never driven separately | GBFans thread close-ups |
-| Colours | separate red and green clusters per pixel; both lit reads as amber | GBFans thread |
+| Colors | separate red and green clusters per pixel; both lit reads as amber | GBFans thread |
 | Vertical offset | green clusters sit lower than red | GBFans thread; visible in the WE'RE BACK scan |
-| Count | 560 pixels per colour, 4,480 LEDs per sign | GBFans thread |
+| Count | 560 pixels per color, 4,480 LEDs per sign | GBFans thread |
 | Two signs | one per side, always showing the same content | GBFans thread |
 | Manufacturer | unknown | thread investigation is ongoing |
 
-### Modelling choices
+### Modeling choices
 
 - **Logical model:** 80 × 7 grid, each pixel `0` off, `1` red, `2` green, `3` both. This matches the 4-state encoding prodestrian proposed in the thread, so the data can be shared with other projects as-is.
-- **Panel mapping (16×96):** the 80 columns map 1:1, centred with 8 columns of margin each side. Each sign row becomes 2 panel rows. Red uses panel rows `2y, 2y+1`; green uses `2y+1, 2y+2`. So green sits half a sign pixel lower, as on the real hardware. A red+green pixel shows red on top, amber in the middle, and green underneath. 15 of the 16 panel rows are used.
+- **Panel mapping (16×96):** the 80 columns map 1:1, centered with 8 columns of margin each side. Each sign row becomes 2 panel rows. Red uses panel rows `2y, 2y+1`; green uses `2y+1, 2y+2`. So green sits half a sign pixel lower, as on the real hardware. A red+green pixel shows red on top, amber in the middle, and green underneath. 15 of the 16 panel rows are used.
 
 ![Offset close-up](images/offset_closeup.png)
 
@@ -31,7 +31,7 @@ The sign uses three fonts. They were identified by enlarging the reference still
 
 - Letters are 7 columns wide with 2-pixel strokes. Letters are separated by 2 blank columns, and words by 2.
 - **B, A, C, K** were read pixel-for-pixel from the green half of the hi-res WE'RE BACK book scan, where every LED cluster is distinct. B has a 2-column serif on its top and bottom rows.
-- **W, E, ', R** were read from the red half of the same scan. The red is softer, so these are slightly less certain. W is 10 wide, with an "LIJ" shape: a centre stroke from row 2 and joined feet.
+- **W, E, ', R** were read from the red half of the same scan. The red is softer, so these are slightly less certain. W is 10 wide, with an "LIJ" shape: a center stroke from row 2 and joined feet.
 - **Check:** W10+E7+'3+R7+E7 plus gaps is 42 columns, a 2-column space follows, and B9+A7+C7+K7 plus gaps is 36 columns. That totals exactly **80**, so the phrase fills columns 0–79 as in the photo.
 - H, O, Y, G, N, L, U, S, ?, ! are drawn in the same style but **not seen in any reference** (estimate).
 - `<` and `>` are the US! arrows. In both premiere frames the shaft runs away from the word and the tall head faces it, so both arrows point inward.
@@ -52,14 +52,14 @@ The sign uses three fonts. They were identified by enlarging the reference still
 - Confirmed by premiere-footage close-ups of CALL, BELIEVE and a thin amber "WE". In the close-up, the E's top and bottom rows are 5 pixels and its middle row is 4.
 - TO BELIEVE YOU is 75 columns wide, so it fills the sign, matching the film still.
 
-## 3. Colours per frame
+## 3. Colors per frame
 
-| Frame | Colours | Evidence |
+| Frame | Colors | Evidence |
 |---|---|---|
 | A GHOSTBUSTERS | red; green; ~16 red/green swaps; settles green | night still (red); thread: film 01:22:59 and Getty clip |
 | B FOR HIRE… | red text, green border | night still |
 | C WE'RE READY | **unknown**, shown amber (font also unconfirmed) | no clear reference |
-| D TO BELIEVE YOU | all red → TO green → BELIEVE amber → YOU green (**inferred colour**) → all red; the other words stay red | states in P3, P8, P16; the word-by-word order is Ryan's observation; the rate is estimated |
+| D TO BELIEVE YOU | all red → TO green → BELIEVE amber → YOU green (**inferred color**) → all red; the other words stay red | states in P3, P8, P16; the word-by-word order is Ryan's observation; the rate is estimated |
 | E / L CALL JL5-2020 | amber | premiere close-ups (red and green clusters both lit) |
 | F GHOSTBUSTERS | green, then red | thread (film 01:23:28; Getty clip) |
 | G WE'RE BACK | WE'RE red, BACK green, then swapped | book scan; thread (Getty clip) |
@@ -79,13 +79,13 @@ The order and the transitions come from the thread's analysis of the film (timec
 | L slides down, A slides up (red) | content shifted 2–3 rows per frame | film 01:23:17; museum arrival |
 | J slides up and out, then blank about 0.8 s | as above; then 4 blank frames | Getty clip; V1 |
 | US! alone, then arrows on/off/on | 3 frames alone; arrows 6 on, 4 off, 3 on | V1 |
-| US! → CALL JL5-2020 | text revealed outward from the centre, in 2 steps, while the arrows stay lit | V1 frames 132–137 |
+| US! → CALL JL5-2020 | text revealed outward from the center, in 2 steps, while the arrows stay lit | V1 frames 132–137 |
 | D wipes down as E slides in from the top | E above D on a 15-row strip, viewed at offsets 5, then 2 | film 01:24:46; Getty clip |
-| Red/green swaps (A) | the same glyphs alternate colour every frame, 16 times | Getty clip: "about 16 times" |
-| Colour wipe (A→B, B→C, E→F, F green→red) | **INFERRED (v7):** the colour advances **left to right** over the old message in a half step, then a solid frame (where the thread reports one), then the new message is revealed left to right. The colours are sourced. The direction is inferred from the left-to-right red sweep on this sign in V1 frames 20–23. | thread reports the colours |
+| Red/green swaps (A) | the same glyphs alternate color every frame, 16 times | Getty clip: "about 16 times" |
+| Color wipe (A→B, B→C, E→F, F green→red) | **INFERRED (v7):** the color advances **left to right** over the old message in a half step, then a solid frame (where the thread reports one), then the new message is revealed left to right. The colors are sourced. The direction is inferred from the left-to-right red sweep on this sign in V1 frames 20–23. | thread reports the colors |
 | Green → red (F) | cut | thread |
 | Solid red (F→G), green flash opening G | one solid frame each | Getty clip |
-| Word colour swap (G) | WE'RE/BACK alternate red/green | Getty clip |
+| Word color swap (G) | WE'RE/BACK alternate red/green | Getty clip |
 | Static border (B) | perimeter pixels green where the text is unlit | FOR HIRE still |
 | Arrow blink (K) | arrows on/off over 5 frames | Getty clip |
 
@@ -96,7 +96,7 @@ Rendered as a best-effort reconstruction. The thread describes five vertical lin
 | Step | Frame | Sourced from V1 / thread | Inferred |
 |---|---|---|---|
 | 1–3 | red line → half fill → full red; dark dividers | red wipe fill with dark dividers (V1 8–14); "each one wipes across" (thread) | 5 sections × 16 columns; divider in each section's column 0; left-to-right; 3 steps |
-| 4–5 | green grows from each section's centre to full; dividers red | green growing outward from points in each section, red dividers (V1 15–19) | growth from the exact centre; full height; 2 steps |
+| 4–5 | green grows from each section's center to full; dividers red | green growing outward from points in each section, red dividers (V1 15–19) | growth from the exact center; full height; 2 steps |
 | 6–7 | red sweeps back from the left → full red | red re-entering from the left of each section (V1 20–25) | half then full; 2 steps |
 | 8 | full green again | second green phase (V1 26–30); "loops multiple times" (thread) | 1 step (v7, to fit the wipes); loop count 1.5 |
 
@@ -124,4 +124,4 @@ At 200 ms per frame this gives a 22.6-second loop of 113 frames, exactly at the 
 
 ### Two-part, screen-timed version
 
-CoolLED panels can store several programmes and play them in order, so a second build splits the loop into **two files**, each within the 113-frame limit. Part 1 covers A–F (112 frames, 22.4 s) and Part 2 covers G–L (109 frames, 21.8 s), for 44.2 s in total. That doubles the frame budget, so the holds follow real timings: measured values for J–L, 2.0 s message holds based on the measured 2.1 s CALL JL5-2020 hold, a 1.2–1.6 s shimmer (the thread says "a few seconds"), two-step wipes, and three passes of the lines → boxes graphic. Per-element bases are in [ATTRIBUTION.md](ATTRIBUTION.md#timing).
+CoolLED panels can store several programs and play them in order, so a second build splits the loop into **two files**, each within the 113-frame limit. Part 1 covers A–F (112 frames, 22.4 s) and Part 2 covers G–L (109 frames, 21.8 s), for 44.2 s in total. That doubles the frame budget, so the holds follow real timings: measured values for J–L, 2.0 s message holds based on the measured 2.1 s CALL JL5-2020 hold, a 1.2–1.6 s shimmer (the thread says "a few seconds"), two-step wipes, and three passes of the lines → boxes graphic. Per-element bases are in [ATTRIBUTION.md](ATTRIBUTION.md#timing).

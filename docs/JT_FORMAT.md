@@ -23,14 +23,14 @@ A JSON array with one object:
 | `aniData` | int[] | pixel bytes (below) |
 | `frameNum` | int | number of frames |
 | `delays` | int | milliseconds per frame (one value for all frames) |
-| `aniType` | int | `1` = 3-bit colour; `2` = 24-bit RGB (newer "CoolLEDU" panels) |
+| `aniType` | int | `1` = 3-bit color; `2` = 24-bit RGB (newer "CoolLEDU" panels) |
 | `pixelHeight` | int | panel height, e.g. 16 |
 
 Static images use `graffitiData`, `graffitiType` (1/2), `mode`, `speed`, `stayTime`, `pixelWidth` and `pixelHeight`.
 
 ## 3-bit pixel data (`aniType 1`)
 
-Each pixel has 3 bits: red, green, blue. That gives 8 colours: black, red, green, yellow, blue, magenta, cyan, white.
+Each pixel has 3 bits: red, green, blue. That gives 8 colors: black, red, green, yellow, blue, magenta, cyan, white.
 
 `aniData` is three **bit-planes concatenated**, each covering *all* frames:
 

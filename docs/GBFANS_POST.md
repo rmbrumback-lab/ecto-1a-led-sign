@@ -14,9 +14,9 @@ Building on the incredible research in @prodestrian's [Screen Accurate ECTO-1A D
 
 * **A ready-to-load file for CoolLED1248 LED panels** (the cheap Bluetooth panels sold on AliExpress and Amazon), 16×96 size.
 * **Open frame data** (GIF, PNG frames, sprite sheet, JSON, and an Arduino/C header) so you can drive any LED sign, app, or scratch-built replica.
-* **A full attribution audit with evidence cards**: every screen, colour and effect is traced to a post or a reference image, shown side by side with the recreation.
+* **A full attribution audit with evidence cards**: every screen, color and effect is traced to a post or a reference image, shown side by side with the recreation.
 
-My rule: **everything is attributed.** Where the look of an effect isn't documented, it's clearly labelled as *inferred*, with the evidence behind the guess.
+My rule: **everything is attributed.** Where the look of an effect isn't documented, it's clearly labeled as *inferred*, with the evidence behind the guess.
 
 ![preview](https://raw.githubusercontent.com/rmbrumback-lab/ecto-1a-led-sign/main/docs/images/preview_96x16.gif)
 
@@ -52,21 +52,21 @@ The IDs match prodestrian's A–L frames. It's one loop: 22 seconds in the singl
 1. **GHOSTBUSTERS** slides up in red, shimmers in green, rapidly swaps red/green about 16 times, then goes solid green.
 2. **FOR HIRE…** wipes in from the green, in red inside a **green border**, then a green wipe.
 3. **WE'RE READY**, wiped in from the green.
-4. **TO BELIEVE YOU**: the highlight moves word by word: TO (green), BELIEVE (amber), then YOU. YOU's colour is my guess. It then wipes down as **CALL JL5-2020** (amber) slides in from the top.
+4. **TO BELIEVE YOU**: the highlight moves word by word: TO (green), BELIEVE (amber), then YOU. YOU's color is my guess. It then wipes down as **CALL JL5-2020** (amber) slides in from the top.
 5. A red wipe, then **GHOSTBUSTERS** in green with the shimmer, wiping from green to red, then solid red.
-6. A green flash → **WE'RE BACK**, with the words swapping colours.
+6. A green flash → **WE'RE BACK**, with the words swapping colors.
 7. The **five lines → green boxes** graphic. This is my *inferred* reconstruction; see below.
 8. **WHO YA** and **GONNA**, then red **CALL?**, which slides up and out. The sign then goes dark briefly.
 9. **US!** appears on its own, then the green arrows come on, off and on again.
-10. **CALL JL5-2020** opens out from the centre while the arrows are still lit, holds, slides down, and GHOSTBUSTERS rises to start again.
+10. **CALL JL5-2020** opens out from the center while the arrows are still lit, holds, slides down, and GHOSTBUSTERS rises to start again.
 
 ---
 
 ## What I inferred, and why
 
-Three things are confirmed to happen on the real sign, but nobody has documented exactly *what they look like*. I've reconstructed them as best guesses, labelled as such everywhere:
+Three things are confirmed to happen on the real sign, but nobody has documented exactly *what they look like*. I've reconstructed them as best guesses, labeled as such everywhere:
 
-**1. The colour wipes.** The thread confirms each wipe and its colour: green into FOR HIRE…, green before WE'RE READY, red into the second GHOSTBUSTERS, and green-to-red within it. Nobody records the direction. In the deleted-scene clip, red sweeps in **from the left** on this sign during the lines → boxes graphic, so I've drawn every wipe left to right.
+**1. The color wipes.** The thread confirms each wipe and its color: green into FOR HIRE…, green before WE'RE READY, red into the second GHOSTBUSTERS, and green-to-red within it. Nobody records the direction. In the deleted-scene clip, red sweeps in **from the left** on this sign during the lines → boxes graphic, so I've drawn every wipe left to right.
 
 **2. The shimmer.** It's confirmed on green GHOSTBUSTERS: for a few seconds before the red/green swaps (Getty footage), and after the red wipe (film; the behind-the-scenes footage shows GHOSTBUSTERS, shimmer, GHOSTBUSTERS again). I couldn't measure the thread's shimmer GIFs, so it's rendered as random per-pixel sparkle.
 
@@ -90,9 +90,9 @@ I dropped one thing outright: the possible upside-down flip in GHOSTBUSTERS, sin
 
 ## How I worked it out
 
-**1. The file format.** CoolLED's `.jt` files turn out to be JSON containing the frames as colour bit-planes. I worked out the layout from JT-Edit and the coolledx driver. I then proved it by re-encoding four files exported by the CoolLED app and getting byte-identical results. One catch: the panel's upload protocol caps a 16×96 animation at **113 frames**. That's why the timing is tighter than in the film.
+**1. The file format.** CoolLED's `.jt` files turn out to be JSON containing the frames as color bit-planes. I worked out the layout from JT-Edit and the coolledx driver. I then proved it by re-encoding four files exported by the CoolLED app and getting byte-identical results. One catch: the panel's upload protocol caps a 16×96 animation at **113 frames**. That's why the timing is tighter than in the film.
 
-**2. The sequence.** I took this straight from prodestrian's analysis: what transitions into what, the slides, the solid colour frames, and the colour swaps.
+**2. The sequence.** I took this straight from prodestrian's analysis: what transitions into what, the slides, the solid color frames, and the color swaps.
 
 **3. The photos.** I enlarged the stills posted in the thread and laid an 80×7 grid over each one, with perspective correction on the angled shots. That turned up:
 
@@ -104,16 +104,16 @@ I dropped one thing outright: the possible upside-down flip in GHOSTBUSTERS, sin
 ![bold wide font](https://raw.githubusercontent.com/rmbrumback-lab/ecto-1a-led-sign/main/docs/images/font_bold_wide.png)
 
 * **FOR HIRE…** has a green border.
-* **CALL JL5-2020** is amber. You can see both colours lit in the Getty close-up.
+* **CALL JL5-2020** is amber. You can see both colors lit in the Getty close-up.
 * **TO BELIEVE YOU** shows one word highlighted at a time (TO green, BELIEVE amber), so I've animated it word by word through YOU.
 * The green shapes beside **US!** are arrows pointing *in* at the word.
 
-**4. The deleted-scene clip.** I went through the Hardemeyer deleted-scene GIF frame by frame, all 181 frames, calibrating colours against things we already know (red US!, green arrows, amber CALL). It showed:
+**4. The deleted-scene clip.** I went through the Hardemeyer deleted-scene GIF frame by frame, all 181 frames, calibrating colors against things we already know (red US!, green arrows, amber CALL). It showed:
 
 * **WHO YA** and **CALL?** are **red**.
 * After CALL?, the sign goes **dark for about 0.8 s**.
 * **US!** appears alone first; the arrows then come on for about 1.2 s, go off for 0.8 s, and come back.
-* **CALL JL5-2020 opens out from the centre** while the arrows are still lit. You can see "JL5" between the arrows, then "L JL5-20", then the full text. It holds about 2 s, then slides down as red GHOSTBUSTERS rises.
+* **CALL JL5-2020 opens out from the center** while the arrows are still lit. You can see "JL5" between the arrows, then "L JL5-20", then the full text. It holds about 2 s, then slides down as red GHOSTBUSTERS rises.
 
 **5. The green offset.** The panel version uses two panel rows per sign row. That let me draw the green half a pixel lower than the red, just like the real sign, where "BACK" doesn't line up with "WE'RE":
 
@@ -125,8 +125,8 @@ I dropped one thing outright: the possible upside-down flip in GHOSTBUSTERS, sin
 
 These frames are confirmed to exist, but some details aren't:
 
-* the font and colour of **WE'RE READY**, the colour of **GONNA**, and the exact letter shapes of WHO YA / GONNA / CALL?;
-* YOU's highlight colour, and the speed of the word-by-word highlight;
+* the font and color of **WE'RE READY**, the color of **GONNA**, and the exact letter shapes of WHO YA / GONNA / CALL?;
+* YOU's highlight color, and the speed of the word-by-word highlight;
 * the US! arrowhead shape (the premiere frames are heavily blurred);
 * the exact look of the wipes, shimmer and lines → boxes graphic (all inferred);
 * the exact timing of everything before CALL? (J–L are timed from the deleted-scene clip; the two-part version uses 2-second holds based on the measured CALL JL5-2020 hold).
@@ -137,7 +137,7 @@ Each one is marked in the attribution audit. **A clear shot of GONNA, or a sharp
 
 ## Using it
 
-* **CoolLED1248 (16×96):** download the `.jt` to your phone (iOS or Android), tap it, and open with CoolLED1248. A single file holds at most 113 frames, so the single-file version compresses the timing. If your panel can play two programmes in a row, use **Part 1 + Part 2** for screen-accurate timing. The app versions that support `.jt` import are 2.x. **Tested:** both the single file and Part 1 + Part 2 play correctly on two separate 16×96 panels, imported from iOS.
+* **CoolLED1248 (16×96):** download the `.jt` to your phone (iOS or Android), tap it, and open with CoolLED1248. A single file holds at most 113 frames, so the single-file version compresses the timing. If your panel can play two programs in a row, use **Part 1 + Part 2** for screen-accurate timing. The app versions that support `.jt` import are 2.x. **Tested:** both the single file and Part 1 + Part 2 play correctly on two separate 16×96 panels, imported from iOS.
 * **Any other sign or app:** the repo's `dist/` folder has:
   * `frames_80x7/` — 113 PNGs, 200 ms each
   * a sprite sheet
@@ -147,6 +147,6 @@ Each one is marked in the attribution audit. **A clear shot of GONNA, or a sharp
 * The `docs/PORTING.md` guide covers making a pixel-exact GIF, scaling to other panel sizes, and driving true red/green LEDs for a full-size replica.
 * **Other CoolLED sizes:** the generator script is included. Change two numbers and re-run it.
 
-Code and data are MIT-licensed. The small credited source extracts on the evidence cards belong to their owners and aren't covered by that licence.
+Code and data are MIT-licensed. The small credited source extracts on the evidence cards belong to their owners and aren't covered by that license.
 
 If you load it on a panel, I'd love to see a photo. 👻

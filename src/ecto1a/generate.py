@@ -106,7 +106,7 @@ def blank(c=OFF):
 
 
 def layout(text, font, gap, space, colors, start=None):
-    """Lay out text in a font. colors: one colour, or a per-character list."""
+    """Lay out text in a font. colors: one color, or a per-character list."""
     cols, prev_space = [], True
     for i, ch in enumerate(text):
         c = colors[i] if isinstance(colors, list) else colors
@@ -189,15 +189,15 @@ def colmix(a, b, x):
     return [ra[:x] + rb[x:] for ra, rb in zip(a, b)]
 
 
-def wipe_cover(old, colour, x=W // 2):
-    """INFERRED wipe, left to right: a solid colour advances over the old frame (one half step).
+def wipe_cover(old, color, x=W // 2):
+    """INFERRED wipe, left to right: a solid color advances over the old frame (one half step).
     Direction inferred from the left-to-right red sweep seen in the deleted-scene clip (V1)."""
-    return colmix(blank(colour), old, x)
+    return colmix(blank(color), old, x)
 
 
-def wipe_reveal(new, colour, x=W // 2):
-    """INFERRED wipe, left to right: the new frame is revealed from a solid colour (one half step)."""
-    return colmix(new, blank(colour), x)
+def wipe_reveal(new, color, x=W // 2):
+    """INFERRED wipe, left to right: the new frame is revealed from a solid color (one half step)."""
+    return colmix(new, blank(color), x)
 
 
 def shimmer(f, probs, seed):
@@ -224,7 +224,7 @@ def lines_boxes(full=False):
     """
     SEG, N = 16, 5
 
-    def frame(fill):                       # fill(seg_col) -> colour for columns 1..15
+    def frame(fill):                       # fill(seg_col) -> color for columns 1..15
         f = blank()
         for k in range(N):
             for c in range(1, SEG):
@@ -233,19 +233,19 @@ def lines_boxes(full=False):
                     f[y][k * SEG + c] = v
         return f
 
-    def with_divider(f, colour):
+    def with_divider(f, color):
         for k in range(N):
             for y in range(H):
-                f[y][k * SEG] = colour
+                f[y][k * SEG] = color
         return f
 
-    c0 = SEG // 2                            # section centre (col 8)
+    c0 = SEG // 2                            # section center (col 8)
     out = []
     # 1. a red line wipes across each section, leaving red fill (dark dividers)
     out.append(frame(lambda c: R if c == 1 else OFF))
     out.append(frame(lambda c: R if c <= 8 else OFF))
     out.append(frame(lambda c: R))
-    # 2. green box grows outward from each section's centre (dividers red)
+    # 2. green box grows outward from each section's center (dividers red)
     out.append(with_divider(frame(lambda c: G if abs(c - c0) <= 3 else R), R))
     out.append(with_divider(frame(lambda c: G), R))
     # 3. red sweeps back in from the left of each section
@@ -258,8 +258,8 @@ def lines_boxes(full=False):
     return out
 
 
-def reveal_centre(new, old_keep, half):
-    """New frame revealed outward from the centre column; outside the revealed span the
+def reveal_center(new, old_keep, half):
+    """New frame revealed outward from the center column; outside the revealed span the
     old frame's pixels (old_keep) stay lit. Seen in the deleted-scene clip for US! -> CALL."""
     lo, hi = W // 2 - half, W // 2 + half
     return [[new[y][x] if lo <= x < hi else old_keep[y][x] for x in range(W)] for y in range(H)]
@@ -268,13 +268,13 @@ def reveal_centre(new, old_keep, half):
 PROFILES = ("single", "full")
 
 
-def wipe_steps(old, new, colour, solid, steps):
-    """INFERRED left-to-right wipe: colour covers old in `steps` half-steps, optional solid
-    frames, then new is revealed from the colour in `steps` steps. old/new may be None."""
+def wipe_steps(old, new, color, solid, steps):
+    """INFERRED left-to-right wipe: color covers old in `steps` half-steps, optional solid
+    frames, then new is revealed from the color in `steps` steps. old/new may be None."""
     xs = [round(W * (i + 1) / (steps + 1)) for i in range(steps)]
-    out = [wipe_cover(old, colour, x) for x in xs] if old is not None else []
-    out += [blank(colour)] * solid
-    out += [wipe_reveal(new, colour, x) for x in xs] if new is not None else []
+    out = [wipe_cover(old, color, x) for x in xs] if old is not None else []
+    out += [blank(color)] * solid
+    out += [wipe_reveal(new, color, x) for x in xs] if new is not None else []
     return out
 
 
@@ -286,7 +286,7 @@ def build_segments(profile="single"):
                       each within the 113-frame limit, played back to back.
 
     Every element is attributed in docs/ATTRIBUTION.md. Three effects whose appearance is not
-    documented are rendered as INFERRED reconstructions at the owner's request: the colour wipes
+    documented are rendered as INFERRED reconstructions at the owner's request: the color wipes
     (left to right), the shimmer (random sparkle) and the lines -> boxes graphic. Timings for J-L
     are measured from the deleted-scene clip (V1). In "full", other message holds use 2.0 s, based
     on the measured CALL JL5-2020 hold (2.1 s); the 16 swaps follow the thread; the shimmer runs
@@ -296,17 +296,17 @@ def build_segments(profile="single"):
     A_r = narrow("GHOSTBUSTERS", R)
     A_g = recolor(A_r, G)
     B = border(narrow("FOR HIRE...", R, gap=2, space=6))
-    C = thin("WE'RE READY", Y)                      # font/colour unknown (estimate)
+    C = thin("WE'RE READY", Y)                      # font/color unknown (estimate)
     s = "TO BELIEVE YOU"
     # One word highlighted at a time: TO (green, P3), BELIEVE (amber, P16), YOU (green, INFERRED
-    # colour); the other words stay red, as in P3/P16. Sequential highlight: owner observation.
+    # color); the other words stay red, as in P3/P16. Sequential highlight: owner observation.
     D_red, D_to, D_bel, D_you = (thin(s, per_word(s, c)) for c in
                                  ([R, R, R], [G, R, R], [R, Y, R], [R, R, G]))
     E = thin("CALL JL5-2020", Y)
     s = "WE'RE BACK"
     G_rg, G_gr = wide(s, per_word(s, [R, G])), wide(s, per_word(s, [G, R]))
     Hf = wide("WHO YA", R)      # red: measured in V1
-    I = wide("GONNA", R)        # colour unknown (estimate); not visible in V1
+    I = wide("GONNA", R)        # color unknown (estimate); not visible in V1
     J = wide("CALL?", R)        # red: measured in V1
     k = "> US! <"
     K_on = wide(k, [G, OFF, R, R, R, OFF, G], space=6)
@@ -351,7 +351,7 @@ def build_segments(profile="single"):
     # No WE'RE-alone frame (listed before WE'RE BACK in T #14 Getty): removed at the owner's direction
     g = [blank(G)] * (2 if full else 1) + hold(G_rg, 11 if full else 3)
     g += ([G_gr, G_gr, G_rg, G_rg] * 2) if full else [G_gr, G_rg, G_gr, G_rg]
-    seg.append(("G", "WE'RE BACK - green flash, WE'RE BACK, words swap colours", g))
+    seg.append(("G", "WE'RE BACK - green flash, WE'RE BACK, words swap colors", g))
     # G2
     seg.append(("G2", "Five lines wipe across, green boxes grow, red sweeps back, green again (INFERRED)",
                 lines_boxes(full=True) * 3 if full else lines_boxes()))
@@ -361,8 +361,8 @@ def build_segments(profile="single"):
                 hold(J, 4) + [shift(J, -3), shift(J, -6)] + hold(blank(), 4)))
     seg.append(("K", "US! - red alone, then green arrows (on ~1.2 s, off ~0.8 s, on)",
                 hold(K_off, 3) + hold(K_on, 6) + hold(K_off, 4) + hold(K_on, 3)))
-    seg.append(("L", "CALL JL5-2020 - reveals from centre (arrows stay), holds ~2 s, slides down",
-                [reveal_centre(L, arrows_only, 8), reveal_centre(L, arrows_only, 16)]
+    seg.append(("L", "CALL JL5-2020 - reveals from center (arrows stay), holds ~2 s, slides down",
+                [reveal_center(L, arrows_only, 8), reveal_center(L, arrows_only, 16)]
                 + hold(L, 11 if full else 10) + [shift(L, 3), shift(L, 6)]))
     return seg
 
@@ -384,7 +384,7 @@ def build():
 
 # --------------------------------------------------------------------------- panel + JT
 def to_panel(f, pw=PANEL_W, ph=PANEL_H):
-    """Map 80x7 onto the panel: 2 panel rows per sign row, centred.
+    """Map 80x7 onto the panel: 2 panel rows per sign row, centered.
     Red on rows 2y,2y+1; green on 2y+1,2y+2 - the real sign's green clusters sit lower."""
     p = [[0] * pw for _ in range(ph)]
     x0, y0 = (pw - W) // 2, (ph - (2 * H + 1)) // 2
@@ -401,7 +401,7 @@ def to_panel(f, pw=PANEL_W, ph=PANEL_H):
 
 
 def plane(p, bit, pw, ph):
-    """One colour bit-plane: column-major, 8 rows per byte, MSB = top row."""
+    """One color bit-plane: column-major, 8 rows per byte, MSB = top row."""
     out = []
     for x in range(pw):
         for yb in range(0, ph, 8):

@@ -2,15 +2,15 @@
 
 The **Ecto-1A LED sign boards** are the two roof-mounted dot-matrix signs added to the Ecto-1 for *Ghostbusters II* (1989), when the car was upgraded to the Ecto-1A. One board faces each side of the car and both always show the same content: a looping sequence of red, green and amber messages such as GHOSTBUSTERS, WE'RE BACK and WHO YA GONNA CALL? US!, along with the phone number CALL JL5-2020.
 
-This page collects what the community has worked out about the boards: the hardware, the full message list and running order, the fonts, colours and animations, and build plans and files for making a screen-accurate replica. Most of it comes from the GBFans reference thread *Screen Accurate ECTO-1A Dot Matrix LED Sign (Reference)*.[^thread] Details that are still uncertain are marked **unconfirmed**, and effects that have been reconstructed rather than observed are marked **inferred**.
+This page collects what the community has worked out about the boards: the hardware, the full message list and running order, the fonts, colors and animations, and build plans and files for making a screen-accurate replica. Most of it comes from the GBFans reference thread *Screen Accurate ECTO-1A Dot Matrix LED Sign (Reference)*.[^thread] Details that are still uncertain are marked **unconfirmed**, and effects that have been reconstructed rather than observed are marked **inferred**.
 
 ## Hardware
 
 - **Resolution:** 80 columns × 7 rows, counted from film frames.[^thread]
 - **Pixels:** each pixel is a cluster of 4 LEDs. The clusters are never driven separately.[^thread]
-- **Colours:** every pixel has a red cluster and a green cluster. Lighting both reads as amber or yellow on screen; there is no separate yellow LED.[^thread][^kingpin]
+- **Colors:** every pixel has a red cluster and a green cluster. Lighting both reads as amber or yellow on screen; there is no separate yellow LED.[^thread][^kingpin]
 - **Green offset:** the green clusters sit slightly lower than the red ones. It shows wherever red and green text meet, for example where "BACK" doesn't line up with "WE'RE".[^thread][^book]
-- **LED count:** 560 pixels per colour, 4,480 LEDs per board.[^thread]
+- **LED count:** 560 pixels per color, 4,480 LEDs per board.[^thread]
 - **Two boards**, one per side, always showing the same content.[^thread]
 - **Manufacturer:** unknown. The thread's investigation is ongoing.
 
@@ -22,14 +22,14 @@ The boards cycle through twelve screens. The IDs A–L follow prodestrian's brea
 
 - **A — GHOSTBUSTERS:** bold narrow font, edge to edge. Red, then green, with rapid red/green swaps.
 - **B — FOR HIRE…:** bold narrow font, red text inside a green border.
-- **C — WE'RE READY:** font and colour **unconfirmed**. Shown here in the thin font in amber.
-- **D — TO BELIEVE YOU:** thin font. Red, with one word highlighted at a time: TO in green, BELIEVE in amber, then YOU (YOU's colour is **inferred** as green).
+- **C — WE'RE READY:** font and color **unconfirmed**. Shown here in the thin font in amber.
+- **D — TO BELIEVE YOU:** thin font. Red, with one word highlighted at a time: TO in green, BELIEVE in amber, then YOU (YOU's color is **inferred** as green).
 - **E — CALL JL5-2020:** thin font, amber.
 - **F — GHOSTBUSTERS:** second appearance, green and then red.
-- **G — WE'RE BACK:** bold wide font, filling all 80 columns. WE'RE red and BACK green, then the colours swap.
+- **G — WE'RE BACK:** bold wide font, filling all 80 columns. WE'RE red and BACK green, then the colors swap.
 - **G2 — five lines → green boxes:** a graphic between WE'RE BACK and WHO YA (see *Inferred effects*).
 - **H — WHO YA:** bold wide font, red.
-- **I — GONNA:** bold wide font, colour **unconfirmed** (shown red).
+- **I — GONNA:** bold wide font, color **unconfirmed** (shown red).
 - **J — CALL?:** bold wide font, red.
 - **K — US!:** bold wide font, red, between two green arrows that point inward at the word.
 - **L — CALL JL5-2020:** second appearance, amber, which then loops back to A.
@@ -57,11 +57,11 @@ The running order comes from the thread's analysis of the film (around 00:37:06,
 3. **WE'RE READY**.
 4. **TO BELIEVE YOU**, with the highlight moving word by word. It then wipes downward as **CALL JL5-2020** slides in from the top.
 5. A red wipe into **GHOSTBUSTERS** in green, which shimmers, wipes from green to red, and is followed by a solid red frame.
-6. A green flash, then **WE'RE BACK**, with the two words swapping colours.
+6. A green flash, then **WE'RE BACK**, with the two words swapping colors.
 7. The **five lines → green boxes** graphic, looping several times.
 8. **WHO YA**, **GONNA**, then **CALL?**, which slides up and out. The board then goes dark for about 0.8 s.
 9. **US!** appears alone for about 0.6 s. The arrows then come on for about 1.2 s, go off for 0.8 s, and come back.
-10. **CALL JL5-2020** opens outward from the centre while the arrows are still lit, holds for about 2 s, then slides down as red GHOSTBUSTERS rises to restart the loop.
+10. **CALL JL5-2020** opens outward from the center while the arrows are still lit, holds for about 2 s, then slides down as red GHOSTBUSTERS rises to restart the loop.
 
 ![Storyboard of the full loop](IMG:storyboard.png)
 
@@ -69,9 +69,9 @@ The running order comes from the thread's analysis of the film (around 00:37:06,
 
 ## Inferred effects
 
-Three effects are confirmed to happen on the boards, but their exact appearance hasn't been documented. The recreation renders them as clearly labelled best guesses.
+Three effects are confirmed to happen on the boards, but their exact appearance hasn't been documented. The recreation renders them as clearly labeled best guesses.
 
-- **Colour wipes:** the colour of each wipe is reported in the thread (green into FOR HIRE…, green before WE'RE READY, red into the second GHOSTBUSTERS, green to red within it), but the direction is not. In the deleted museum scene, red sweeps in from the left on this board, so the recreation draws every wipe **left to right**.[^deleted]
+- **Color wipes:** the color of each wipe is reported in the thread (green into FOR HIRE…, green before WE'RE READY, red into the second GHOSTBUSTERS, green to red within it), but the direction is not. In the deleted museum scene, red sweeps in from the left on this board, so the recreation draws every wipe **left to right**.[^deleted]
 - **Shimmer:** reported on green GHOSTBUSTERS, both before the red/green swaps and after the red wipe. The recreation renders it as random per-pixel sparkle.
 - **Five lines → green boxes:** the thread describes five vertical lines that each wipe across and are replaced by a green box, looping several times.[^thread] The deleted museum scene confirms red fills with dark dividers, then green growing outward from inside each section with red dividers, then red sweeping back from the left.[^deleted] Only the right third of the board is visible, out of focus, so the recreation **assumes** five 16-column sections. The measured spacing of 14–15 columns is consistent with that.
 
@@ -83,7 +83,7 @@ The thread also mentions a possible bounce and an upside-down flip of GHOSTBUSTE
 
 ## Plans
 
-The plans below show every message as a numbered pixel map. Columns run 0–79 from the left and rows 0–6 from the top. Cells are coloured red, green or amber (both lit). The same maps are available as plain text in the downloads.
+The plans below show every message as a numbered pixel map. Columns run 0–79 from the left and rows 0–6 from the top. Cells are colored red, green or amber (both lit). The same maps are available as plain text in the downloads.
 
 ![Plan A: GHOSTBUSTERS](IMG:plans/plan_A.png)
 
@@ -126,8 +126,8 @@ The plans below show every message as a numbered pixel map. Columns run 0–79 f
   Both versions have been tested on two separate 16 × 96 panels. Each board row uses two panel rows, so the green can sit half a pixel lower than the red, as on the real boards.
 - **Arduino, ESP32 and other microcontrollers:** use the C header, or the JSON frame data, which stores every pixel as 0 (off), 1 (red), 2 (green) or 3 (both). A microcontroller isn't limited to 113 frames, so the holds can be stretched to film timing.
 - **RGB matrices (HUB75, WS2812):** map "both" to an amber such as RGB (255, 180, 0). Pure yellow looks greenish on most panels.
-- **Scratch-built replica:** use separate red and green LED clusters in an 80 × 7 grid, drive the two colours independently, and mount the green slightly below the red.
-- **Other panel sizes:** the messages are designed for 80 columns. On narrower panels, scroll or scale with nearest-neighbour; never smooth the image. The generator script can produce CoolLED files for other sizes.
+- **Scratch-built replica:** use separate red and green LED clusters in an 80 × 7 grid, drive the two colors independently, and mount the green slightly below the red.
+- **Other panel sizes:** the messages are designed for 80 columns. On narrower panels, scroll or scale with nearest-neighbor; never smooth the image. The generator script can produce CoolLED files for other sizes.
 
 ## Downloads
 
@@ -146,7 +146,7 @@ On iOS or Android, download the file, tap it, and open it with CoolLED1248 (app 
 
 - **[Ecto-1A_Attribution_Evidence_v10.pdf](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/Ecto-1A_Attribution_Evidence_v10.pdf)**: one card per element, showing a credited source extract beside the recreation and marking it sourced, measured, estimate or inferred.
 
-The source extracts in the PDF (film stills, Getty Images news footage, a book scan) belong to their owners. They are included only for attribution and comparison, and aren't covered by the project's MIT licence.
+The source extracts in the PDF (film stills, Getty Images news footage, a book scan) belong to their owners. They are included only for attribution and comparison, and aren't covered by the project's MIT license.
 
 ### Image files
 
@@ -172,9 +172,9 @@ The source extracts in the PDF (film stills, Getty Images news footage, a book s
 
 These would replace estimates and inferences with facts. If you have reference, please post it in the reference thread.
 
-- Clear frames of **GONNA** (colour and letters), and sharp frames of WHO YA and CALL?.
-- The font and colour of **WE'RE READY**.
-- YOU's highlight colour in TO BELIEVE YOU.
+- Clear frames of **GONNA** (color and letters), and sharp frames of WHO YA and CALL?.
+- The font and color of **WE'RE READY**.
+- YOU's highlight color in TO BELIEVE YOU.
 - What the **shimmer** really looks like, and the direction of the **wipes**.
 - A sharp, full-width view of the **five lines → green boxes** graphic.
 - A sharp frame of the US! arrows.
@@ -200,6 +200,6 @@ This page builds on research shared in the GBFans forum:
 
 [^book]: zerosum, in the reference thread (post #10): hi-res book scan of the WE'RE BACK sign.
 
-[^getty]: 1989 *Ghostbusters II* premiere footage, Getty Images clip 1032076844, found by Kingpin and analysed in the reference thread.
+[^getty]: 1989 *Ghostbusters II* premiere footage, Getty Images clip 1032076844, found by Kingpin and analyzed in the reference thread.
 
-[^deleted]: *Ghostbusters II* deleted scene (Hardemeyer at the museum), analysed frame by frame (181 frames, about 14.8 s). Colours were calibrated against the confirmed red US!, green arrows and amber CALL JL5-2020.
+[^deleted]: *Ghostbusters II* deleted scene (Hardemeyer at the museum), analyzed frame by frame (181 frames, about 14.8 s). Colors were calibrated against the confirmed red US!, green arrows and amber CALL JL5-2020.

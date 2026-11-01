@@ -10,7 +10,7 @@ def test_protocol_limits():
     d = JT[0]["data"]
     assert d["frameNum"] == len(FRAMES) <= 255           # frame count is 1 byte on the wire
     assert len(d["aniData"]) <= 65535                     # payload length is 2 bytes on the wire
-    assert len(d["aniData"]) == len(FRAMES) * 96 * 2 * 3  # 2 bytes/column x 3 colour planes
+    assert len(d["aniData"]) == len(FRAMES) * 96 * 2 * 3  # 2 bytes/column x 3 color planes
 
 
 def test_jt_structure_matches_app_export():

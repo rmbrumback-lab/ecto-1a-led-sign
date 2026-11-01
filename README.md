@@ -14,7 +14,7 @@ A frame-by-frame recreation of the roof-mounted dot-matrix sign from the **Ecto-
 | Sequence | 13 segments. Single file: 113 frames, 22.6 s. Two-part: 112 + 109 frames, 44.2 s. All at 200 ms/frame |
 | Fonts | 3, traced from reference photos |
 | Attribution | every element traced to a source — [ATTRIBUTION.md](docs/ATTRIBUTION.md), with [evidence cards](docs/evidence/) showing each source extract beside our rendering |
-| CoolLED files | `aniType 1` (3-bit colour). Single: 65,088 bytes. Part 1: 64,512. Part 2: 62,784. All inside the app's 65,535-byte upload limit |
+| CoolLED files | `aniType 1` (3-bit color). Single: 65,088 bytes. Part 1: 64,512. Part 2: 62,784. All inside the app's 65,535-byte upload limit |
 | Verified | Byte-for-byte encoder match with app-exported files; decoded with zero errors by JT-Edit's own import code |
 
 This project builds directly on research by the GBFans community. See **[Credits](#credits)**.
@@ -29,7 +29,7 @@ This project builds directly on research by the GBFans community. See **[Credits
 - [What's sourced vs. estimated](#whats-sourced-vs-estimated)
 - [Files](#files)
 - [Using it in other LED apps](#using-it-in-other-led-apps)
-- [Regenerating or customising](#regenerating-or-customising)
+- [Regenerating or customizing](#regenerating-or-customizing)
 - [Credits](#credits)
 - [Legal](#legal)
 
@@ -48,7 +48,7 @@ Detailed documentation:
 
 > If the app won't import the file, you can load it into the browser-based [JT-Edit](https://jt-edit.com/) editor instead.
 
-**Other panel sizes:** the `.jt` file must match your panel. 16×96 is the smallest common CoolLED size that fits the sign at 1:1. For other sizes, see [Regenerating or customising](#regenerating-or-customising).
+**Other panel sizes:** the `.jt` file must match your panel. 16×96 is the smallest common CoolLED size that fits the sign at 1:1. For other sizes, see [Regenerating or customizing](#regenerating-or-customizing).
 
 ### Anything else
 
@@ -64,27 +64,27 @@ Use the files in [`dist/`](dist/): GIF, per-frame PNGs, sprite sheet, JSON, or a
 |---|---|---|---|
 | A | GHOSTBUSTERS | rises in red, shimmer on green *(inferred look)*, 16 rapid red/green swaps, solid green | 4.4 s |
 | B | FOR HIRE… | wiped in from green *(inferred, left to right)*; red text inside a green border; green wipe out | 1.0 s |
-| C | WE'RE READY | wiped in from green *(inferred)*; font and colour unknown (shown thin, amber) | 0.8 s |
+| C | WE'RE READY | wiped in from green *(inferred)*; font and color unknown (shown thin, amber) | 0.8 s |
 | D | TO BELIEVE YOU | thin font; **the highlight moves word by word: TO (green), BELIEVE (amber), YOU (green, inferred)**, with the other words red; wipes down as E slides in | 1.4 s |
 | E | CALL JL5-2020 | thin font, amber; red wipe out *(inferred, left to right)* | 1.0 s |
 | F | GHOSTBUSTERS | wiped in green from red, shimmer *(inferred look)*, green, green→red wipe, solid red | 1.2 s |
-| G | WE'RE BACK | green flash, then WE'RE (red) BACK (green), words swap colours | 1.6 s |
+| G | WE'RE BACK | green flash, then WE'RE (red) BACK (green), words swap colors | 1.6 s |
 | G2 | (graphic) | **inferred reconstruction:** five red lines wipe across, green boxes grow, red sweeps back, green again | 1.8 s |
 | H | WHO YA | red | 0.6 s |
-| I | GONNA | colour unknown (shown red) | 0.4 s |
+| I | GONNA | color unknown (shown red) | 0.4 s |
 | J | CALL? | red; slides up and out; sign blank about 0.8 s | 2.0 s |
 | K | US! | red; alone, then green arrows on / off / on | 3.2 s |
-| L | CALL JL5-2020 | revealed from the centre while the arrows stay lit; slides down; GHOSTBUSTERS rises to restart | 2.8 s |
+| L | CALL JL5-2020 | revealed from the center while the arrows stay lit; slides down; GHOSTBUSTERS rises to restart | 2.8 s |
 
 The segment IDs follow the A–L scheme from the GBFans reference thread.
 
-**Three inferred reconstructions.** These effects are confirmed to exist, but their exact look isn't documented, so they're best-effort reconstructions, labelled *inferred* everywhere:
+**Three inferred reconstructions.** These effects are confirmed to exist, but their exact look isn't documented, so they're best-effort reconstructions, labeled *inferred* everywhere:
 
-- **Five lines → green boxes (G2).** The colours, phase order and approximate spacing come from the deleted-scene clip. The geometry is inferred: 16-column sections, full-height fill, step counts.
-- **Colour wipes** (A→B, B→C, E→F, and green→red in F). The colours are sourced. The direction is inferred as left to right, because red sweeps in from the left on this sign in the clip.
+- **Five lines → green boxes (G2).** The colors, phase order and approximate spacing come from the deleted-scene clip. The geometry is inferred: 16-column sections, full-height fill, step counts.
+- **Color wipes** (A→B, B→C, E→F, and green→red in F). The colors are sourced. The direction is inferred as left to right, because red sweeps in from the left on this sign in the clip.
 - **Shimmer** (A and F). When and where it happens is sourced; its look is inferred as random per-pixel sparkle.
 
-See [docs/ATTRIBUTION.md](docs/ATTRIBUTION.md) and the [evidence cards](docs/evidence/). Drawing them would mean inventing them. Instead, the confirmed frame is held, or a solid colour frame stands in for the wipe. See [docs/ATTRIBUTION.md](docs/ATTRIBUTION.md).
+See [docs/ATTRIBUTION.md](docs/ATTRIBUTION.md) and the [evidence cards](docs/evidence/). Drawing them would mean inventing them. Instead, the confirmed frame is held, or a solid color frame stands in for the wipe. See [docs/ATTRIBUTION.md](docs/ATTRIBUTION.md).
 
 ---
 
@@ -92,7 +92,7 @@ See [docs/ATTRIBUTION.md](docs/ATTRIBUTION.md) and the [evidence cards](docs/evi
 
 1. **Format research.** The CoolLED1248 `.jt` format was taken from the open-source [JT-Edit](https://github.com/auc0le/JT-Edit) editor and the [coolledx-driver](https://github.com/UpDryTwist/coolledx-driver) Python driver. The upload protocol stores frame count in 1 byte and payload length in 2 bytes. That caps a 16×96 animation at **113 frames**. Full specification: [docs/JT_FORMAT.md](docs/JT_FORMAT.md).
 2. **Sign research.** The GBFans reference thread supplied the hardware model, every message and the playback order. It also supplied a scene-by-scene analysis of the film, deleted scenes, behind-the-scenes footage and the 1989 premiere footage.
-3. **Photo analysis.** Reference stills from the thread were enlarged and sampled on a fitted 80×7 grid, with perspective correction where the sign is tilted. This revealed **three distinct fonts**, the FOR HIRE border, the amber CALL frame, the TO BELIEVE YOU colour states and the US! arrows. See [docs/DESIGN.md](docs/DESIGN.md).
+3. **Photo analysis.** Reference stills from the thread were enlarged and sampled on a fitted 80×7 grid, with perspective correction where the sign is tilted. This revealed **three distinct fonts**, the FOR HIRE border, the amber CALL frame, the TO BELIEVE YOU color states and the US! arrows. See [docs/DESIGN.md](docs/DESIGN.md).
 4. **Generator.** A single Python script ([`src/ecto1a/generate.py`](src/ecto1a/generate.py)) builds the 80×7 sequence. It then maps it onto the panel and encodes the `.jt` file, along with every export in `dist/`.
 5. **Hardware detail.** On the real sign the green LED clusters sit slightly lower than the red ones. You can see this in the film when "WE'RE" (red) and "BACK" (green) are lit together. The panel version uses 2 panel rows per sign row and draws green half a sign-pixel lower to reproduce this:
 
@@ -115,18 +115,18 @@ The project went through four iterations as more reference material surfaced. Th
 | WE'RE BACK font, layout (cols 0–79), red/green split | **Sourced** | Hi-res book scan, read pixel-for-pixel |
 | FOR HIRE… red with green border | **Sourced** | Night still |
 | TO BELIEVE YOU thin font; TO green and BELIEVE amber, each with the other words red | **Sourced** | Film still, museum still, premiere close-up |
-| Word-by-word highlight TO → BELIEVE → YOU | **Sourced** (owner observation) / YOU's colour and the rate **inferred** | Ryan's observation; consistent with the stills, where one word at a time is lit |
+| Word-by-word highlight TO → BELIEVE → YOU | **Sourced** (owner observation) / YOU's color and the rate **inferred** | Ryan's observation; consistent with the stills, where one word at a time is lit |
 | Two-part screen timings | **Measured** (J–L), **sourced** (16 swaps; shimmer "a few seconds") / **estimated** (2.0 s message holds, from the measured 2.1 s CALL JL5-2020 hold) | Deleted-scene clip; thread |
 | CALL JL5-2020 thin font, amber | **Sourced** | Premiere close-ups |
 | US! red with inward green arrows | **Sourced (shape approximate)** | Heavily motion-blurred premiere frames |
-| Slides, 16 red/green swaps, solid colour frames, word colour swaps, arrow blink | **Sourced** | Thread's frame-by-frame descriptions |
-| Wipes: occurrence and colours / direction and steps | **Sourced** / **Inferred** | Thread (Getty, film) / left-to-right sweep seen in the clip |
+| Slides, 16 red/green swaps, solid color frames, word color swaps, arrow blink | **Sourced** | Thread's frame-by-frame descriptions |
+| Wipes: occurrence and colors / direction and steps | **Sourced** / **Inferred** | Thread (Getty, film) / left-to-right sweep seen in the clip |
 | Shimmer: occurrence (A, F) / look | **Sourced** / **Inferred** | Thread (Getty, film, behind-the-scenes) / random sparkle |
-| WE'RE READY font and colour | **Unknown** (shown thin, amber) | No clear reference |
-| WHO YA and CALL? colour (red) | **Sourced** | Deleted-scene clip, colour-calibrated |
-| J–L timing (blank, arrow blink, centre reveal, holds) | **Sourced** | Deleted-scene clip, measured |
-| GONNA colour; WHO YA / GONNA / CALL? letter shapes | **Estimate** | Bold-wide font assumed |
-| Lines → boxes graphic (G2): occurrence, colours, phase order | **Sourced** | Thread (Getty analysis); deleted-scene clip |
+| WE'RE READY font and color | **Unknown** (shown thin, amber) | No clear reference |
+| WHO YA and CALL? color (red) | **Sourced** | Deleted-scene clip, color-calibrated |
+| J–L timing (blank, arrow blink, center reveal, holds) | **Sourced** | Deleted-scene clip, measured |
+| GONNA color; WHO YA / GONNA / CALL? letter shapes | **Estimate** | Bold-wide font assumed |
+| Lines → boxes graphic (G2): occurrence, colors, phase order | **Sourced** | Thread (Getty analysis); deleted-scene clip |
 | Lines → boxes graphic (G2): section width, divider position, fill height, step count | **Inferred** | Clip spacing matches 5 × 16 columns within error |
 | Timing of A–I | **Estimate**, compressed | 113-frame upload limit |
 
@@ -166,7 +166,7 @@ Step-by-step recipes (GIF building, scaling to other panel sizes, Arduino exampl
 
 ---
 
-## Regenerating or customising
+## Regenerating or customizing
 
 Requires Python 3.9+ and Pillow.
 
@@ -179,7 +179,7 @@ python -m pytest -q tests
 
 - **Panel size:** `PANEL_W` / `PANEL_H` in `generate.py`. Panels at least 80 wide work as-is. Keep `frames × width × ceil(height/8) × 3 ≤ 65,535` bytes.
 - **Timing:** `DELAY_MS` and the `hold(...)` counts in `build_segments()`.
-- **Fonts/colours:** the glyph tables at the top of `generate.py` are plain `#`/`.` strings.
+- **Fonts/colors:** the glyph tables at the top of `generate.py` are plain `#`/`.` strings.
 
 ---
 
@@ -204,4 +204,4 @@ Project by **Ryan Brumback**, built with AI assistance (Anthropic's Claude).
 
 Fan project for non-commercial use. *Ghostbusters*, *Ghostbusters II*, Ecto-1 and related marks are the property of Columbia Pictures / Sony Pictures. This project is not affiliated with or endorsed by them.
 
-Code and generated data are released under the [MIT License](LICENSE). The small source extracts in [`docs/evidence/`](docs/evidence/) are third-party images (film stills, Getty Images news footage, a book scan), included only for attribution and comparison, with credits. They are **not** covered by the MIT licence.
+Code and generated data are released under the [MIT License](LICENSE). The small source extracts in [`docs/evidence/`](docs/evidence/) are third-party images (film stills, Getty Images news footage, a book scan), included only for attribution and comparison, with credits. They are **not** covered by the MIT license.

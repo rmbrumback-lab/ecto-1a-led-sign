@@ -3,7 +3,7 @@
 plus a plain-text pixel-map file builders can read without any software.
 
 Each plan shows the message's frame(s) on a grid with column numbers (0-79) and
-row numbers (0-6). Cell colours: red, green, amber (red + green both lit), off.
+row numbers (0-6). Cell colors: red, green, amber (red + green both lit), off.
 All images are our own renderings of the generator's frames; no film material.
 """
 import os, sys
@@ -26,21 +26,21 @@ PLANS = [
     ("A", "GHOSTBUSTERS", "Bold narrow font, spans columns 0-78",
      [(2, "red"), (13, "green")]),
     ("B", "FOR HIRE...", "Bold narrow font, red text, static green border", [(5, "")]),
-    ("C", "WE'RE READY", "Thin 5x7 font; colour and font UNCONFIRMED (shown amber)", [(2, "")]),
-    ("D", "TO BELIEVE YOU", "Thin 5x7 font; highlight moves word by word (YOU's colour inferred)",
+    ("C", "WE'RE READY", "Thin 5x7 font; color and font UNCONFIRMED (shown amber)", [(2, "")]),
+    ("D", "TO BELIEVE YOU", "Thin 5x7 font; highlight moves word by word (YOU's color inferred)",
      [(0, "all red"), (2, "TO green"), (4, "BELIEVE amber"), (6, "YOU green (inferred)")]),
     ("E", "CALL JL5-2020", "Thin 5x7 font, amber", [(0, "")]),
     ("F", "GHOSTBUSTERS (second)", "Green, then red", [(2, "green"), (16, "red")]),
-    ("G", "WE'RE BACK", "Bold wide font, spans columns 0-79; words swap colours",
+    ("G", "WE'RE BACK", "Bold wide font, spans columns 0-79; words swap colors",
      [(2, "WE'RE red / BACK green"), (13, "swapped")]),
     ("G2", "Five lines -> boxes", "INFERRED reconstruction (5 x 16-column sections)",
      [(0, "red lines"), (2, "full red, dark dividers"), (4, "green, red dividers")]),
     ("H", "WHO YA", "Bold wide font, red (glyphs estimated)", [(0, "")]),
-    ("I", "GONNA", "Bold wide font; colour UNCONFIRMED (shown red)", [(0, "")]),
+    ("I", "GONNA", "Bold wide font; color UNCONFIRMED (shown red)", [(0, "")]),
     ("J", "CALL?", "Bold wide font, red", [(0, "")]),
     ("K", "US!", "Bold wide, red word; green arrows point inward",
      [(0, "US! alone"), (3, "arrows on")]),
-    ("L", "CALL JL5-2020 (second)", "Thin 5x7 font, amber; opens out from the centre", [(2, "")]),
+    ("L", "CALL JL5-2020 (second)", "Thin 5x7 font, amber; opens out from the center", [(2, "")]),
 ]
 
 

@@ -93,10 +93,10 @@ for i_ in imgs:
 im.save(os.path.join(OUT, "hero.png"))
 print("doc images written to", os.path.abspath(OUT))
 
-# Inferred lines -> boxes graphic: every step, labelled (our rendering only; no film frames)
+# Inferred lines -> boxes graphic: every step, labeled (our rendering only; no film frames)
 g2 = [fr for sid, _, fr in segs if sid == "G2"][0]
 labels = ["1 red line wipes", "2 half filled", "3 full red, dark dividers",
-          "4 green grows from centres", "5 full green, red dividers", "6 red sweeps back from left",
+          "4 green grows from centers", "5 full green, red dividers", "6 red sweeps back from left",
           "7 full red", "8 full green again"]
 steps = [led_image(f, 6) for f in g2]
 lh = steps[0].height + 22

@@ -15,15 +15,15 @@ One card per element of the animation, showing a small source extract beside our
 | 9 | [D. TO BELIEVE YOU: highlight moves word by word](09-d-to-believe-you-highlight-moves-word-by-word.png) | SOURCED |
 | 10 | [D -> E. TO BELIEVE YOU wipes down as CALL JL5-2020 slides in from the top](10-d-e-to-believe-you-wipes-down-as-call-jl5-2020-s.png) | SOURCED |
 | 11 | [E / L. CALL JL5-2020 in amber](11-e-l-call-jl5-2020-in-amber.png) | SOURCED |
-| 12 | [Colour wipes: A->B and B->C (green), E->F (red), F green->red](12-colour-wipes-a-b-and-b-c-green-e-f-red-f-green-r.png) | INFERRED |
+| 12 | [Color wipes: A->B and B->C (green), E->F (red), F green->red](12-color-wipes-a-b-and-b-c-green-e-f-red-f-green-r.png) | INFERRED |
 | 13 | [F. GHOSTBUSTERS green, then red](13-f-ghostbusters-green-then-red.png) | SOURCED |
-| 14 | [G. Green flash -> WE'RE BACK, words swap colours](14-g-green-flash-we-re-back-words-swap-colours.png) | SOURCED |
+| 14 | [G. Green flash -> WE'RE BACK, words swap colors](14-g-green-flash-we-re-back-words-swap-colors.png) | SOURCED |
 | 15 | [G2. Five lines -> green boxes](15-g2-five-lines-green-boxes.png) | INFERRED |
 | 16 | [H. WHO YA in red](16-h-who-ya-in-red.png) | MEASURED |
 | 17 | [I. GONNA](17-i-gonna.png) | ESTIMATE |
 | 18 | [J. CALL? in red, slides up, sign blank ~0.8 s](18-j-call-in-red-slides-up-sign-blank-0-8-s.png) | MEASURED |
 | 19 | [K. US! alone, then green arrows on / off / on](19-k-us-alone-then-green-arrows-on-off-on.png) | MEASURED |
-| 20 | [K -> L. CALL JL5-2020 opens from centre, arrows lit](20-k-l-call-jl5-2020-opens-from-centre-arrows-lit.png) | MEASURED |
+| 20 | [K -> L. CALL JL5-2020 opens from center, arrows lit](20-k-l-call-jl5-2020-opens-from-center-arrows-lit.png) | MEASURED |
 | 21 | [L. CALL JL5-2020 holds ~2 s, then slides down](21-l-call-jl5-2020-holds-2-s-then-slides-down.png) | MEASURED |
 | 22 | [Shimmer on green GHOSTBUSTERS (A and F)](22-shimmer-on-green-ghostbusters-a-and-f.png) | INFERRED |
 | 23 | [Timing: single file and two-part screen-timed build](23-timing-single-file-and-two-part-screen-timed-bui.png) | ESTIMATE |
@@ -36,7 +36,7 @@ One card per element of the animation, showing a small source extract beside our
 
 ## Image credits
 
-The source extracts are small crops of third-party images, used here only to attribute and compare. All rights stay with their owners. These images are **not** covered by this repository's MIT licence.
+The source extracts are small crops of third-party images, used here only to attribute and compare. All rights stay with their owners. These images are **not** covered by this repository's MIT license.
 
 | ID | Image | Rights holder / original source | Shared in the GBFans thread |
 |---|---|---|---|

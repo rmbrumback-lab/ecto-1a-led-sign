@@ -4,7 +4,7 @@
 //   git clone https://github.com/auc0le/JT-Edit.git
 //   node tools/verify_with_jtedit.js ./JT-Edit dist/Ecto-1A_GB2_16x96.jt
 //
-// Prints frame count/size and a few rows of frame 0 using JT-Edit's colour names.
+// Prints frame count/size and a few rows of frame 0 using JT-Edit's color names.
 const fs = require('fs');
 const path = require('path');
 const [jtEditDir, jtFile] = process.argv.slice(2);

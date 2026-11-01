@@ -1,8 +1,8 @@
 # Attribution audit
 
-Every screen, text, colour and effect in the animation is listed here with its source.
+Every screen, text, color and effect in the animation is listed here with its source.
 
-**Rule applied (v4):** an element stays only if a reference shows it, or the GBFans thread reports it as an observation. Reports hedged as "possibly", "seems", "my guess" or "?" don't count. Where something is confirmed to exist but nobody has documented *how it looks*, it is **not rendered**, because rendering it would mean inventing it. **Exceptions, at Ryan's request (v6–v7):** three effects that are confirmed to exist but whose look is undocumented are rendered as clearly labelled **inferred** reconstructions: the lines → boxes graphic (G2), the colour wipes, and the shimmer. Their sourced and inferred parts are separated below. Visual evidence for every row is in [evidence/](evidence/), one card per element.
+**Rule applied (v4):** an element stays only if a reference shows it, or the GBFans thread reports it as an observation. Reports hedged as "possibly", "seems", "my guess" or "?" don't count. Where something is confirmed to exist but nobody has documented *how it looks*, it is **not rendered**, because rendering it would mean inventing it. **Exceptions, at Ryan's request (v6–v7):** three effects that are confirmed to exist but whose look is undocumented are rendered as clearly labeled **inferred** reconstructions: the lines → boxes graphic (G2), the color wipes, and the shimmer. Their sourced and inferred parts are separated below. Visual evidence for every row is in [evidence/](evidence/), one card per element.
 
 Sources:
 
@@ -21,7 +21,7 @@ Sources:
   - P15: Getty close-up, thin amber "WE"/"VE"
   - P16: Getty close-up, red O, amber BELIEVE
   - Credits and rights holders for every image: [evidence/README.md](evidence/README.md)
-- **V1** — deleted-scene GIF (Hardemeyer at the museum): 181 frames, 14.8 s, 654×376. It matches the thread's description of `i.imgur.com/yjkGYPb.gif`. The sign sits out of focus behind the actors and is partly blocked, so letter shapes can't be read, but colours, transitions and timing can. Colours were calibrated against elements already confirmed: US! red (green/red ratio 0.65), the arrows green (0.95), CALL JL5-2020 amber (0.85). Frame numbers below refer to V1.
+- **V1** — deleted-scene GIF (Hardemeyer at the museum): 181 frames, 14.8 s, 654×376. It matches the thread's description of `i.imgur.com/yjkGYPb.gif`. The sign sits out of focus behind the actors and is partly blocked, so letter shapes can't be read, but colors, transitions and timing can. Colors were calibrated against elements already confirmed: US! red (green/red ratio 0.65), the arrows green (0.95), CALL JL5-2020 amber (0.85). Frame numbers below refer to V1.
 
 ## Hardware
 
@@ -61,21 +61,21 @@ Sources:
 | L | CALL JL5-2020 (second instance) | ✅ | T #14; P7 |
 | — | Playback order A→L | ✅ | T #14 (film timecodes + Getty clip) |
 
-## Colours
+## Colors
 
 | Element | Status | Source |
 |---|---|---|
 | A: red, rapid red/green swaps, settles green | ✅ | T #14: film 01:22:59; Getty clip, about 16 swaps; P1 |
 | B: red text, green border | ✅ | P2 |
-| C: WE'RE READY colour **and font** | ⚠️ **unknown**, shown thin amber | P15 could be WE'RE or BELIEVE's "VE" |
+| C: WE'RE READY color **and font** | ⚠️ **unknown**, shown thin amber | P15 could be WE'RE or BELIEVE's "VE" |
 | D: all red / TO green (rest red) / BELIEVE amber (rest red) | ✅ states observed | P8, P3, P16 |
-| D: highlight moves word by word, TO → BELIEVE → YOU | ✅ **owner observation** (Ryan) | Consistent with P3 and P16, where exactly one word is highlighted. **YOU's highlight colour is INFERRED** as green, continuing TO green → BELIEVE amber. The rate is estimated. |
+| D: highlight moves word by word, TO → BELIEVE → YOU | ✅ **owner observation** (Ryan) | Consistent with P3 and P16, where exactly one word is highlighted. **YOU's highlight color is INFERRED** as green, continuing TO green → BELIEVE amber. The rate is estimated. |
 | E, L: amber | ✅ | P12, P13, P7 |
 | F: green, then red | ✅ | T #14 |
 | G: WE'RE red and BACK green, words swapping | ✅ | T #14 (Getty); P4, P14 |
-| H: WHO YA colour | ✅ **red** | V1 frames 44–57: green/red ratio 0.62, matching known red |
-| I: GONNA colour | ⚠️ **unknown**, shown red | Not visible in V1 |
-| J: CALL? colour | ✅ **red** | V1 frames 66–75: ratio 0.60 |
+| H: WHO YA color | ✅ **red** | V1 frames 44–57: green/red ratio 0.62, matching known red |
+| I: GONNA color | ⚠️ **unknown**, shown red | Not visible in V1 |
+| J: CALL? color | ✅ **red** | V1 frames 66–75: ratio 0.60 |
 | K: red US!, green arrows | ✅ | P5, P6; T #14 ("green arrows start to blink") |
 
 ## Effects and transitions
@@ -91,7 +91,7 @@ Sources:
 | B: border chase animation | rendered | ❌ **removed**, border static | Motion was inferred from uneven dots in P2 and isn't documented |
 | B→C: green wipe | sweep | ⚠️ **green covers B left to right, solid green, C wiped in (INFERRED direction, v7)** | T #14 (Getty: solid green wipe). Direction inferred from V1. |
 | C→D transition | green wipe | ❌ **removed**, straight cut | No source for this transition |
-| D: colour states | rendered | ✅ kept | P3, P8, P16 |
+| D: color states | rendered | ✅ kept | P3, P8, P16 |
 | D→E: D wipes down, E slides in from the top | rendered | ✅ kept | T #14 (film 01:24:46; Getty) |
 | E→F: red wipe | sweep | ⚠️ **red covers E left to right, solid red, F wiped in green (INFERRED direction, v7)** | T #14 ("transitions out with a red wipe into frame F"). Direction inferred from V1. |
 | F: shimmer | random dropout | ⚠️ **INFERRED (v7)**: green, 2-step sparkle, green again | T #14 (film 01:23:28); T #3 behind-the-scenes ("GHOSTBUSTERS, then shimmer, then GHOSTBUSTERS again"). Look inferred. |
@@ -104,7 +104,7 @@ Sources:
 | Blank sign between CALL? and US! | not shown | ✅ **added**, about 0.8 s | V1 frames 81–90 (800 ms) |
 | US! appears before the arrows | not shown | ✅ **added**, about 0.6 s | V1 frames 91–98 (640 ms) |
 | K: arrows blink | rendered | ✅ **retimed**: on about 1.2 s, off 0.8 s, on 0.6 s | V1 frames 99–131 (read visually; the camera moves) |
-| K→L: CALL JL5-2020 revealed outward from the centre while the arrows stay lit | not shown | ✅ **added** | V1 frames 132–137 (470 ms): frame 132 shows "JL5" between the arrows, frame 135 "L JL5-20", then the full text with the arrows off |
+| K→L: CALL JL5-2020 revealed outward from the center while the arrows stay lit | not shown | ✅ **added** | V1 frames 132–137 (470 ms): frame 132 shows "JL5" between the arrows, frame 135 "L JL5-20", then the full text with the arrows off |
 | L: hold | estimate | ✅ **retimed** to about 2 s | V1 frames 138–164 (2,140 ms) |
 | L: slides down, red GHOSTBUSTERS rises | rendered | ✅ kept, **video-confirmed** | T #14; V1 frames 165–170 (390 ms) |
 

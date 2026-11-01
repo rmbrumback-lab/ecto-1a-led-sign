@@ -14,11 +14,11 @@ fonts/           The three sign fonts (bold wide, bold narrow, thin 5x7)
 preview/         Animated previews
 
 Status: elements are sourced from the GBFans reference thread and reference footage.
-Three effects (lines -> boxes, colour wipes, shimmer) are INFERRED reconstructions,
-and a few colours (WE'RE READY, GONNA, YOU's highlight) are unconfirmed. See the wiki page.
+Three effects (lines -> boxes, color wipes, shimmer) are INFERRED reconstructions,
+and a few colors (WE'RE READY, GONNA, YOU's highlight) are unconfirmed. See the wiki page.
 
 Credits: research by prodestrian, zerosum, Kingpin, d_osborn and others in the GBFans thread
 "Screen Accurate ECTO-1A Dot Matrix LED Sign (Reference)". File format work by auc0le
 (JT-Edit) and UpDryTwist (coolledx-driver). Recreation by ryan-brumback.
-Code and data: MIT licence. Ghostbusters is a trademark of Columbia Pictures / Sony;
+Code and data: MIT license. Ghostbusters is a trademark of Columbia Pictures / Sony;
 non-commercial fan project.

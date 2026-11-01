@@ -89,12 +89,12 @@ void loop() {
 
 ## Other panel sizes
 
-- **At least 80 wide, at least 7 tall:** place 1:1 and centre. For 14+ rows, double each row as the CoolLED version does. For 15+ rows, optionally use the half-row green offset (`to_panel()` in `generate.py`).
+- **At least 80 wide, at least 7 tall:** place 1:1 and center. For 14+ rows, double each row as the CoolLED version does. For 15+ rows, optionally use the half-row green offset (`to_panel()` in `generate.py`).
 - **Narrower than 80:** the sign's messages are designed for 80 columns; WE'RE BACK and GHOSTBUSTERS fill it edge to edge. Options:
   1. **Scroll** each frame horizontally, which works best for the long messages.
-  2. **Scale down** horizontally with nearest-neighbour. Expect bold strokes to break below about 64 columns.
+  2. **Scale down** horizontally with nearest-neighbor. Expect bold strokes to break below about 64 columns.
   3. **Two lines** on tall panels (e.g. 32×64): split long words. This is not screen-accurate.
-- **Integer scaling up:** use nearest-neighbour only. Never smooth or interpolate; LED art turns to mush.
+- **Integer scaling up:** use nearest-neighbor only. Never smooth or interpolate; LED art turns to mush.
 
 ## Regenerating the `.jt` for another CoolLED size
 
