@@ -33,4 +33,4 @@ This folder is the source of truth for the GBFans wiki page [Ecto-1A LED Sign Bo
 
 | Date | Version | Change | Wiki status |
 |---|---|---|---|
-| 2026-11-01 | v10.1 | First draft: hardware, messages, fonts, sequence, inferred effects, plans, build guide, downloads, open questions, credits and references. Downloads link directly to the `.jt` files, the attribution PDF, every image file, and the porting code on GitHub. iOS/two-panel testing noted. American spelling throughout (color, center, license) | Drafted in the editor, **not yet saved** |
+| 2026-11-01 | v10.1 | First draft: hardware, messages, fonts, sequence, inferred effects, plans, build guide, downloads, open questions, credits and references. Downloads link directly to the `.jt` files, the attribution PDF, every image file, and the porting code on GitHub. iOS/two-panel testing noted. American spelling throughout (color, center, license) | Drafted in the editor, **not yet saved**. 3:11 PM save attempt stopped: GBFans refused the image upload (403 Forbidden) for this account, so nothing was saved |
