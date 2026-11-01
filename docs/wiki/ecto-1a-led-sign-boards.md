@@ -146,32 +146,8 @@ On Android, download the file, tap it, and open it with CoolLED1248 (app version
 
 - **[Ecto-1A_Attribution_Evidence_v10.pdf](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/Ecto-1A_Attribution_Evidence_v10.pdf)**: one card per element, showing a credited source extract beside the recreation and marking it sourced, measured, estimate or inferred.
 - The written audit: [ATTRIBUTION.md](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/ATTRIBUTION.md).
-- The individual evidence cards:
-  - [1. Hardware: 80 x 7 red/green matrix, green sits lower](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/01-hardware-80-x-7-red-green-matrix-green-sits-lowe.png) (sourced)
-  - [2. Font: bold narrow (GHOSTBUSTERS, FOR HIRE...)](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/02-font-bold-narrow-ghostbusters-for-hire.png) (sourced)
-  - [3. Font: bold wide (WE'RE BACK, WHO YA, GONNA, CALL?, US!)](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/03-font-bold-wide-we-re-back-who-ya-gonna-call-us.png) (sourced)
-  - [4. Font: thin 5x7 (CALL JL5-2020, TO BELIEVE YOU)](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/04-font-thin-5x7-call-jl5-2020-to-believe-you.png) (sourced)
-  - [5. A. GHOSTBUSTERS: rises in red after CALL JL5-2020 slides down](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/05-a-ghostbusters-rises-in-red-after-call-jl5-2020-.png) (sourced)
-  - [6. A. GHOSTBUSTERS: ~16 rapid red/green swaps, settles green, solid green](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/06-a-ghostbusters-16-rapid-red-green-swaps-settles-.png) (sourced)
-  - [7. B. FOR HIRE... in red inside a green border](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/07-b-for-hire-in-red-inside-a-green-border.png) (sourced)
-  - [8. C. WE'RE READY](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/08-c-we-re-ready.png) (estimate)
-  - [9. D. TO BELIEVE YOU: highlight moves word by word](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/09-d-to-believe-you-highlight-moves-word-by-word.png) (sourced)
-  - [10. D -> E. TO BELIEVE YOU wipes down as CALL JL5-2020 slides in from the top](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/10-d-e-to-believe-you-wipes-down-as-call-jl5-2020-s.png) (sourced)
-  - [11. E / L. CALL JL5-2020 in amber](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/11-e-l-call-jl5-2020-in-amber.png) (sourced)
-  - [12. Colour wipes: A->B and B->C (green), E->F (red), F green->red](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/12-colour-wipes-a-b-and-b-c-green-e-f-red-f-green-r.png) (inferred)
-  - [13. F. GHOSTBUSTERS green, then red](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/13-f-ghostbusters-green-then-red.png) (sourced)
-  - [14. G. Green flash -> WE'RE BACK, words swap colours](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/14-g-green-flash-we-re-back-words-swap-colours.png) (sourced)
-  - [15. G2. Five lines -> green boxes](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/15-g2-five-lines-green-boxes.png) (inferred)
-  - [16. H. WHO YA in red](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/16-h-who-ya-in-red.png) (measured)
-  - [17. I. GONNA](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/17-i-gonna.png) (estimate)
-  - [18. J. CALL? in red, slides up, sign blank ~0.8 s](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/18-j-call-in-red-slides-up-sign-blank-0-8-s.png) (measured)
-  - [19. K. US! alone, then green arrows on / off / on](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/19-k-us-alone-then-green-arrows-on-off-on.png) (measured)
-  - [20. K -> L. CALL JL5-2020 opens from centre, arrows lit](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/20-k-l-call-jl5-2020-opens-from-centre-arrows-lit.png) (measured)
-  - [21. L. CALL JL5-2020 holds ~2 s, then slides down](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/21-l-call-jl5-2020-holds-2-s-then-slides-down.png) (measured)
-  - [22. Shimmer on green GHOSTBUSTERS (A and F)](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/22-shimmer-on-green-ghostbusters-a-and-f.png) (inferred)
-  - [23. Timing: single file and two-part screen-timed build](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/docs/evidence/23-timing-single-file-and-two-part-screen-timed-bui.png) (estimate)
 
-The source extracts on the evidence cards (film stills, Getty Images news footage, a book scan) belong to their owners. They are included only for attribution and comparison, and aren't covered by the project's MIT licence.
+The source extracts in the PDF (film stills, Getty Images news footage, a book scan) belong to their owners. They are included only for attribution and comparison, and aren't covered by the project's MIT licence.
 
 ### Image files
 
