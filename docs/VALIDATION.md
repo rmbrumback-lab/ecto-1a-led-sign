@@ -51,7 +51,10 @@ During development, its output was also compared pixel-by-pixel with the generat
 | `test_dist_parts_are_current` | the committed part files equal freshly generated output |
 | `test_to_believe_you_highlights_one_word_at_a_time` | at most one word highlighted per frame, in the order TO → BELIEVE → YOU, in both builds |
 
+## 4. App import
+
+- **iOS:** tested by the project owner on 1 November 2026. The `.jt` file imports into CoolLED1248 and works.
+
 ## Not yet verified
 
 - **On-device playback** on a physical 16×96 panel. The limits above come from the protocol; panel firmware could be stricter.
-- **iOS app import** of `.jt` files.

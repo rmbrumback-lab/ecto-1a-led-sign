@@ -134,7 +134,7 @@ Each one is marked in the attribution audit. **A clear shot of GONNA, or a sharp
 
 ## Using it
 
-* **CoolLED1248 (16×96):** download the `.jt` to your phone (Android), tap it, and open with CoolLED1248. A single file holds at most 113 frames, so the single-file version compresses the timing. If your panel can play two programmes in a row, use **Part 1 + Part 2** for screen-accurate timing. The app versions that support `.jt` import are 2.x. iOS import isn't confirmed yet.
+* **CoolLED1248 (16×96):** download the `.jt` to your phone (iOS or Android), tap it, and open with CoolLED1248. A single file holds at most 113 frames, so the single-file version compresses the timing. If your panel can play two programmes in a row, use **Part 1 + Part 2** for screen-accurate timing. The app versions that support `.jt` import are 2.x.
 * **Any other sign or app:** the repo's `dist/` folder has:
   * `frames_80x7/` — 113 PNGs, 200 ms each
   * a sprite sheet

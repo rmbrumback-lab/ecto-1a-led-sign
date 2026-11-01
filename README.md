@@ -43,10 +43,10 @@ Detailed documentation:
 ### CoolLED1248 (16×96 panel)
 
 1. Download either the single file [`Ecto-1A_GB2_16x96.jt`](dist/Ecto-1A_GB2_16x96.jt), or both [`Part1`](dist/two_part/Ecto-1A_GB2_16x96_Part1.jt) and [`Part2`](dist/two_part/Ecto-1A_GB2_16x96_Part2.jt), to your phone.
-2. **Android:** open your Files app, tap the file, choose **Open with → CoolLED1248**. App versions 2.x import `.jt` files; if an import fails, the JT-Edit author recommends version 2.1.4.
+2. **iOS or Android:** tap the downloaded file and open it with **CoolLED1248**. App versions 2.x import `.jt` files; if an import fails, the JT-Edit author recommends version 2.1.4.
 3. Send it to the panel from the app. For the two-part version, import both and add them to the panel's playlist in order: **Part 1, then Part 2**. Part 2 ends with CALL JL5-2020 sliding down, and Part 1 opens with GHOSTBUSTERS rising, so the loop is seamless.
 
-> **iOS:** `.jt` import on iOS has not been confirmed. As a workaround, load the file into the browser-based [JT-Edit](https://jt-edit.com/) editor.
+> If the app won't import the file, you can load it into the browser-based [JT-Edit](https://jt-edit.com/) editor instead.
 
 **Other panel sizes:** the `.jt` file must match your panel. 16×96 is the smallest common CoolLED size that fits the sign at 1:1. For other sizes, see [Regenerating or customising](#regenerating-or-customising).
 
