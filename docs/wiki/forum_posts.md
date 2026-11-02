@@ -30,6 +30,7 @@ A record of the GBFans forum posts that shaped the wiki page, kept so future rev
 
 - **Ryan, 1 November 2026:** "Sounds great! I'll start working on the content…"
 - **Ryan, 1 November 2026, 3:24 PM (post #4):** "@aj-quick The Ecto-1A LED Sign Boards page is drafted and ready to save, but image uploads to the wiki are blocked for my account (the upload returns "403 Forbidden"). Could you enable image uploads for me? Once that's sorted, I'll upload the images and publish the page. Thanks!"
+- **Ryan, 2 November 2026, 8:25 AM (post #5):** "@aj-quick Quick update: the Ecto-1A LED Sign Boards page is written and has been submitted for review. Image uploads are still failing for me, so as a workaround the images currently point to copies on GitHub. Once I've resolved the upload issue, they can be pulled in and hosted here on GBFans instead. Thanks!"
 
 ## Follow-up for when the page is live (draft v4, not yet posted; the 3:15 PM run was held because the page isn't live yet. Post once the page is saved)
 
