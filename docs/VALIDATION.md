@@ -24,7 +24,7 @@ git clone https://github.com/auc0le/JT-Edit.git
 node tools/verify_with_jtedit.js ./JT-Edit dist/Ecto-1A_GB2_16x96.jt
 # JT-Edit decoded 113 frames of 16x96; non-red/green/yellow pixels: 0
 node tools/verify_with_jtedit.js ./JT-Edit dist/two_part/Ecto-1A_GB2_16x96_Part1.jt
-# JT-Edit decoded 112 frames of 16x96; non-red/green/yellow pixels: 0
+# JT-Edit decoded 111 frames of 16x96; non-red/green/yellow pixels: 0
 node tools/verify_with_jtedit.js ./JT-Edit dist/two_part/Ecto-1A_GB2_16x96_Part2.jt
 # JT-Edit decoded 109 frames of 16x96; non-red/green/yellow pixels: 0
 ```
@@ -50,6 +50,11 @@ During development, its output was also compared pixel-by-pixel with the generat
 | `test_two_parts_cover_full_sequence_in_order` | Part 1 + Part 2 equals the full screen-timed sequence, frame for frame |
 | `test_dist_parts_are_current` | the committed part files equal freshly generated output |
 | `test_to_believe_you_highlights_one_word_at_a_time` | at most one word highlighted per frame, in the order TO → BELIEVE → YOU, in both builds |
+| `test_prodestrian_maps_used_verbatim` | WE'RE READY, TO BELIEVE YOU and US! frames equal prodestrian's pixel maps |
+| `test_we_re_ready_is_red_with_green_words` | WE'RE READY uses red and green only |
+| `test_lines_boxes_have_no_gaps` | once drawn, the five boxes fill every column |
+| `test_who_ya_has_a_word_space` | WHO YA has a full word space |
+| `test_drop_shadow_and_flip_present` | WHO YA / GONNA / CALL? carry the green shadow; A includes the upside-down GHOSTBUSTERS |
 
 ## 4. Tested on real hardware
 

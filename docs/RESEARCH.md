@@ -107,14 +107,27 @@ At Ryan's request, the remaining undocumented effects were reconstructed, and th
 - The v9 word-by-word build of WE'RE READY was reverted at Ryan's direction. WE'RE READY is again shown as sourced: the full phrase.
 - Frame counts are unchanged.
 
+## v11: prodestrian's review
+
+prodestrian reviewed v10 on 8 November 2026, with feedback in the release topic (post #12) and new reference in the reference thread (post #41). His 2000 × 160 pixel diagrams were decoded into 80 × 7 frames, and his clip of the flip was viewed frame by frame.
+
+- **WE'RE READY:** red, not amber; WE'RE then READY each turn green in turn. His pixel map is used verbatim, replacing the amber estimate.
+- **TO BELIEVE YOU:** TO, BELIEVE and YOU each turn green in turn (v9–v10 had BELIEVE amber and YOU inferred). His pixel map is used verbatim, so the letter layout changes too.
+- **WE'RE READY → TO BELIEVE YOU:** a right-to-left wipe, where v4–v10 had a cut.
+- **WHO YA:** two words; it now has a full word space.
+- **Drop shadow:** WHO YA, GONNA, CALL? and US! have a green shadow one column to the right; the arrows don't. US! and its arrows use his pixel map verbatim, which also moves the arrows outward.
+- **Lines → boxes:** five 16-column boxes with no gaps. The dark and red divider columns in v6–v10 were an optical illusion from the offset LEDs. The red line grows from each box's left edge to full width, then shrinks from that edge, revealing green. Only the step count is still inferred.
+- **Flip:** the upside-down GHOSTBUSTERS is real, per his clip, the deleted museum scene and behind-the-scenes photos. It is back in the swaps, mirrored top to bottom with each letter in place. The order of upright and flipped states is estimated.
+- **Shimmer:** he sees the pattern as partly repeating, so the random sparkle now cycles through three masks.
+- **Colors of WHO YA / GONNA / CALL?:** he reads them as amber in the Getty footage; the deleted-scene clip measured them red. Red letters with a green shadow fit both.
+- **Frames:** still 113 (single); 111 + 109 (two-part, 44.0 s). The single build's WE'RE BACK swaps went from four to two to fit.
+
 ## Open questions
 
-- GONNA's color, and sharp frames of WHO YA / GONNA / CALL? for letter shapes.
-- YOU's highlight color.
+- Pixel maps of WHO YA, GONNA and CALL? for exact letter shapes and shadow.
 - Whether the FOR HIRE border animates.
-- What the shimmer really looks like, and the real wipe direction (both currently inferred).
-- The real geometry of the lines → boxes graphic (currently inferred).
-- A sharp frame of the US! arrows.
+- The direction and look of the color wipes (prodestrian plans to look at these).
+- The order of upright and flipped GHOSTBUSTERS during the swaps.
 - True film timing. Uninterrupted footage of the full loop isn't known to exist.
 
 Contributions with better reference are welcome via an issue or pull request.

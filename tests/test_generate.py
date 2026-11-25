@@ -98,3 +98,49 @@ def test_to_believe_you_highlights_one_word_at_a_time():
                 order.append(lit[0])
         assert order[:3] == ["TO", "BELIEVE", "YOU"]
 
+
+
+def test_prodestrian_maps_used_verbatim():
+    # WE'RE READY, TO BELIEVE YOU and US! frames are prodestrian's pixel maps (GBFans, 8 Nov 2026)
+    segs = {sid: fr for sid, _, fr in g.build_segments("full")}
+    for sid, key in (("C", "C_red"), ("D", "D_red"), ("K", "K_on")):
+        assert g.bitmap(g.PRODESTRIAN_MAPS[key]) in segs[sid]
+
+
+def test_we_re_ready_is_red_with_green_words():
+    segs = {sid: fr for sid, _, fr in g.build_segments("full")}
+    colors = {v for f in segs["C"] for row in f for v in row if v} 
+    assert g.Y not in {v for f in segs["C"][-8:] for row in f for v in row}
+    assert {g.R, g.G} <= colors
+
+
+def test_lines_boxes_have_no_gaps():
+    # Each box fills all 16 columns; no dark divider columns once the boxes are drawn (post #41)
+    for prof in g.PROFILES:
+        g2 = [fr for sid, _, fr in g.build_segments(prof) if sid == "G2"][0]
+        full_lit = [all(v != g.OFF for row in f for v in row) for f in g2]
+        first = full_lit.index(True)                    # first pass grows over a dark sign
+        assert all(full_lit[first:])
+
+
+def test_who_ya_has_a_word_space():
+    f = g.wide("WHO YA", g.R, space=6)
+    lit = [any(f[y][x] for y in range(g.H)) for x in range(g.W)]
+    runs, n = [], 0
+    for v in lit:
+        if not v:
+            n += 1
+        else:
+            if n:
+                runs.append(n)
+            n = 0
+    assert max(runs[1:]) >= 6          # the gap between WHO and YA
+
+
+def test_drop_shadow_and_flip_present():
+    segs = {sid: fr for sid, _, fr in g.build_segments("single")}
+    for sid in ("H", "I", "J"):
+        vals = {v for row in segs[sid][0] for v in row}
+        assert {g.R, g.G} <= vals                       # red letters, green shadow
+    a_r = g.narrow("GHOSTBUSTERS", g.R)
+    assert g.flip(a_r) in segs["A"]

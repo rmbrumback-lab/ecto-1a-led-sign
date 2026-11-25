@@ -4,7 +4,7 @@ GBFans post draft (Discourse markdown). Suggested title:
 Suggested category: Equipment > Ectomobiles. Reply in the reference thread too, linking here.
 Repository: https://github.com/rmbrumback-lab/ecto-1a-led-sign
 Live topic: https://forum.gbfans.com/t/screen-accurate-ecto-1a-sign-animation-coolled-file-open-data-for-any-led-build/219532
-Note (1 Nov 2026): this copy includes the iOS / two-panel testing line. The live opening post
+Note (1 Nov 2026): this copy includes the iOS / two-panel testing line. v11 (25 Nov 2026) corrections from prodestrian's review are reflected in the sequence list below; see docs/RESEARCH.md. The live opening post
 couldn't be edited (new-user limits), so the update was posted as reply #4 instead.
 -->
 
@@ -51,12 +51,12 @@ The IDs match prodestrian's A–L frames. It's one loop: 22 seconds in the singl
 
 1. **GHOSTBUSTERS** slides up in red, shimmers in green, rapidly swaps red/green about 16 times, then goes solid green.
 2. **FOR HIRE…** wipes in from the green, in red inside a **green border**, then a green wipe.
-3. **WE'RE READY**, wiped in from the green.
-4. **TO BELIEVE YOU**: the highlight moves word by word: TO (green), BELIEVE (amber), then YOU. YOU's color is my guess. It then wipes down as **CALL JL5-2020** (amber) slides in from the top.
+3. **WE'RE READY** in red, wiped in from the green; WE'RE then READY turn green, then a right-to-left wipe.
+4. **TO BELIEVE YOU** in red: TO, BELIEVE and YOU each turn green in turn. It then wipes down as **CALL JL5-2020** (amber) slides in from the top.
 5. A red wipe, then **GHOSTBUSTERS** in green with the shimmer, wiping from green to red, then solid red.
 6. A green flash → **WE'RE BACK**, with the words swapping colors.
-7. The **five lines → green boxes** graphic. This is my *inferred* reconstruction; see below.
-8. **WHO YA** and **GONNA**, then red **CALL?**, which slides up and out. The sign then goes dark briefly.
+7. The **five lines → green boxes** graphic: red grows across each 16-column box, then shrinks to reveal green.
+8. **WHO YA** and **GONNA**, then **CALL?** (red with a green drop shadow), which slides up and out. The sign then goes dark briefly.
 9. **US!** appears on its own, then the green arrows come on, off and on again.
 10. **CALL JL5-2020** opens out from the center while the arrows are still lit, holds, slides down, and GHOSTBUSTERS rises to start again.
 
@@ -105,7 +105,7 @@ I dropped one thing outright: the possible upside-down flip in GHOSTBUSTERS, sin
 
 * **FOR HIRE…** has a green border.
 * **CALL JL5-2020** is amber. You can see both colors lit in the Getty close-up.
-* **TO BELIEVE YOU** shows one word highlighted at a time (TO green, BELIEVE amber), so I've animated it word by word through YOU.
+* **TO BELIEVE YOU** shows one word turning green at a time (v11, from prodestrian's pixel maps).
 * The green shapes beside **US!** are arrows pointing *in* at the word.
 
 **4. The deleted-scene clip.** I went through the Hardemeyer deleted-scene GIF frame by frame, all 181 frames, calibrating colors against things we already know (red US!, green arrows, amber CALL). It showed:

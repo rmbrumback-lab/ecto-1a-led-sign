@@ -6,12 +6,12 @@ A frame-by-frame recreation of the roof-mounted dot-matrix sign from the **Ecto-
 
 **Download (pick one):**
 - **Single file:** [`Ecto-1A_GB2_16x96.jt`](dist/Ecto-1A_GB2_16x96.jt). The whole loop fits in one file, so timing is compressed (22.6 s).
-- **Two files, screen-timed:** [`Part1.jt`](dist/two_part/Ecto-1A_GB2_16x96_Part1.jt) + [`Part2.jt`](dist/two_part/Ecto-1A_GB2_16x96_Part2.jt). Load both onto the panel to play in order. With twice the frames, the holds follow real timings (44.2 s).
+- **Two files, screen-timed:** [`Part1.jt`](dist/two_part/Ecto-1A_GB2_16x96_Part1.jt) + [`Part2.jt`](dist/two_part/Ecto-1A_GB2_16x96_Part2.jt). Load both onto the panel to play in order. With twice the frames, the holds follow real timings (44.0 s).
 
 | | |
 |---|---|
 | Sign model | 80 × 7 pixels, red + green (both lit = amber) |
-| Sequence | 13 segments. Single file: 113 frames, 22.6 s. Two-part: 112 + 109 frames, 44.2 s. All at 200 ms/frame |
+| Sequence | 13 segments. Single file: 113 frames, 22.6 s. Two-part: 111 + 109 frames, 44.0 s. All at 200 ms/frame |
 | Fonts | 3, traced from reference photos |
 | Attribution | every element traced to a source — [ATTRIBUTION.md](docs/ATTRIBUTION.md), with [evidence cards](docs/evidence/) showing each source extract beside our rendering |
 | CoolLED files | `aniType 1` (3-bit color). Single: 65,088 bytes. Part 1: 64,512. Part 2: 62,784. All inside the app's 65,535-byte upload limit |
@@ -62,27 +62,27 @@ Use the files in [`dist/`](dist/): GIF, per-frame PNGs, sprite sheet, JSON, or a
 
 | ID | Shows | Effect | Time |
 |---|---|---|---|
-| A | GHOSTBUSTERS | rises in red, shimmer on green *(inferred look)*, 16 rapid red/green swaps, solid green | 4.4 s |
+| A | GHOSTBUSTERS | rises in red, shimmer on green *(repeating sparkle)*, about 16 rapid red/green swaps with upside-down flips, solid green | 5.0 s |
 | B | FOR HIRE… | wiped in from green *(inferred, left to right)*; red text inside a green border; green wipe out | 1.0 s |
-| C | WE'RE READY | wiped in from green *(inferred)*; font and color unknown (shown thin, amber) | 0.8 s |
-| D | TO BELIEVE YOU | thin font; **the highlight moves word by word: TO (green), BELIEVE (amber), YOU (green, inferred)**, with the other words red; wipes down as E slides in | 1.4 s |
+| C | WE'RE READY | wiped in from green *(inferred)*; thin font, red, with WE'RE then READY turning green; right-to-left wipe to D | 1.0 s |
+| D | TO BELIEVE YOU | thin font, red; **TO, BELIEVE and YOU each turn green in turn**; wipes down as E slides in | 1.6 s |
 | E | CALL JL5-2020 | thin font, amber; red wipe out *(inferred, left to right)* | 1.0 s |
-| F | GHOSTBUSTERS | wiped in green from red, shimmer *(inferred look)*, green, green→red wipe, solid red | 1.2 s |
-| G | WE'RE BACK | green flash, then WE'RE (red) BACK (green), words swap colors | 1.6 s |
-| G2 | (graphic) | **inferred reconstruction:** five red lines wipe across, green boxes grow, red sweeps back, green again | 1.8 s |
-| H | WHO YA | red | 0.6 s |
-| I | GONNA | color unknown (shown red) | 0.4 s |
-| J | CALL? | red; slides up and out; sign blank about 0.8 s | 2.0 s |
-| K | US! | red; alone, then green arrows on / off / on | 3.2 s |
+| F | GHOSTBUSTERS | wiped in green from red, shimmer *(repeating sparkle)*, green, green→red wipe, solid red | 1.6 s |
+| G | WE'RE BACK | green flash, then WE'RE (red) BACK (green), words swap colors | 1.2 s |
+| G2 | (graphic) | five 16-column boxes, no gaps: in each, red grows from the left edge to full width, then shrinks from that edge revealing green | 1.4 s |
+| H | WHO YA | red with a green drop shadow | 0.4 s |
+| I | GONNA | red with a green drop shadow | 0.4 s |
+| J | CALL? | red with a green drop shadow; slides up and out; sign blank about 0.8 s | 2.0 s |
+| K | US! | red with a green drop shadow; alone, then green arrows on / off / on | 3.2 s |
 | L | CALL JL5-2020 | revealed from the center while the arrows stay lit; slides down; GHOSTBUSTERS rises to restart | 2.8 s |
 
 The segment IDs follow the A–L scheme from the GBFans reference thread.
 
-**Three inferred reconstructions.** These effects are confirmed to exist, but their exact look isn't documented, so they're best-effort reconstructions, labeled *inferred* everywhere:
+**What's still inferred.** After prodestrian's review (v11), most effects are sourced. Still inferred:
 
-- **Five lines → green boxes (G2).** The colors, phase order and approximate spacing come from the deleted-scene clip. The geometry is inferred: 16-column sections, full-height fill, step counts.
-- **Color wipes** (A→B, B→C, E→F, and green→red in F). The colors are sourced. The direction is inferred as left to right, because red sweeps in from the left on this sign in the clip.
-- **Shimmer** (A and F). When and where it happens is sourced; its look is inferred as random per-pixel sparkle.
+- **Color wipes** (A→B, B→C, E→F, and green→red in F). The colors are sourced; the direction is inferred as left to right. The WE'RE READY → TO BELIEVE YOU wipe is right to left, as prodestrian reports.
+- **Shimmer pixels** (A and F). When it happens is sourced, and prodestrian sees the pattern as partly repeating; the exact pixels are a seeded random cycle.
+- **Step counts and the flip order.** The lines → boxes step count, and the order of upright and upside-down GHOSTBUSTERS during the swaps, are estimates.
 
 See [docs/ATTRIBUTION.md](docs/ATTRIBUTION.md) and the [evidence cards](docs/evidence/). Drawing them would mean inventing them. Instead, the confirmed frame is held, or a solid color frame stands in for the wipe. See [docs/ATTRIBUTION.md](docs/ATTRIBUTION.md).
 
@@ -112,22 +112,22 @@ The project went through four iterations as more reference material surfaced. Th
 | Every message and its spelling (incl. the apostrophe in WE'RE) | **Sourced** | GBFans thread |
 | Playback order A–L | **Sourced** (one gap inferred by the thread) | Film, deleted scenes, premiere footage |
 | GHOSTBUSTERS font + red / red-green flashing | **Sourced** | Night still, sampled on grid |
+| GHOSTBUSTERS upside-down flip during the swaps / order of flipped states | **Sourced** / **Estimate** | prodestrian's clip and citations (release topic #12) |
 | WE'RE BACK font, layout (cols 0–79), red/green split | **Sourced** | Hi-res book scan, read pixel-for-pixel |
 | FOR HIRE… red with green border | **Sourced** | Night still |
-| TO BELIEVE YOU thin font; TO green and BELIEVE amber, each with the other words red | **Sourced** | Film still, museum still, premiere close-up |
-| Word-by-word highlight TO → BELIEVE → YOU | **Sourced** (owner observation) / YOU's color and the rate **inferred** | Ryan's observation; consistent with the stills, where one word at a time is lit |
+| WE'RE READY and TO BELIEVE YOU: thin font, exact layout, red with each word turning green in turn | **Sourced** / rate **estimated** | prodestrian's pixel maps from the Getty footage (reference thread #41); film and museum stills |
+| Right-to-left wipe from WE'RE READY to TO BELIEVE YOU | **Sourced** direction / **inferred** look | prodestrian (reference thread #41) |
 | Two-part screen timings | **Measured** (J–L), **sourced** (16 swaps; shimmer "a few seconds") / **estimated** (2.0 s message holds, from the measured 2.1 s CALL JL5-2020 hold) | Deleted-scene clip; thread |
 | CALL JL5-2020 thin font, amber | **Sourced** | Premiere close-ups |
-| US! red with inward green arrows | **Sourced (shape approximate)** | Heavily motion-blurred premiere frames |
+| US! red with green drop shadow; inward green arrows | **Sourced** | prodestrian's pixel map (release topic #12); premiere frames |
 | Slides, 16 red/green swaps, solid color frames, word color swaps, arrow blink | **Sourced** | Thread's frame-by-frame descriptions |
 | Wipes: occurrence and colors / direction and steps | **Sourced** / **Inferred** | Thread (Getty, film) / left-to-right sweep seen in the clip |
-| Shimmer: occurrence (A, F) / look | **Sourced** / **Inferred** | Thread (Getty, film, behind-the-scenes) / random sparkle |
-| WE'RE READY font and color | **Unknown** (shown thin, amber) | No clear reference |
-| WHO YA and CALL? color (red) | **Sourced** | Deleted-scene clip, color-calibrated |
+| Shimmer: occurrence (A, F), partly repeating / exact pixels | **Sourced** / **Inferred** | Thread (Getty, film, behind-the-scenes); prodestrian (#41) / seeded random cycle |
+| WHO YA, GONNA, CALL?: red letters, green drop shadow; WHO YA as two words | **Sourced** | Deleted-scene clip, color-calibrated; prodestrian (release topic #12) |
 | J–L timing (blank, arrow blink, center reveal, holds) | **Sourced** | Deleted-scene clip, measured |
-| GONNA color; WHO YA / GONNA / CALL? letter shapes | **Estimate** | Bold-wide font assumed |
-| Lines → boxes graphic (G2): occurrence, colors, phase order | **Sourced** | Thread (Getty analysis); deleted-scene clip |
-| Lines → boxes graphic (G2): section width, divider position, fill height, step count | **Inferred** | Clip spacing matches 5 × 16 columns within error |
+| WHO YA / GONNA / CALL? letter shapes | **Estimate** | Bold-wide font assumed |
+| Lines → boxes graphic (G2): five 16-column full-height boxes, no gaps; red grows from each box's left edge, then shrinks from it | **Sourced** | prodestrian's pixel map and notes (#41, release topic #12); deleted-scene clip |
+| Lines → boxes graphic (G2): step count | **Inferred** | — |
 | Timing of A–I | **Estimate**, compressed | 113-frame upload limit |
 
 ---
@@ -139,7 +139,7 @@ The project went through four iterations as more reference material surfaced. Th
 | [`dist/Ecto-1A_GB2_16x96.jt`](dist/Ecto-1A_GB2_16x96.jt) | CoolLED1248 animation, 16×96 panel, single file (compressed timing) |
 | [`dist/two_part/Ecto-1A_GB2_16x96_Part1.jt`](dist/two_part/Ecto-1A_GB2_16x96_Part1.jt), [`Part2.jt`](dist/two_part/Ecto-1A_GB2_16x96_Part2.jt) | Screen-timed version as two CoolLED files: Part 1 = A–F, Part 2 = G–L |
 | [`dist/two_part/ecto1a_96x16_full.gif`](dist/two_part/ecto1a_96x16_full.gif) | Preview of the screen-timed version (both parts) |
-| [`dist/two_part/ecto1a_full_frames.json`](dist/two_part/ecto1a_full_frames.json), [`ecto1a_full_playlist.json`](dist/two_part/ecto1a_full_playlist.json) | Screen-timed frames for other apps (221 frames / 61 unique) |
+| [`dist/two_part/ecto1a_full_frames.json`](dist/two_part/ecto1a_full_frames.json), [`ecto1a_full_playlist.json`](dist/two_part/ecto1a_full_playlist.json) | Screen-timed frames for other apps (220 frames / 71 unique) |
 | [`dist/ecto1a_96x16_panel.gif`](dist/ecto1a_96x16_panel.gif) | Preview as it appears on the panel |
 | [`dist/ecto1a_80x7.gif`](dist/ecto1a_80x7.gif) | Native 80×7 LED-style preview |
 | [`dist/frames_80x7/`](dist/frames_80x7/) | 113 PNGs, 1 image pixel = 1 sign pixel |
@@ -187,7 +187,7 @@ python -m pytest -q tests
 
 This recreation rests on the community research in the GBFans thread **[Screen Accurate ECTO-1A Dot Matrix LED Sign (Reference)](https://forum.gbfans.com/t/screen-accurate-ecto-1a-dot-matrix-led-sign-reference/26454)**:
 
-- **prodestrian** — started and led the reference effort: the 80×7 red/green hardware model, the red/green vertical offset, the full text inventory, the A–L sequence, and the scene-by-scene film, deleted-scene and premiere footage analysis.
+- **prodestrian** — started and led the reference effort: the 80×7 red/green hardware model, the red/green vertical offset, the full text inventory, the A–L sequence, and the scene-by-scene film, deleted-scene and premiere footage analysis. His November 2026 review of this recreation supplied pixel maps of WE'RE READY, TO BELIEVE YOU, US! and the lines → boxes wipe, the drop shadow, the WHO YA spacing and the clip showing the GHOSTBUSTERS flip (v11).
 - **zerosum** — pixel-placement maps, screen grabs from the premiere footage, and the book scan of WE'RE BACK that anchored the bold-wide font.
 - **Kingpin** — found the 1989 premiere footage (YouTube and Getty Images), and confirmed the "yellow" is red and green lit together.
 - **d_osborn** — pointed to the Electronic Press Kit, and contributed close-up photos.

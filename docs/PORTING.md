@@ -21,7 +21,7 @@ The base timing is **200 ms per frame**. The full loop is 113 frames, or 22.6 s.
 | Arduino / ESP32 / Teensy | `ecto1a_frames.h` |
 | Raspberry Pi, web, Python, JS | `ecto1a_frames.json` or `ecto1a_playlist.json` |
 | CoolLED1248, 16×96 | `Ecto-1A_GB2_16x96.jt` (single file), or `two_part/…Part1.jt` + `…Part2.jt` played in order (screen-timed) |
-| Screen-timed data for any app | `two_part/ecto1a_full_frames.json`, `two_part/ecto1a_full_playlist.json` (221 frames, 44.2 s) |
+| Screen-timed data for any app | `two_part/ecto1a_full_frames.json`, `two_part/ecto1a_full_playlist.json` (220 frames, 44.0 s) |
 | CoolLED1248, other size | regenerate (see the README) |
 
 `ecto1a_80x7.gif` and `ecto1a_96x16_panel.gif` are **LED-style previews** (round dots, 8× scale). Apps that rescale a GIF onto their own grid want a **pixel-exact** GIF instead, where 1 image pixel equals 1 LED:
@@ -52,12 +52,12 @@ imgs[0].save("ecto1a_exact.gif", save_all=True, append_images=imgs[1:],
 }
 ```
 
-`ecto1a_playlist.json` contains the same metadata. It stores `unique_frames` (46) and a `playlist` of `{"frame": index, "ms": duration}` (77 steps). Use it when memory matters or when you want to stretch holds to film-like timing: multiply `ms` on steps longer than 400 ms.
+`ecto1a_playlist.json` contains the same metadata. It stores `unique_frames` (50) and a `playlist` of `{"frame": index, "ms": duration}` (79 steps). Use it when memory matters or when you want to stretch holds to film-like timing: multiply `ms` on steps longer than 400 ms.
 
 ## Arduino / C (`ecto1a_frames.h`)
 
-- `ecto1a_frames[ECTO1A_UNIQUE_FRAMES][140]` (46 frames): 2 bits per pixel, 4 pixels per byte, MSB first, row-major. Each row is 20 bytes.
-- `ecto1a_playlist[ECTO1A_STEPS][2]` (56 steps): `{unique frame index, duration ms}`.
+- `ecto1a_frames[ECTO1A_UNIQUE_FRAMES][140]` (50 frames): 2 bits per pixel, 4 pixels per byte, MSB first, row-major. Each row is 20 bytes.
+- `ecto1a_playlist[ECTO1A_STEPS][2]` (79 steps): `{unique frame index, duration ms}`.
 - Marked `PROGMEM`. On AVR, read with `pgm_read_byte` / `pgm_read_word`.
 
 ```cpp

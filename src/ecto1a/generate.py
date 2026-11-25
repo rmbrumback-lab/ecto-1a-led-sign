@@ -99,6 +99,52 @@ BOLD_NARROW = {
 
 FONTS = {"thin": THIN, "bold_wide": BOLD_WIDE, "bold_narrow": BOLD_NARROW}
 
+# --------------------------------------------------------------------------- sourced bitmaps
+# Full-frame pixel maps posted by prodestrian (GBFans, 8 Nov 2026: reference thread post #41
+# and release topic post #12), read from the 1989 Getty premiere footage and decoded here from
+# his 2000x160 diagrams. R = red, G = green, Y = both, . = off.
+PRODESTRIAN_MAPS = {
+    # WE'RE READY: all red, then each word turns green in turn (post #41)
+    "C_red": (
+        "......R...R.RRRRR....R..RRRR..RRRRR........RRRR..RRRRR..RRR..RRRR..R...R........",
+        "......R...R.R.......R...R...R.R............R...R.R.....R...R.R...R.R...R........",
+        "......R...R.R...........R...R.R............R...R.R.....R...R.R...R..R.R.........",
+        "......R.R.R.RRRR........RRRR..RRRR.........RRRR..RRRR..RRRRR.R...R...R..........",
+        "......R.R.R.R...........R.R...R............R.R...R.....R...R.R...R...R..........",
+        "......R.R.R.R...........R..R..R............R..R..R.....R...R.R...R...R..........",
+        ".......R.R..RRRRR.......R...R.RRRRR........R...R.RRRRR.R...R.RRRR....R.........."),
+    # TO BELIEVE YOU: all red, then TO, BELIEVE and YOU each turn green in turn (post #41)
+    "D_red": (
+        "RRRRR..RRR.......RRRR..RRRRR.R......R..RRRRR.R...R.RRRRR......R...R..RRR..R...R.",
+        "..R...R...R.......R..R.R.....R......R..R.....R...R.R..........R...R.R...R.R...R.",
+        "..R...R...R.......R..R.R.....R......R..R.....R...R.R...........R.R..R...R.R...R.",
+        "..R...R...R.......RRR..RRRR..R......R..RRRR...R.R..RRRR.........R...R...R.R...R.",
+        "..R...R...R.......R..R.R.....R......R..R......R.R..R............R...R...R.R...R.",
+        "..R...R...R.......R..R.R.....R......R..R.......R...R............R...R...R.R...R.",
+        "..R....RRR.......RRRR..RRRRR.RRRRR..R..RRRRR...R...RRRRR........R....RRR...RRR.."),
+    # US! with its green drop shadow, between the inward-pointing green arrows (post #12)
+    "K_on": (
+        "............G................RRG..RRG.RRRRRRRG.RRG.................G............",
+        "............GG...............RRG..RRG.RRYRRRRG.RRG................GG............",
+        "........GGGGGGG..............RRG..RRG.RRG...R..RRG...............GGGGGGG........",
+        "........GGGGGGGG.............RRG..RRG..RRRRR...RY...............GGGGGGGG........",
+        "........GGGGGGG..............RRG..RRG.R....RRG...................GGGGGGG........",
+        "............GG...............RRRRRRG..RRRRRRRG.RRG................GG............",
+        "............G.................RYYYY...RYYYYYY..RY..................G............"),
+}
+WORD_SPANS = {"C": [(6, 35), (43, 72)], "D": [(0, 11), (17, 56), (62, 80)]}
+
+
+def bitmap(rows):
+    code = {".": OFF, "R": R, "G": G, "Y": Y}
+    return [[code[ch] for ch in row] for row in rows]
+
+
+def word_green(f, span):
+    """Turn the lit pixels inside one word's column span green (prodestrian, post #41)."""
+    a, b = span
+    return [[G if (v and a <= x < b) else v for x, v in enumerate(row)] for row in f]
+
 
 # --------------------------------------------------------------------------- frame helpers
 def blank(c=OFF):
@@ -200,12 +246,40 @@ def wipe_reveal(new, color, x=W // 2):
     return colmix(new, blank(color), x)
 
 
-def shimmer(f, probs, seed):
-    """INFERRED shimmer: lit pixels randomly drop out and return (seeded, so reproducible).
-    The shimmer is reported in the thread (film, deleted scene, behind-the-scenes, premiere),
-    but its appearance is undocumented; random per-pixel sparkle is the inference."""
+def shimmer(f, probs, seed, cycle=3):
+    """Shimmer: lit pixels drop out and return. Reported in the thread (film, deleted scene,
+    behind-the-scenes, premiere). prodestrian (reference thread post #41) sees the pattern in the
+    Getty footage as partly repeating and says a suitably randomized sequence is fine, so a short
+    cycle of seeded random masks repeats (pixel pattern INFERRED, repetition per his reading)."""
     rng = random.Random(seed)
-    return [[[v if (v and rng.random() > p) else OFF for v in row] for row in f] for p in probs]
+    masks = [[[rng.random() for _ in range(W)] for _ in range(H)] for _ in range(cycle)]
+    return [[[v if (v and masks[i % cycle][y][x] > p) else OFF for x, v in enumerate(row)]
+             for y, row in enumerate(f)] for i, p in enumerate(probs)]
+
+
+def flip(f):
+    """Upside-down state: the frame mirrored top to bottom, each letter staying in place.
+    Seen during the GHOSTBUSTERS red/green swaps in the clip prodestrian posted (release topic
+    post #12), with the deleted museum scene and behind-the-scenes photos (his citations)."""
+    return [list(r) for r in f[::-1]]
+
+
+def drop_shadow(f, color=G):
+    """Green drop shadow one column right of the text, on unlit pixels only. prodestrian
+    (release topic post #12): WHO YA, GONNA, CALL? and US! have it; the arrows do not."""
+    out = [list(r) for r in f]
+    for y in range(H):
+        for x in range(1, W):
+            if f[y][x - 1] and not f[y][x]:
+                out[y][x] = color
+    return out
+
+
+def wipe_rl(old, new, steps):
+    """Right-to-left wipe: the new frame replaces the old from the right edge leftwards.
+    Direction sourced (prodestrian, post #41: WE'RE READY -> TO BELIEVE YOU); style inferred."""
+    xs = [round(W * (steps - i) / (steps + 1)) for i in range(steps)]
+    return [colmix(old, new, x) for x in xs]
 
 
 def hold(f, n):
@@ -213,48 +287,27 @@ def hold(f, n):
 
 
 # --------------------------------------------------------------------------- sequence
-def lines_boxes(full=False):
-    """INFERRED reconstruction of the "five lines -> green boxes" graphic (see docs/ATTRIBUTION.md).
+def lines_boxes(full=False, first=True):
+    """The "five lines -> green boxes" graphic.
 
-    Sourced: five vertical lines spread across the sign, each wiping across before being replaced
-    by a green box, looping (GBFans thread, Getty analysis); red wipe fill with dark dividers, green
-    growing outward from points inside each section with red dividers, red sweeping back in from
-    the left, green again (deleted-scene clip V1, frames 8-30, ~1.9 s; seed spacing ~14-15 cols).
-    Inferred: 16-column sections, divider in column 0 of each, full-height fill, step counts (8).
+    Sourced: five equal full-height boxes, 16 columns each, with no gaps between them (the
+    apparent gaps are an optical illusion from the offset red/green LEDs); in each box a red line
+    starts at the box's left edge and expands until it is 16 columns wide, then shrinks from the
+    same starting edge, revealing green; it loops (prodestrian, reference thread post #41 and
+    release topic post #12, from the Getty premiere footage; confirmed by the deleted-scene clip V1).
+    Inferred: the number of steps per pass.
     """
     SEG, N = 16, 5
 
-    def frame(fill):                       # fill(seg_col) -> color for columns 1..15
-        f = blank()
-        for k in range(N):
-            for c in range(1, SEG):
-                v = fill(c)
-                for y in range(H):
-                    f[y][k * SEG + c] = v
-        return f
+    def frame(fill):                       # fill(col within box 0..15) -> color
+        return [[fill(x % SEG) for x in range(N * SEG)] for _ in range(H)]
 
-    def with_divider(f, color):
-        for k in range(N):
-            for y in range(H):
-                f[y][k * SEG] = color
-        return f
-
-    c0 = SEG // 2                            # section center (col 8)
-    out = []
-    # 1. a red line wipes across each section, leaving red fill (dark dividers)
-    out.append(frame(lambda c: R if c == 1 else OFF))
-    out.append(frame(lambda c: R if c <= 8 else OFF))
-    out.append(frame(lambda c: R))
-    # 2. green box grows outward from each section's center (dividers red)
-    out.append(with_divider(frame(lambda c: G if abs(c - c0) <= 3 else R), R))
-    out.append(with_divider(frame(lambda c: G), R))
-    # 3. red sweeps back in from the left of each section
-    out.append(with_divider(frame(lambda c: R if c <= 8 else G), R))
-    out.append(frame(lambda c: R))
-    # 4. green again (loop)
-    if full:
-        out.append(with_divider(frame(lambda c: G if abs(c - c0) <= 3 else R), R))
-    out.append(with_divider(frame(lambda c: G), R))
+    grow = (1, 4, 8, 12, 16) if full else (1, 6, 11, 16)
+    shrink = (4, 8, 12) if full else (6, 11)
+    base = OFF if first else G             # first pass draws over a dark sign, loops over green
+    out = [frame(lambda c, w=w: R if c < w else base) for w in grow]
+    out += [frame(lambda c, s=s: G if c < s else R) for s in shrink]
+    out.append(frame(lambda c: G))
     return out
 
 
@@ -296,22 +349,25 @@ def build_segments(profile="single"):
     A_r = narrow("GHOSTBUSTERS", R)
     A_g = recolor(A_r, G)
     B = border(narrow("FOR HIRE...", R, gap=2, space=6))
-    C = thin("WE'RE READY", Y)                      # font/color unknown (estimate)
-    s = "TO BELIEVE YOU"
-    # One word highlighted at a time: TO (green, P3), BELIEVE (amber, P16), YOU (green, INFERRED
-    # color); the other words stay red, as in P3/P16. Sequential highlight: owner observation.
-    D_red, D_to, D_bel, D_you = (thin(s, per_word(s, c)) for c in
-                                 ([R, R, R], [G, R, R], [R, Y, R], [R, R, G]))
+    # WE'RE READY and TO BELIEVE YOU: prodestrian's pixel maps (post #41). Each is all red, then
+    # each word turns green in turn.
+    C_red = bitmap(PRODESTRIAN_MAPS["C_red"])
+    C_we, C_ready = (word_green(C_red, sp) for sp in WORD_SPANS["C"])
+    D_red = bitmap(PRODESTRIAN_MAPS["D_red"])
+    D_to, D_bel, D_you = (word_green(D_red, sp) for sp in WORD_SPANS["D"])
     E = thin("CALL JL5-2020", Y)
     s = "WE'RE BACK"
     G_rg, G_gr = wide(s, per_word(s, [R, G])), wide(s, per_word(s, [G, R]))
-    Hf = wide("WHO YA", R)      # red: measured in V1
-    I = wide("GONNA", R)        # color unknown (estimate); not visible in V1
-    J = wide("CALL?", R)        # red: measured in V1
-    k = "> US! <"
-    K_on = wide(k, [G, OFF, R, R, R, OFF, G], space=6)
-    K_off = wide(k, [OFF, OFF, R, R, R, OFF, OFF], space=6)
-    arrows_only = wide(k, [G, OFF, OFF, OFF, OFF, OFF, G], space=6)
+    # WHO YA, GONNA, CALL?: red letters with a green drop shadow (prodestrian, post #12; red
+    # letters measured in V1). WHO YA is two words, so it gets a full word space.
+    Hf = drop_shadow(wide("WHO YA", R, space=6))
+    I = drop_shadow(wide("GONNA", R))
+    J = drop_shadow(wide("CALL?", R))
+    # US! with drop shadow and arrows: prodestrian's pixel map (post #12)
+    K_on = bitmap(PRODESTRIAN_MAPS["K_on"])
+    is_arrow = lambda x: x < 20 or x >= 60
+    K_off = [[OFF if is_arrow(x) else v for x, v in enumerate(r)] for r in K_on]
+    arrows_only = [[v if is_arrow(x) else OFF for x, v in enumerate(r)] for r in K_on]
     L = E
 
     MSG = 10 if full else None                 # 2.0 s message hold in the full profile
@@ -322,20 +378,26 @@ def build_segments(profile="single"):
     a = [shift(A_r, 4), shift(A_r, 2)] + hold(A_r, 3 if full else 1)   # rises red after L (V1)
     a += shimmer(A_g, (0.2, 0.4, 0.6, 0.7, 0.6, 0.4, 0.3, 0.2) if full else (0.3, 0.6, 0.3), seed=1989)
     a += hold(A_g, 3 if full else 1)                                   # GHOSTBUSTERS again, green
-    a += [A_r if i % 2 == 0 else A_g for i in range(16)]               # ~16 rapid swaps, ends green
-    a += [blank(G)] * (2 if full else 1)                               # solid green
-    seg.append(("A", "GHOSTBUSTERS - rises red, shimmer (inferred), green, 16 red/green swaps, solid green", a))
+    # ~16 rapid red/green swaps with upside-down states (flip: prodestrian post #12 clip;
+    # the exact order of upright/flipped states is estimated)
+    a += [A_r, flip(A_r), A_g, flip(A_g)] * 4
+    a += [A_g] + [blank(G)] * (2 if full else 1)                       # ends green, solid green
+    seg.append(("A", "GHOSTBUSTERS - rises red, shimmer, green, ~16 red/green swaps with upside-down flips, solid green", a))
     # B
     seg.append(("B", "FOR HIRE... - wiped in from green (inferred L-R); green border; green wipe out",
                 wipe_steps(None, B, G, 0, WS) + hold(B, MSG or 2)
                 + wipe_steps(B, None, G, 2 if full else 1, WS)))
     # C
-    seg.append(("C", "WE'RE READY - wiped in from green (inferred L-R); cut to D",
-                wipe_steps(None, C, G, 0, WS) + hold(C, MSG or 3)))
-    # D: one word highlighted at a time, TO -> BELIEVE -> YOU
-    d = (hold(D_red, 2) + hold(D_to, 2) + hold(D_bel, 2) + hold(D_you, 2) + hold(D_red, 4)) if full \
+    # C: red, each word green in turn, red; right-to-left wipe into D (prodestrian post #41)
+    c = (hold(C_red, 2) + hold(C_we, 2) + hold(C_ready, 2) + hold(C_red, 2)) if full \
+        else [C_red, C_we, C_ready, C_red]
+    seg.append(("C", "WE'RE READY - wiped in from green (inferred L-R); red, WE'RE then READY turn green; "
+                "right-to-left wipe to D", wipe_steps(None, C_red, G, 0, WS) + c))
+    # D: red, then TO, BELIEVE and YOU each turn green in turn (prodestrian post #41)
+    d = wipe_rl(C_red, D_red, WS)
+    d += (hold(D_red, 2) + hold(D_to, 2) + hold(D_bel, 2) + hold(D_you, 2) + hold(D_red, 2)) if full \
         else [D_red, D_to, D_bel, D_you, D_red]
-    seg.append(("D", "TO BELIEVE YOU - highlight moves word by word: TO, BELIEVE, YOU; wipes down as E slides in",
+    seg.append(("D", "TO BELIEVE YOU - red; TO, BELIEVE, YOU turn green in turn; wipes down as E slides in",
                 d + [stack(E, D_red, 5), stack(E, D_red, 2)]))
     # E
     seg.append(("E", "CALL JL5-2020 - thin, amber; red wipe out (inferred L-R)",
@@ -350,14 +412,15 @@ def build_segments(profile="single"):
     # G
     # No WE'RE-alone frame (listed before WE'RE BACK in T #14 Getty): removed at the owner's direction
     g = [blank(G)] * (2 if full else 1) + hold(G_rg, 11 if full else 3)
-    g += ([G_gr, G_gr, G_rg, G_rg] * 2) if full else [G_gr, G_rg, G_gr, G_rg]
+    g += ([G_gr, G_gr, G_rg, G_rg] * 2) if full else [G_gr, G_rg]
     seg.append(("G", "WE'RE BACK - green flash, WE'RE BACK, words swap colors", g))
     # G2
-    seg.append(("G2", "Five lines wipe across, green boxes grow, red sweeps back, green again (INFERRED)",
-                lines_boxes(full=True) * 3 if full else lines_boxes()))
-    seg.append(("H", "WHO YA - red", hold(Hf, MSG or 2)))
-    seg.append(("I", "GONNA", hold(I, MSG or 2)))
-    seg.append(("J", "CALL? - red; slides up and out; blank ~0.8 s",
+    g2 = lines_boxes(full) + (lines_boxes(full, first=False) * 2 if full else [])
+    seg.append(("G2", "Five lines -> green boxes: red grows from each box's left edge, then shrinks "
+                "from it revealing green (no gaps); loops", g2))
+    seg.append(("H", "WHO YA - red with green drop shadow", hold(Hf, MSG or 2)))
+    seg.append(("I", "GONNA - red with green drop shadow", hold(I, MSG or 2)))
+    seg.append(("J", "CALL? - red with green drop shadow; slides up and out; blank ~0.8 s",
                 hold(J, 4) + [shift(J, -3), shift(J, -6)] + hold(blank(), 4)))
     seg.append(("K", "US! - red alone, then green arrows (on ~1.2 s, off ~0.8 s, on)",
                 hold(K_off, 3) + hold(K_on, 6) + hold(K_off, 4) + hold(K_on, 3)))

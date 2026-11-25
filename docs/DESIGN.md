@@ -44,13 +44,13 @@ The sign uses three fonts. They were identified by enlarging the reference still
 - Sampled from the night GHOSTBUSTERS still with a tilted-grid fit. **GHOSTBUSTERS spans columns 0–78**, edge to edge as in the photo.
 - FOR HIRE… uses the same font with 2-column letter gaps and 6-column word spaces, which matches its looser spacing in the still. The ellipsis is three 2×2 dots.
 
-### Thin 5×7 — TO BELIEVE YOU, CALL JL5-2020 (and WE'RE READY, unconfirmed)
+### Thin 5×7 — WE'RE READY, TO BELIEVE YOU, CALL JL5-2020
 
 ![thin](images/font_thin.png)
 
 - Classic 5×7 with 1-column gaps and 3-column spaces.
 - Confirmed by premiere-footage close-ups of CALL, BELIEVE and a thin amber "WE". In the close-up, the E's top and bottom rows are 5 pixels and its middle row is 4.
-- TO BELIEVE YOU is 75 columns wide, so it fills the sign, matching the film still.
+- **WE'RE READY and TO BELIEVE YOU use prodestrian's pixel maps verbatim** (reference thread post #41, read from the Getty premiere footage). TO BELIEVE YOU fills the sign from column 0 to 79, with a single-stroke I; WE'RE READY spans columns 6–72.
 
 ## 3. Colors per frame
 
@@ -58,15 +58,13 @@ The sign uses three fonts. They were identified by enlarging the reference still
 |---|---|---|
 | A GHOSTBUSTERS | red; green; ~16 red/green swaps; settles green | night still (red); thread: film 01:22:59 and Getty clip |
 | B FOR HIRE… | red text, green border | night still |
-| C WE'RE READY | **unknown**, shown amber (font also unconfirmed) | no clear reference |
-| D TO BELIEVE YOU | all red → TO green → BELIEVE amber → YOU green (**inferred color**) → all red; the other words stay red | states in P3, P8, P16; the word-by-word order is Ryan's observation; the rate is estimated |
+| C WE'RE READY | all red → WE'RE green → READY green → all red; the other word stays red | prodestrian's pixel maps (#41); rate estimated |
+| D TO BELIEVE YOU | all red → TO green → BELIEVE green → YOU green → all red; the other words stay red | prodestrian's pixel maps (#41); P3, P8; rate estimated |
 | E / L CALL JL5-2020 | amber | premiere close-ups (red and green clusters both lit) |
 | F GHOSTBUSTERS | green, then red | thread (film 01:23:28; Getty clip) |
 | G WE'RE BACK | WE'RE red, BACK green, then swapped | book scan; thread (Getty clip) |
-| H WHO YA | red | deleted-scene clip V1, measured |
-| I GONNA | **unknown**, shown red | not visible in V1 |
-| J CALL? | red | V1, measured |
-| K US! | red word, green arrows | premiere frames |
+| H WHO YA, I GONNA, J CALL? | red letters with a green drop shadow one column to the right | letters measured red in V1; shadow from prodestrian (release topic #12), who reads the combination as amber in the Getty footage |
+| K US! | red word with green drop shadow; green arrows (no shadow) | prodestrian's pixel map (release topic #12), used verbatim |
 
 ## 4. Sequence and effects
 
@@ -81,7 +79,9 @@ The order and the transitions come from the thread's analysis of the film (timec
 | US! alone, then arrows on/off/on | 3 frames alone; arrows 6 on, 4 off, 3 on | V1 |
 | US! → CALL JL5-2020 | text revealed outward from the center, in 2 steps, while the arrows stay lit | V1 frames 132–137 |
 | D wipes down as E slides in from the top | E above D on a 15-row strip, viewed at offsets 5, then 2 | film 01:24:46; Getty clip |
-| Red/green swaps (A) | the same glyphs alternate color every frame, 16 times | Getty clip: "about 16 times" |
+| Red/green swaps (A) | 16 frames cycling red, red upside-down, green, green upside-down | Getty clip: "about 16 times"; flip from prodestrian's clip (release topic #12). The order of upright and flipped states is **estimated** |
+| WE'RE READY → TO BELIEVE YOU | right-to-left wipe: the new message replaces the old from the right edge | prodestrian (#41); the look of the edge is inferred |
+| Drop shadow (H, I, J, K) | green pixel one column right of each lit letter pixel, where unlit | prodestrian (release topic #12) |
 | Color wipe (A→B, B→C, E→F, F green→red) | **INFERRED (v7):** the color advances **left to right** over the old message in a half step, then a solid frame (where the thread reports one), then the new message is revealed left to right. The colors are sourced. The direction is inferred from the left-to-right red sweep on this sign in V1 frames 20–23. | thread reports the colors |
 | Green → red (F) | cut | thread |
 | Solid red (F→G), green flash opening G | one solid frame each | Getty clip |
@@ -89,24 +89,23 @@ The order and the transitions come from the thread's analysis of the film (timec
 | Static border (B) | perimeter pixels green where the text is unlit | FOR HIRE still |
 | Arrow blink (K) | arrows on/off over 5 frames | Getty clip |
 
-### Inferred: five lines → green boxes (G2)
+### Five lines → green boxes (G2)
 
-Rendered as a best-effort reconstruction. The thread describes five vertical lines, each wiping across before being replaced by a green box, looping several times. The deleted-scene clip (V1, frames 8–30, about 1.9 s) shows the right third of the sign, out of focus.
+Five equal, full-height boxes of 16 columns fill the sign with **no gaps**. In each box a red line starts at the left edge and grows until it is 16 columns wide, then shrinks from that same edge, revealing green; the cycle loops. This follows prodestrian's pixel map and notes (reference thread #41, release topic #12), read from the Getty premiere footage, and matches the deleted-scene clip (V1, frames 6–31). The apparent gaps between boxes in footage are an optical illusion from the offset red and green LEDs, so v6–v10's divider columns are gone.
 
-| Step | Frame | Sourced from V1 / thread | Inferred |
-|---|---|---|---|
-| 1–3 | red line → half fill → full red; dark dividers | red wipe fill with dark dividers (V1 8–14); "each one wipes across" (thread) | 5 sections × 16 columns; divider in each section's column 0; left-to-right; 3 steps |
-| 4–5 | green grows from each section's center to full; dividers red | green growing outward from points in each section, red dividers (V1 15–19) | growth from the exact center; full height; 2 steps |
-| 6–7 | red sweeps back from the left → full red | red re-entering from the left of each section (V1 20–25) | half then full; 2 steps |
-| 8 | full green again | second green phase (V1 26–30); "loops multiple times" (thread) | 1 step (v7, to fit the wipes); loop count 1.5 |
+| Step | Frame |
+|---|---|
+| 1–4 | red grows from each box's left edge: 1, 6, 11, then 16 columns (the first pass draws over a dark sign; later passes over green) |
+| 5–6 | red shrinks from the left edge: green shows in 6, then 11 columns |
+| 7 | all green |
 
-Scale check: the green seeds are about 21 px apart at about 1.46 px per column (taken from the width of CALL JL5-2020 in the same shot). That is 14–15 columns, consistent with five 16-column sections.
+The number of steps is **inferred**. The screen-timed build uses finer steps (1, 4, 8, 12, 16 / 4, 8, 12) and three passes.
 
-![Lines → boxes reconstruction vs clip](images/lines_boxes_steps.png)
+![Lines → boxes](images/lines_boxes_steps.png)
 
-### Inferred: shimmer (A and F)
+### Shimmer (A and F)
 
-The thread reports GHOSTBUSTERS shimmering while green: in A for a few seconds before the red/green swaps (Getty clip), and in F after the red wipe (film 01:23:28; behind-the-scenes footage shows GHOSTBUSTERS, the shimmer, then GHOSTBUSTERS again). Nobody has documented its look, so it is rendered as **random per-pixel sparkle**: lit pixels drop out with rising, then falling, probability (A: 30%, 60%, 30%; F: 40%, 70%). A fixed seed keeps it reproducible.
+The thread reports GHOSTBUSTERS shimmering while green: in A for a few seconds before the red/green swaps (Getty clip), and in F after the red wipe (film 01:23:28; behind-the-scenes footage shows GHOSTBUSTERS, the shimmer, then GHOSTBUSTERS again). prodestrian sees the pattern in the Getty footage as partly repeating, and says a suitably randomized sequence is fine (#41). It is rendered as a **short repeating cycle of three random sparkle masks**: lit pixels drop out with rising, then falling, probability (A: 30%, 60%, 30%; F: 40%, 70%). A fixed seed keeps it reproducible. The exact pixels are inferred.
 
 ![Wipes and shimmer](images/wipes_shimmer_steps.png)
 
@@ -114,14 +113,16 @@ The thread reports GHOSTBUSTERS shimmering while green: in A for a few seconds b
 
 | Effect | Where | Why it's not drawn |
 |---|---|---|
-| Possible slide/flip in A | A | the thread hedges it ("seems", "possibly") |
+| Possible bounce in A | A | the thread hedges it ("seems") |
+
+The upside-down flip, previously listed here, is now drawn (v11) on prodestrian's evidence.
 
 ## 5. Timing
 
 The CoolLED1248 format has **one delay for the whole animation**. Holds are therefore made by repeating frames. The upload protocol limits a 16×96 animation to 113 frames (65,535 bytes ÷ 576 bytes per frame).
 
-At 200 ms per frame this gives a 22.6-second loop of 113 frames, exactly at the upload limit. **J–L are timed from the deleted-scene clip (V1)**: CALL? about 0.8 s, blank 0.8 s, US! 3.2 s with arrows, CALL JL5-2020 about 2.4 s including the reveal. **All other durations are estimates.** Holds of 0.4–0.8 s were shortened to fit the measured segments and the inferred G2 graphic, wipes and shimmer within the 113-frame limit, and are likely shorter than the real sign's. A microcontroller build is not bound by the frame limit: use `ecto1a_playlist.json` and stretch the holds.
+At 200 ms per frame this gives a 22.6-second loop of 113 frames, exactly at the upload limit. **J–L are timed from the deleted-scene clip (V1)**: CALL? about 0.8 s, blank 0.8 s, US! 3.2 s with arrows, CALL JL5-2020 about 2.4 s including the reveal. **All other durations are estimates.** Holds of 0.4–0.8 s were shortened to fit the measured segments and the G2 graphic, wipes and shimmer within the 113-frame limit, and are likely shorter than the real sign's. A microcontroller build is not bound by the frame limit: use `ecto1a_playlist.json` and stretch the holds.
 
 ### Two-part, screen-timed version
 
-CoolLED panels can store several programs and play them in order, so a second build splits the loop into **two files**, each within the 113-frame limit. Part 1 covers A–F (112 frames, 22.4 s) and Part 2 covers G–L (109 frames, 21.8 s), for 44.2 s in total. That doubles the frame budget, so the holds follow real timings: measured values for J–L, 2.0 s message holds based on the measured 2.1 s CALL JL5-2020 hold, a 1.2–1.6 s shimmer (the thread says "a few seconds"), two-step wipes, and three passes of the lines → boxes graphic. Per-element bases are in [ATTRIBUTION.md](ATTRIBUTION.md#timing).
+CoolLED panels can store several programs and play them in order, so a second build splits the loop into **two files**, each within the 113-frame limit. Part 1 covers A–F (111 frames, 22.2 s) and Part 2 covers G–L (109 frames, 21.8 s), for 44.0 s in total. That doubles the frame budget, so the holds follow real timings: measured values for J–L, 2.0 s message holds based on the measured 2.1 s CALL JL5-2020 hold, a 1.2–1.6 s shimmer (the thread says "a few seconds"), two-step wipes, and three passes of the lines → boxes graphic. Per-element bases are in [ATTRIBUTION.md](ATTRIBUTION.md#timing).
