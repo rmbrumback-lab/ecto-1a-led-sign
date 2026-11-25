@@ -13,6 +13,8 @@ A record of the GBFans forum posts that shaped the wiki page, kept so future rev
 - **Post #4, 1 November 2026:** "Update: I've now tested the files on iOS, and the `.jt` files import into CoolLED1248 fine. Both the single file and Part 1 + Part 2 play correctly on two separate 16×96 panels."
   Posted as a reply because editing the opening post was refused: the forum applies new-user limits (2 links, 2 mentions, 5 embedded images) to edits, and the opening post exceeds them. The opening post therefore still says iOS import is unconfirmed; [../GBFANS_POST.md](../GBFANS_POST.md) holds the corrected text for a future edit.
 
+- **Post #16, 25 November 2026:** reply to prodestrian's review (posts #12 here and #41 in the reference thread), summarizing the v11 changes, explaining the WHO YA / GONNA / CALL? color decision (red letters with green shadow, reconciling the deleted-scene measurement and his Getty reading), and listing the open questions to compare notes on.
+
 ## Forum constraints
 
 - New users can include at most **two links**, **two @mentions** and **five embedded images** per post, and the limits apply to edits too.
