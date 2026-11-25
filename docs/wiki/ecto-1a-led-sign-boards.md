@@ -148,6 +148,13 @@ On iOS or Android, download the file, tap it, and open it with CoolLED1248 (app 
 
 The source extracts in the PDF (film stills, Getty Images news footage, a book scan) belong to their owners. They are included only for attribution and comparison, and aren't covered by the project's MIT license.
 
+### Files for other panels
+
+These are **not** the main files above; each is labeled with how it differs.
+
+- **Compact (older 53-frame panels):** [Ecto-1A_GB2_16x96_COMPACT-52frames.jt](https://github.com/rmbrumback-lab/ecto-1a-led-sign/raw/main/dist/other_panels/compact_for_53frame_panels/Ecto-1A_GB2_16x96_COMPACT-52frames.jt). Every message in order, but shortened to 10.4 s with fewer swaps, wipes and holds. Not screen-timed.
+- **Converted (24-bit panels and GIF apps):** [full-color GIFs](https://github.com/rmbrumback-lab/ecto-1a-led-sign/tree/main/dist/other_panels/converted_24bit_gif) of the main animation, at the same timing, whole and in chunks of 40 frames or fewer. See the [other-panels guide](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/dist/other_panels/README.md).
+
 ### Image files
 
 - **Frames:** [113 PNG frames](https://github.com/rmbrumback-lab/ecto-1a-led-sign/tree/main/dist/frames_80x7), 80 × 7, 1 pixel = 1 LED, 200 ms each; [sprite sheet](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/dist/ecto1a_spritesheet_80x7.png).

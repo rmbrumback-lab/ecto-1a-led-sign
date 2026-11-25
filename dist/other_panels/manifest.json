@@ -1,0 +1,130 @@
+[
+ {
+  "folder": "compact_for_53frame_panels",
+  "kind": "COMPACT",
+  "file": "Ecto-1A_GB2_16x96_COMPACT-52frames.jt",
+  "frames": 52,
+  "seconds": 10.4,
+  "timeline": [
+   {
+    "id": "A",
+    "label": "GHOSTBUSTERS rises red, green, swaps with upside-down flips, solid green",
+    "frames": 8
+   },
+   {
+    "id": "B",
+    "label": "FOR HIRE... (cut in, no wipe)",
+    "frames": 2
+   },
+   {
+    "id": "C",
+    "label": "WE'RE READY red, WE'RE green, READY green",
+    "frames": 3
+   },
+   {
+    "id": "D",
+    "label": "right-to-left wipe; TO, BELIEVE, YOU green in turn; pushed down by E",
+    "frames": 5
+   },
+   {
+    "id": "E",
+    "label": "CALL JL5-2020, then solid red",
+    "frames": 3
+   },
+   {
+    "id": "F",
+    "label": "GHOSTBUSTERS green, one shimmer frame, red",
+    "frames": 3
+   },
+   {
+    "id": "G",
+    "label": "green flash, WE'RE BACK, words swap",
+    "frames": 4
+   },
+   {
+    "id": "G2",
+    "label": "lines -> boxes, one pass in 5 steps",
+    "frames": 5
+   },
+   {
+    "id": "H",
+    "label": "WHO YA",
+    "frames": 2
+   },
+   {
+    "id": "I",
+    "label": "GONNA",
+    "frames": 2
+   },
+   {
+    "id": "J",
+    "label": "CALL? slides up, blank",
+    "frames": 4
+   },
+   {
+    "id": "K",
+    "label": "US! alone, arrows on / off / on",
+    "frames": 6
+   },
+   {
+    "id": "L",
+    "label": "CALL JL5-2020 opens from center, holds, slides down",
+    "frames": 5
+   }
+  ]
+ },
+ {
+  "folder": "converted_24bit_gif",
+  "kind": "CONVERTED",
+  "build": "single",
+  "size": "96x16",
+  "whole": "Ecto-1A_single_96x16_24bit_ALL-79frames.gif",
+  "chunks": [
+   "Ecto-1A_single_96x16_24bit_chunk1of2_40frames.gif",
+   "Ecto-1A_single_96x16_24bit_chunk2of2_39frames.gif"
+  ],
+  "gif_frames": 79,
+  "seconds": 22.6
+ },
+ {
+  "folder": "converted_24bit_gif",
+  "kind": "CONVERTED",
+  "build": "single",
+  "size": "80x7",
+  "whole": "Ecto-1A_single_80x7_24bit_ALL-79frames.gif",
+  "chunks": [
+   "Ecto-1A_single_80x7_24bit_chunk1of2_40frames.gif",
+   "Ecto-1A_single_80x7_24bit_chunk2of2_39frames.gif"
+  ],
+  "gif_frames": 79,
+  "seconds": 22.6
+ },
+ {
+  "folder": "converted_24bit_gif",
+  "kind": "CONVERTED",
+  "build": "screen-timed",
+  "size": "96x16",
+  "whole": "Ecto-1A_screen-timed_96x16_24bit_ALL-117frames.gif",
+  "chunks": [
+   "Ecto-1A_screen-timed_96x16_24bit_chunk1of3_39frames.gif",
+   "Ecto-1A_screen-timed_96x16_24bit_chunk2of3_39frames.gif",
+   "Ecto-1A_screen-timed_96x16_24bit_chunk3of3_39frames.gif"
+  ],
+  "gif_frames": 117,
+  "seconds": 44.0
+ },
+ {
+  "folder": "converted_24bit_gif",
+  "kind": "CONVERTED",
+  "build": "screen-timed",
+  "size": "80x7",
+  "whole": "Ecto-1A_screen-timed_80x7_24bit_ALL-117frames.gif",
+  "chunks": [
+   "Ecto-1A_screen-timed_80x7_24bit_chunk1of3_39frames.gif",
+   "Ecto-1A_screen-timed_80x7_24bit_chunk2of3_39frames.gif",
+   "Ecto-1A_screen-timed_80x7_24bit_chunk3of3_39frames.gif"
+  ],
+  "gif_frames": 117,
+  "seconds": 44.0
+ }
+]

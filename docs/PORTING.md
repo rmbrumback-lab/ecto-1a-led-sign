@@ -23,6 +23,8 @@ The base timing is **200 ms per frame**. The full loop is 113 frames, or 22.6 s.
 | CoolLED1248, 16×96 | `Ecto-1A_GB2_16x96.jt` (single file), or `two_part/…Part1.jt` + `…Part2.jt` played in order (screen-timed) |
 | Screen-timed data for any app | `two_part/ecto1a_full_frames.json`, `two_part/ecto1a_full_playlist.json` (220 frames, 44.0 s) |
 | CoolLED1248, other size | regenerate (see the README) |
+| Older CoolLED1248 capped at 53 frames | `other_panels/compact_for_53frame_panels/` (**COMPACT**: shortened, not screen-timed) |
+| 24-bit panels or apps that import GIFs | `other_panels/converted_24bit_gif/` (**CONVERTED**: same animation as full-color GIFs, chunks of 40 frames or fewer) |
 
 `ecto1a_80x7.gif` and `ecto1a_96x16_panel.gif` are **LED-style previews** (round dots, 8× scale). Apps that rescale a GIF onto their own grid want a **pixel-exact** GIF instead, where 1 image pixel equals 1 LED:
 

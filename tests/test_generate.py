@@ -144,3 +144,24 @@ def test_drop_shadow_and_flip_present():
         assert {g.R, g.G} <= vals                       # red letters, green shadow
     a_r = g.narrow("GHOSTBUSTERS", g.R)
     assert g.flip(a_r) in segs["A"]
+
+
+def test_compact_build_fits_legacy_panels_and_keeps_order():
+    from ecto1a import variants as v
+    seg = v.build_compact()
+    frames = [f for _, _, fr in seg for f in fr]
+    assert len(frames) <= v.LEGACY_MAX_FRAMES
+    assert [s for s, _, _ in seg] == [s for s, _, _ in g.build_segments("single")]
+    jt, _ = g.encode_jt(frames)
+    assert jt[0]["data"]["frameNum"] == len(frames)
+
+
+def test_converted_gif_chunks_within_cap_and_cover_loop():
+    from ecto1a import variants as v
+    for prof in g.PROFILES:
+        frames = [f for _, _, fr in g.build_segments(prof) for f in fr]
+        steps = v.runs(frames)
+        parts = v.chunks(steps)
+        assert all(len(c) <= v.GIF_CHUNK for c in parts)
+        assert [s for c in parts for s in c] == steps
+        assert sum(ms for _, ms in steps) == len(frames) * g.DELAY_MS

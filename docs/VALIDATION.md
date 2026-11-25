@@ -55,6 +55,8 @@ During development, its output was also compared pixel-by-pixel with the generat
 | `test_lines_boxes_have_no_gaps` | once drawn, the five boxes fill every column |
 | `test_who_ya_has_a_word_space` | WHO YA has a full word space |
 | `test_drop_shadow_and_flip_present` | WHO YA / GONNA / CALL? carry the green shadow; A includes the upside-down GHOSTBUSTERS |
+| `test_compact_build_fits_legacy_panels_and_keeps_order` | the COMPACT build is at most 53 frames, keeps all 13 segments in order, and encodes |
+| `test_converted_gif_chunks_within_cap_and_cover_loop` | GIF chunks are at most 40 frames and together cover the whole loop at the right total time |
 
 ## 4. Tested on real hardware
 
