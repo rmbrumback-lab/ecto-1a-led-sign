@@ -18,6 +18,7 @@ This folder is the source of truth for the GBFans wiki page [Ecto-1A LED Sign Bo
 - **Footnotes** use the wiki's syntax: `[^id]` in the text and `[^id]: source` in References. The build fails if a reference has no definition, or the reverse.
 - **Status labels:** mark anything not confirmed by a reference as **unconfirmed**, and anything reconstructed as **inferred**. Keep this consistent with [ATTRIBUTION.md](../ATTRIBUTION.md).
 - The wiki editor has **no tables**. Use headed lists.
+- **After loading the page into the editor, insert an empty paragraph after every image.** The editor's Markdown writer otherwise runs an image and the next block together on one line, and the next heading shows up as literal "## …" text.
 
 ## Updating the page
 
@@ -36,3 +37,4 @@ This folder is the source of truth for the GBFans wiki page [Ecto-1A LED Sign Bo
 | 2026-11-01 | v10.1 | First draft: hardware, messages, fonts, sequence, inferred effects, plans, build guide, downloads, open questions, credits and references. Downloads link directly to the `.jt` files, the attribution PDF, every image file, and the porting code on GitHub. iOS/two-panel testing noted. American spelling throughout (color, center, license) | Drafted in the editor, **not yet saved**. 3:11 PM save attempt stopped: GBFans refused the image upload (403 Forbidden). |
 | 2026-11-02 | v10.1 | Saved by Ryan from the editor with the 22 images still loading from GitHub (uploads still return 403 after the permission fix). The edit went to review; the live page shows the old (empty) version until approved | **Submitted for review**. Images to be re-hosted on GBFans once uploads work |
 | 2026-11-25 | v11 | prodestrian's review: WE'RE READY red with each word turning green; TO BELIEVE YOU each word green; right-to-left wipe C→D; WHO YA spacing; green drop shadow on WHO YA / GONNA / CALL? / US!; lines → boxes without gaps; upside-down flip; repeating shimmer; credits and footnotes for his posts #41 and #12 | Draft updated in the repo; the review copy on GBFans still has v10 |
+| 2026-11-25 | v11 | Saved v11 to GBFans: prodestrian's corrections, files for other panels, up-front credit line, 22 images uploaded to GBFans (asset IDs in gbfans_assets.json), and a fix for headings that followed images (the editor's Markdown writer ran image and heading together; an empty paragraph after each image keeps them apart) | **Submitted for review**; the v10 page stays live until approved |
