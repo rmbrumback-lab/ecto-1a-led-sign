@@ -15,6 +15,9 @@ A record of the GBFans forum posts that shaped the wiki page, kept so future rev
 
 - **Post #16, 25 November 2026:** reply to prodestrian's review (posts #12 here and #41 in the reference thread), summarizing the v11 changes, explaining the WHO YA / GONNA / CALL? color decision (red letters with green shadow, reconciling the deleted-scene measurement and his Getty reading), and listing the open questions to compare notes on.
 
+- **Post #17, 25 November 2026:** aj-quick: "Great job!" with a note on how many more animations existed than were seen on screen.
+- **Post #18, 25 November 2026:** reply to spectregater (posts #8, #11, #13–15) pointing to `dist/other_panels/`: the COMPACT 52-frame CoolLED file for 53-frame panels and the CONVERTED 24-bit GIFs in chunks of 40 frames or fewer.
+
 ## Forum constraints
 
 - New users can include at most **two links**, **two @mentions** and **five embedded images** per post, and the limits apply to edits too.
