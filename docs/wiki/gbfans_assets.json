@@ -1,4 +1,28 @@
 {
-  "_comment": "Maps each image placeholder in ecto-1a-led-sign-boards.md to the GBFans wiki asset it was uploaded as. Empty until the images are uploaded. When an image changes, re-upload it and update its id here; unchanged images keep their asset.",
-  "assets": {}
+ "_comment": "Maps each image placeholder in ecto-1a-led-sign-boards.md to the GBFans wiki asset it was uploaded as. Empty until the images are uploaded. When an image changes, re-upload it and update its id here; unchanged images keep their asset.",
+ "assets": {
+  "hero.png": 113963,
+  "plans/panel_mapping.png": 113964,
+  "font_bold_wide.png": 113965,
+  "font_bold_narrow.png": 113966,
+  "font_thin.png": 113967,
+  "storyboard.png": 113968,
+  "preview_96x16.gif": 113969,
+  "lines_boxes_steps.png": 113970,
+  "wipes_shimmer_steps.png": 113971,
+  "plans/plan_A.png": 113972,
+  "plans/plan_B.png": 113973,
+  "plans/plan_C.png": 113974,
+  "plans/plan_D.png": 113975,
+  "plans/plan_E.png": 113976,
+  "plans/plan_F.png": 113977,
+  "plans/plan_G.png": 113978,
+  "plans/plan_G2.png": 113979,
+  "plans/plan_H.png": 113980,
+  "plans/plan_I.png": 113981,
+  "plans/plan_J.png": 113982,
+  "plans/plan_K.png": 113983,
+  "plans/plan_L.png": 113984
+ },
+ "_uploaded": "2026-11-25 from repo commit 59a641f (v11 images); held for moderator review at upload"
 }
