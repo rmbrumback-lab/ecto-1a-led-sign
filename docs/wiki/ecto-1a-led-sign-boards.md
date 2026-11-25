@@ -2,7 +2,7 @@
 
 The **Ecto-1A LED sign boards** are the two roof-mounted dot-matrix signs added to the Ecto-1 for *Ghostbusters II* (1989), when the car was upgraded to the Ecto-1A. One board faces each side of the car and both always show the same content: a looping sequence of red, green and amber messages such as GHOSTBUSTERS, WE'RE BACK and WHO YA GONNA CALL? US!, along with the phone number CALL JL5-2020.
 
-This page collects what the community has worked out about the boards: the hardware, the full message list and running order, the fonts, colors and animations, and build plans and files for making a screen-accurate replica. Most of it comes from the GBFans reference thread *Screen Accurate ECTO-1A Dot Matrix LED Sign (Reference)*.[^thread] Details that are still uncertain are marked **unconfirmed**, and effects that have been reconstructed rather than observed are marked **inferred**.
+This page collects what the community has worked out about the boards: the hardware, the full message list and running order, the fonts, colors and animations, and build plans and files for making a screen-accurate replica. Most of it comes from the GBFans reference thread *Screen Accurate ECTO-1A Dot Matrix LED Sign (Reference)*.[^thread] The animation recreation, plans and build files were made by ryan-brumback from that research, with later corrections from prodestrian. Details that are still uncertain are marked **unconfirmed**, and effects that have been reconstructed rather than observed are marked **inferred**.
 
 ## Hardware
 
