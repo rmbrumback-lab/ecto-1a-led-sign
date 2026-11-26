@@ -18,6 +18,9 @@ A record of the GBFans forum posts that shaped the wiki page, kept so future rev
 - **Post #17, 25 November 2026:** aj-quick: "Great job!" with a note on how many more animations existed than were seen on screen.
 - **Post #18, 25 November 2026:** reply to spectregater (posts #8, #11, #13–15) pointing to `dist/other_panels/`: the COMPACT 52-frame CoolLED file for 53-frame panels and the CONVERTED 24-bit GIFs in chunks of 40 frames or fewer.
 
+- **Post #19, 26 November 2026:** spectregater: the app plays the converted GIFs at the wrong speed (it ignores GIF frame durations); he made six GIFs from the two-part files instead.
+- **Post #20, 26 November 2026:** reply to spectregater: his testing helps everyone with similar panels; pointed him to the new FIXED-SPEED GIFs (`dist/other_panels/fixed_speed_gif/`).
+
 ## Forum constraints
 
 - New users can include at most **two links**, **two @mentions** and **five embedded images** per post, and the limits apply to edits too.
