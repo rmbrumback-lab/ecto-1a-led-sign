@@ -153,7 +153,8 @@ The source extracts in the PDF (film stills, Getty Images news footage, a book s
 These are **not** the main files above; each is labeled with how it differs.
 
 - **Compact (older 53-frame panels):** [Ecto-1A_GB2_16x96_COMPACT-52frames.jt](https://github.com/rmbrumback-lab/ecto-1a-led-sign/raw/main/dist/other_panels/compact_for_53frame_panels/Ecto-1A_GB2_16x96_COMPACT-52frames.jt). Every message in order, but shortened to 10.4 s with fewer swaps, wipes and holds. Not screen-timed.
-- **Converted (24-bit panels and GIF apps):** [full-color GIFs](https://github.com/rmbrumback-lab/ecto-1a-led-sign/tree/main/dist/other_panels/converted_24bit_gif) of the main animation, at the same timing, whole and in chunks of 40 frames or fewer. See the [other-panels guide](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/dist/other_panels/README.md).
+- **Converted (24-bit panels and GIF apps):** [full-color GIFs](https://github.com/rmbrumback-lab/ecto-1a-led-sign/tree/main/dist/other_panels/converted_24bit_gif) of the main animation, at the same timing, whole and in chunks of 40 frames or fewer.
+- **Fixed-speed (apps that ignore GIF timing):** [GIFs with every frame at 200 ms](https://github.com/rmbrumback-lab/ecto-1a-led-sign/tree/main/dist/other_panels/fixed_speed_gif), in six pieces that follow the two CoolLED parts. See the [other-panels guide](https://github.com/rmbrumback-lab/ecto-1a-led-sign/blob/main/dist/other_panels/README.md).
 
 ### Image files
 

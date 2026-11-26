@@ -111,6 +111,33 @@ def chunks(steps, n=GIF_CHUNK):
     return [steps[i:i + size] for i in range(0, len(steps), size)]
 
 
+def save_gif_fixed(frames, path, panel=True):
+    """Every animation frame stored as its own GIF frame at a fixed 200 ms, with no merging of
+    repeated frames, for apps that ignore per-frame GIF durations. Pillow always merges identical
+    consecutive frames, so ImageMagick writes these."""
+    import shutil, subprocess, tempfile
+    if not shutil.which("convert"):
+        raise RuntimeError("ImageMagick 'convert' is needed for fixed-speed GIFs")
+    with tempfile.TemporaryDirectory() as tmp:
+        names = []
+        for i, f in enumerate(frames):
+            n = os.path.join(tmp, f"f{i:04d}.png")
+            rgb_frame(f, panel).save(n)
+            names.append(n)
+        subprocess.run(["convert", "-delay", str(DELAY_MS // 10), "-loop", "0", "-dispose", "none",
+                        *names, path], check=True)
+
+
+def split_like_parts(parts, n=GIF_CHUNK):
+    """Split each CoolLED part into near-equal pieces of at most n frames, keeping part boundaries."""
+    out = []
+    for part in parts:
+        k = -(-len(part) // n)
+        size = -(-len(part) // k)
+        out += [part[i:i + size] for i in range(0, len(part), size)]
+    return out
+
+
 def export(out):
     os.makedirs(out, exist_ok=True)
     manifest = []
@@ -148,6 +175,20 @@ def export(out):
             manifest.append({"folder": "converted_24bit_gif", "kind": "CONVERTED", "build": tag,
                              "size": size, "whole": whole, "chunks": names,
                              "gif_frames": len(st), "seconds": len(fr) * DELAY_MS / 1000})
+    # FIXED-SPEED: every frame at 200 ms, for apps that ignore GIF frame durations
+    d = os.path.join(out, "fixed_speed_gif")
+    os.makedirs(d, exist_ok=True)
+    p1, p2 = g.build_parts()
+    for tag, groups in (("screen-timed", split_like_parts([p1, p2])), ("single", split_like_parts([single]))):
+        for panel, size in ((True, "96x16"), (False, "80x7")):
+            names = []
+            for i, c in enumerate(groups, 1):
+                n = f"Ecto-1A_{tag}_{size}_FIXED-200ms_{i}of{len(groups)}_{len(c)}frames.gif"
+                save_gif_fixed(c, os.path.join(d, n), panel)
+                names.append(n)
+            manifest.append({"folder": "fixed_speed_gif", "kind": "FIXED-SPEED", "build": tag,
+                             "size": size, "files": names, "frames": sum(len(c) for c in groups),
+                             "seconds": sum(len(c) for c in groups) * DELAY_MS / 1000})
     with open(os.path.join(out, "manifest.json"), "w") as fh:
         json.dump(manifest, fh, indent=1)
     return manifest
@@ -158,4 +199,4 @@ if __name__ == "__main__":
     ap.add_argument("--out", default="dist/other_panels")
     a = ap.parse_args()
     for m in export(a.out):
-        print(m["kind"], m.get("file") or m["whole"], m.get("frames") or m["gif_frames"], "frames")
+        print(m["kind"], m.get("file") or m.get("whole") or m["files"][0], m.get("frames") or m["gif_frames"], "frames")

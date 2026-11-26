@@ -140,7 +140,7 @@ The project went through four iterations as more reference material surfaced. Th
 | [`dist/two_part/Ecto-1A_GB2_16x96_Part1.jt`](dist/two_part/Ecto-1A_GB2_16x96_Part1.jt), [`Part2.jt`](dist/two_part/Ecto-1A_GB2_16x96_Part2.jt) | Screen-timed version as two CoolLED files: Part 1 = A–F, Part 2 = G–L |
 | [`dist/two_part/ecto1a_96x16_full.gif`](dist/two_part/ecto1a_96x16_full.gif) | Preview of the screen-timed version (both parts) |
 | [`dist/two_part/ecto1a_full_frames.json`](dist/two_part/ecto1a_full_frames.json), [`ecto1a_full_playlist.json`](dist/two_part/ecto1a_full_playlist.json) | Screen-timed frames for other apps (220 frames / 71 unique) |
-| [`dist/other_panels/`](dist/other_panels/) | **Not the main files.** **COMPACT:** a 52-frame CoolLED file for older panels capped at 53 frames (shortened, not screen-timed). **CONVERTED:** the main animations as full-color GIFs for 24-bit panels, whole and in chunks of 40 frames or fewer. See its README for how each differs. |
+| [`dist/other_panels/`](dist/other_panels/) | **Not the main files.** **COMPACT:** a 52-frame CoolLED file for older panels capped at 53 frames (shortened, not screen-timed). **CONVERTED:** the main animations as full-color GIFs for 24-bit panels, whole and in chunks of 40 frames or fewer. **FIXED-SPEED:** the same GIFs with every frame at 200 ms, for apps that ignore GIF frame durations. See its README for how each differs. |
 | [`dist/ecto1a_96x16_panel.gif`](dist/ecto1a_96x16_panel.gif) | Preview as it appears on the panel |
 | [`dist/ecto1a_80x7.gif`](dist/ecto1a_80x7.gif) | Native 80×7 LED-style preview |
 | [`dist/frames_80x7/`](dist/frames_80x7/) | 113 PNGs, 1 image pixel = 1 sign pixel |

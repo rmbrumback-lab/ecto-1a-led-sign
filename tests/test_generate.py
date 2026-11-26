@@ -165,3 +165,12 @@ def test_converted_gif_chunks_within_cap_and_cover_loop():
         assert all(len(c) <= v.GIF_CHUNK for c in parts)
         assert [s for c in parts for s in c] == steps
         assert sum(ms for _, ms in steps) == len(frames) * g.DELAY_MS
+
+
+def test_fixed_speed_split_keeps_part_boundaries():
+    from ecto1a import variants as v
+    p1, p2 = g.build_parts()
+    groups = v.split_like_parts([p1, p2])
+    assert len(groups) == 6 and all(len(c) <= v.GIF_CHUNK for c in groups)
+    assert [f for c in groups[:3] for f in c] == p1
+    assert [f for c in groups[3:] for f in c] == p2

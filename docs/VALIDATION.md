@@ -64,3 +64,4 @@ Tested by the project owner on 1 November 2026:
 
 - **iOS:** the `.jt` files import into CoolLED1248 and work.
 - **On-device playback:** the single file and the two-part files (Part 1 then Part 2) both play correctly on **two separate** physical 16×96 CoolLED panels. That confirms the 113-frame and 65,535-byte limits hold on real panel firmware.
+| `test_fixed_speed_split_keeps_part_boundaries` | the fixed-speed GIFs split into 6 pieces of at most 40 frames, 1–3 = Part 1 and 4–6 = Part 2 |

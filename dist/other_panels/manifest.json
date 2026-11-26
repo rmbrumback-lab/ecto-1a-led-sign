@@ -126,5 +126,63 @@
   ],
   "gif_frames": 117,
   "seconds": 44.0
+ },
+ {
+  "folder": "fixed_speed_gif",
+  "kind": "FIXED-SPEED",
+  "build": "screen-timed",
+  "size": "96x16",
+  "files": [
+   "Ecto-1A_screen-timed_96x16_FIXED-200ms_1of6_37frames.gif",
+   "Ecto-1A_screen-timed_96x16_FIXED-200ms_2of6_37frames.gif",
+   "Ecto-1A_screen-timed_96x16_FIXED-200ms_3of6_37frames.gif",
+   "Ecto-1A_screen-timed_96x16_FIXED-200ms_4of6_37frames.gif",
+   "Ecto-1A_screen-timed_96x16_FIXED-200ms_5of6_37frames.gif",
+   "Ecto-1A_screen-timed_96x16_FIXED-200ms_6of6_35frames.gif"
+  ],
+  "frames": 220,
+  "seconds": 44.0
+ },
+ {
+  "folder": "fixed_speed_gif",
+  "kind": "FIXED-SPEED",
+  "build": "screen-timed",
+  "size": "80x7",
+  "files": [
+   "Ecto-1A_screen-timed_80x7_FIXED-200ms_1of6_37frames.gif",
+   "Ecto-1A_screen-timed_80x7_FIXED-200ms_2of6_37frames.gif",
+   "Ecto-1A_screen-timed_80x7_FIXED-200ms_3of6_37frames.gif",
+   "Ecto-1A_screen-timed_80x7_FIXED-200ms_4of6_37frames.gif",
+   "Ecto-1A_screen-timed_80x7_FIXED-200ms_5of6_37frames.gif",
+   "Ecto-1A_screen-timed_80x7_FIXED-200ms_6of6_35frames.gif"
+  ],
+  "frames": 220,
+  "seconds": 44.0
+ },
+ {
+  "folder": "fixed_speed_gif",
+  "kind": "FIXED-SPEED",
+  "build": "single",
+  "size": "96x16",
+  "files": [
+   "Ecto-1A_single_96x16_FIXED-200ms_1of3_38frames.gif",
+   "Ecto-1A_single_96x16_FIXED-200ms_2of3_38frames.gif",
+   "Ecto-1A_single_96x16_FIXED-200ms_3of3_37frames.gif"
+  ],
+  "frames": 113,
+  "seconds": 22.6
+ },
+ {
+  "folder": "fixed_speed_gif",
+  "kind": "FIXED-SPEED",
+  "build": "single",
+  "size": "80x7",
+  "files": [
+   "Ecto-1A_single_80x7_FIXED-200ms_1of3_38frames.gif",
+   "Ecto-1A_single_80x7_FIXED-200ms_2of3_38frames.gif",
+   "Ecto-1A_single_80x7_FIXED-200ms_3of3_37frames.gif"
+  ],
+  "frames": 113,
+  "seconds": 22.6
  }
 ]
